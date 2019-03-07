@@ -1,1 +1,0 @@
-# Kali_Linux_Pro_Certification
