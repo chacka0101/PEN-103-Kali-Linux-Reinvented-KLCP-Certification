@@ -296,7 +296,7 @@ PENDIENTE...
  Si bien las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debes deshabilitar 
 esa característica en la configuración de BIOS.
 
-----KERNEL
+- KERNEL
 Seguridad de Kernel basada en anillos: https://es.wikipedia.org/wiki/Anillo_(seguridad_inform%C3%A1tica)
 El kernel exporta datos sobre el hardware detectado a través de los sistemas de archivos /proc/y /sys/virtuales.
 Las aplicaciones a menudo acceden a los dispositivos por medio de archivos creados dentro /dev/. 
@@ -340,6 +340,8 @@ datos al espacio de usuario.
 /usr/: Aplicaciones (este directorio es subdividen en bin, sbin, libde acuerdo con la misma lógica que en el directorio raíz)
 Además, /usr/share/contiene los datos independientes de la arquitectura. El /usr/local/administrador debe utilizar el directorio
 para instalar las aplicaciones manualmente sin sobrescribir los archivos que maneja el sistema de empaque ( dpkg).
+
+- NETWORK
 
 
 
