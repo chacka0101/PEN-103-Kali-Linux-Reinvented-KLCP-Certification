@@ -55,29 +55,29 @@ HISTORIA DE LAS DISTROS HACKING
 
 COMPRIMIR O DESCOMPRIMIR EN DEBIAN
 --
-Archivos .tar.xz:
-Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
-Descomprimir: tar -Jxvf paquete.tar.xz
+- Archivos .tar.xz:
+- Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
+- Descomprimir: tar -Jxvf paquete.tar.xz
 
-Archivos .tar.gz:
-Comprimir: tar -czvf paquete.tar.gz /carpeta/a/empaquetar/
-Descomprimir: tar -xzvf paquete.tar.gz
+- Archivos .tar.gz:
+- Comprimir: tar -czvf paquete.tar.gz /carpeta/a/empaquetar/
+- Descomprimir: tar -xzvf paquete.tar.gz
 
-Archivos .tar:
-Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
-Desempaquetar: tar -xvf paquete.tar
+- Archivos .tar:
+- Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
+- Desempaquetar: tar -xvf paquete.tar
 
-Archivos .gz:
-Comprimir: gzip -9 index.php
-Descomprimir: gzip -d index.php.gz
+- Archivos .gz:
+- Comprimir: gzip -9 index.php
+- Descomprimir: gzip -d index.php.gz
 
-Archivos .zip:
-Comprimir: zip archivo.zip carpeta
-Descomprimir: unzip archivo.zip
+- Archivos .zip:
+- Comprimir: zip archivo.zip carpeta
+- Descomprimir: unzip archivo.zip
 
-Archivos .xz:
-Comprimir: xz archivo.xz
-Descomprimir: unxz archivo.xz
+- Archivos .xz:
+- Comprimir: xz archivo.xz
+- Descomprimir: unxz archivo.xz
 
 GNOME es el entorno de escritorio predeterminado de Kali Linux
 --
