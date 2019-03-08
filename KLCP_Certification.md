@@ -14,44 +14,44 @@ amd64, i386, armel, armhf, arm64
 
 RECURSOS
 --
-WEB: https://kali.training
-Book: https://kali.training/downloads/Kali-Linux-Revealed-1st-edition.pdf
-Training: https://kali.training/lessons/introduction/
-Foros: https://forums.kali.org/
-Blog: https://www.kali.org/blog/
-Docs: https://docs.kali.org/
-Dojo: https://www.kali.org/kali-linux-dojo-workshop/
-Mirror List: http://cdimage.kali.org/README.mirrorlist
-Generar Passwords Robustas: https://www.pwdgen.org/
+- WEB: https://kali.training
+- Book: https://kali.training/downloads/Kali-Linux-Revealed-1st-edition.pdf
+- Training: https://kali.training/lessons/introduction/
+- Foros: https://forums.kali.org/
+- Blog: https://www.kali.org/blog/-
+- Docs: https://docs.kali.org/ 
+- Dojo: https://www.kali.org/kali-linux-dojo-workshop/
+- Mirror List: http://cdimage.kali.org/README.mirrorlist
+- Generar Passwords Robustas: https://www.pwdgen.org/
 
 El Sistema Operativo de KALI LINUX es DEBIAN
 --
 
-Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
-https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
+- Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
+- https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
 
 SISTEMAS ARM
 --
-http://docs.kali.org/category/kali-on-arm
+- http://docs.kali.org/category/kali-on-arm
 
 HACKERS DATA BASE:
 --
 
-https://www.securityfocus.com/
-https://packetstormsecurity.com/
-https://www.exploit-db.com/
-https://github.com/rapid7/metasploit-framework/tree/master/modules
+- https://www.securityfocus.com/
+- https://packetstormsecurity.com/
+- https://www.exploit-db.com/
+- https://github.com/rapid7/metasploit-framework/tree/master/modules
  
 HISTORIA DE LAS DISTROS HACKING
 -- 
-KNOPIX - WhoppiX (2004)
-SLAX - WHAX (2005)
-SLAX - BackTrack (2006)
-UBUNTU - BackTrack 4 (2009)
-UBUNTU - BackTrack R1, R2, R3 (2010-2012)
-DEBIAN - Kali Linux 1.0 (2013)
-DEBIAN - Kali Linux 2.0 (2015-2016)
-DEBIAN - Kali Linux 2019.1 (2019)
+- KNOPIX - WhoppiX (2004)
+- SLAX - WHAX (2005)
+- SLAX - BackTrack (2006)
+- UBUNTU - BackTrack 4 (2009)
+- UBUNTU - BackTrack R1, R2, R3 (2010-2012)
+- DEBIAN - Kali Linux 1.0 (2013)
+- DEBIAN - Kali Linux 2.0 (2015-2016)
+- DEBIAN - Kali Linux 2019.1 (2019)
 
 COMPRIMIR O DESCOMPRIMIR EN DEBIAN
 --
