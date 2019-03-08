@@ -5,14 +5,14 @@ Kali Linux es una distribución de Linux para auditoría de seguridad lista para
 Kali está dirigido a profesionales de la seguridad y administradores de TI, lo que les permite realizar pruebas avanzadas
 de penetración, análisis forense y auditorías de seguridad.
 
-PRE REQUISITOS
+Prerrequisitos
 --
 https://www.edx.org/course/introduction-to-linux
 
 Arquitecturas Diponibles para Kali:
 amd64, i386, armel, armhf, arm64
 
-RECURSOS
+Recursos
 --
 - WEB: https://kali.training
 - Book: https://kali.training/downloads/Kali-Linux-Revealed-1st-edition.pdf
@@ -30,11 +30,11 @@ El Sistema Operativo de KALI LINUX es DEBIAN
 - Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
 - https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
 
-SISTEMAS ARM
+Sistemas ARM en Kali Linux
 --
 - http://docs.kali.org/category/kali-on-arm
 
-HACKERS DATA BASE:
+Hackers Data Base:
 --
 
 - https://www.securityfocus.com/
@@ -42,7 +42,7 @@ HACKERS DATA BASE:
 - https://www.exploit-db.com/
 - https://github.com/rapid7/metasploit-framework/tree/master/modules
  
-HISTORIA DE LAS DISTROS HACKING
+Historia de los SO en Hacking:
 -- 
 - KNOPIX - WhoppiX (2004)
 - SLAX - WHAX (2005)
@@ -53,7 +53,7 @@ HISTORIA DE LAS DISTROS HACKING
 - DEBIAN - Kali Linux 2.0 (2015-2016)
 - DEBIAN - Kali Linux 2019.1 (2019)
 
-COMPRIMIR O DESCOMPRIMIR EN DEBIAN
+Comprimir o descomprimir:
 --
 - Archivos .tar.xz:
 - Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
@@ -84,16 +84,15 @@ GNOME es el entorno de escritorio predeterminado de Kali Linux
 root@hacker:~# gnome-shell --version
 GNOME Shell 3.30.1
 
-Lanzar una nueva gnome por shell:
+- Lanzar una nueva gnome por shell:
 root@hacker:~# gnome-shell --replace
-
 
 Respositorios o Paquetes
 --
 
-Kali Linux Git Repositories: http://git.kali.org/gitweb/
-Kali Linux Package Tracker: http://pkg.kali.org/
-Mirror original: http.kali.org
+- Kali Linux Git Repositories: http://git.kali.org/gitweb/
+- Kali Linux Package Tracker: http://pkg.kali.org/
+- Mirror original: http.kali.org
 
 Soporte de ARM
 --
