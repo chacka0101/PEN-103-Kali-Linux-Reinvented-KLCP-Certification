@@ -118,9 +118,8 @@ https://wiki.debian.org/ShellCommands#Z
 - root@hacker:~# uname --all (Identificación de Arquitectura de Procesador)
 Linux hacker 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64 GNU/Linux
 - root@chacka0101:~# uname -r (Versión del Kernel)
-4.19.0-kali1-amd64
-root@hacker:~# apt update (Actualizar)
-root@hacker:~# apt list --upgradable (Actualizar)
+- root@hacker:~# apt update (Actualizar)
+- root@hacker:~# apt list --upgradable (Actualizar)
 - root@hacker:~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la integridad del ISO)
 - root@hacker:~# 1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
 - root@chacka0101:~# ls -l /dev/sd* (Identificar la USB)
@@ -129,58 +128,26 @@ root@hacker:~# apt list --upgradable (Actualizar)
 - root@chacka0101:~# sudo fdisk -l (Visualizar Disco Duro y Particiones)
 - root@chacka0101:~# cat /proc/filesystems  (Tipos de sistemas de Archivos soportados por Kali)
 Mas info: https://wiki.debian.org/FileSystem
-
-Procesos
---
-- Procesos Abiertos:
-root@chacka0101:~# ls /etc/init.d
-
-- Lista todos los Procesos - PID:
-root@chacka0101:~# ps axjf | less
-- A : Select all processes
-- u : Select all processes on a terminal, including those of other users
-- x : Select processes without controlling ttys
-
-- Reiniciar proceso:
-- root@chacka0101:~# sudo systemctl restart nombredelproceso
-
-- Matar proceso:
--root@chacka0101:~# sudo killall nombredelproceso
--Matar proceso segundo plano:
-- root@chacka0101:~# kill %1
-
-- Lista los procesos en tiempo real:
-- root@chacka0101:~# top
-- Guardarlos en un log:
-- root@chacka0101:~# top -b -n1 > /root/Desktop/process.log
-
-- Lista los procesos en segundo plano:
-- root@chacka0101:~# jobs -l
-
-- Variable de entorno:
-- root@chacka0101:~# echo $PATH
+- root@chacka0101:~# ls /etc/init.d  (Procesos Abiertos)
+- root@chacka0101:~# sudo systemctl restart nombredelproceso (Reiniciar proceso)
+- root@chacka0101:~# sudo killall nombredelproceso  (Matar proceso)
+- root@chacka0101:~# kill %1  (Matar proceso segundo plano)
+- root@chacka0101:~# top (Lista los procesos en tiempo real)
+- root@chacka0101:~# top -b -n1 > /root/Desktop/process.log (Guardar procesos en un log)
+- root@chacka0101:~# jobs -l  (Lista los procesos en segundo plano)
+- root@chacka0101:~# echo $PATH  (Variable de entorno)
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-- Editar la Variable de Entorno:
-- root@chacka0101:/etc # cat profile
-- Definir variables de entorno no especificas:
-- root@chacka0101:/etc # cat environment 
-
-- Buscar la ubicación de los comandos:
-- root@chacka0101:~# which ls
-/usr/bin/ls
-
-- Muestra información o tipo sobre de cada comando:
-- root@chacka0101:~# type rm
-rm is /usr/bin/rm
-- root@chacka0101:~# type pwd
-pwd is a shell builtin
-
-- Listar archivos ocultos en la Ubicación actual:
-- root@chacka0101:~# ls -al
-Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.
-
-- Visualiza el contenido del archivo:
-- root@chacka0101:~# cat archivo.txt
+- root@chacka0101:/etc # cat profile (Editar la Variable de Entorno)
+- root@chacka0101:/etc # cat environment  (Definir variables de entorno no especificas)
+- root@chacka0101:~# which ls  (Buscar la ubicación de los comandos)
+- root@chacka0101:~# type rm (Muestra información de los comandos)
+- root@chacka0101:~# type pwd (Tipo de cada comando)
+- root@chacka0101:~# ls -al (Listar archivos ocultos en la Ubicación actual, Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.)
+- root@chacka0101:~# cat archivo.txt  (Visualiza el contenido del archivo)
+- root@chacka0101:~# ps axjf | less  (Lista todos los Procesos - PID)
+-- A : Select all processes
+-- u : Select all processes on a terminal, including those of other users
+-- x : Select processes without controlling ttys
 
 - Buscando archivos y dentro de archivos:
 - root@chacka0101:~# find / -name nombreexactodeloquebusco
