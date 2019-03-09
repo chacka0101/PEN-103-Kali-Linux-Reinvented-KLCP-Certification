@@ -161,9 +161,9 @@ root@chacka0101:~# ps axjf | less
 - root@chacka0101:~# echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 - Editar la Variable de Entorno:
-- root@chacka0101:/etc# cat profile
+- root@chacka0101:/etc # cat profile
 - Definir variables de entorno no especificas:
-- root@chacka0101:/etc# cat environment 
+- root@chacka0101:/etc # cat environment 
 
 - Buscar la ubicación de los comandos:
 - root@chacka0101:~# which ls
