@@ -9,8 +9,11 @@ Prerrequisitos
 --
 https://www.edx.org/course/introduction-to-linux
 
-Arquitecturas Diponibles para Kali:
-amd64, i386, armel, armhf, arm64
+* Arquitecturas Diponibles para Kali:
+  * amd64, i386, armel, armhf, arm64
+
+* Consideraciones de BIOS
+  * Si bien las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debes deshabilitar esa característica en la configuración de BIOS.
 
 Recursos
 --
@@ -182,93 +185,65 @@ el bit "Setuid" se identifica con una “s” en un listado de la siguiente form
    
 HARD DISK
 --
-- Información de Disco Duro:
-root@chacka0101:~# free -t -l --human
-Información de Disco Duro:
-root@chacka0101:~# df --all
-
-- Información del usuario actual:
-root@chacka0101:~# id
-uid=0(root) gid=0(root) groups=0(root)
-
-- Información de Logs:
-root@chacka0101:~# journalctl --all
-Información de Logs en especifico:
-root@chacka0101:~# journalctl -u ssh.service
-Información de los Logs del Kernel:
-root@chacka0101:~# dmesg --human --kernel | more
+- root@chacka0101:~# free -t -l --human   (Información de Disco Duro)
+- root@chacka0101:~# df --all  (Información de Disco Duro)
+- root@chacka0101:~# id   (Información del usuario actual)
+  * uid=0(root) gid=0(root) groups=0(root)
+ -root@chacka0101:~# journalctl --all  (Información de Logs)
+- root@chacka0101:~# journalctl -u ssh.service  (Información de Logs en especifico)
+- root@chacka0101:~# dmesg --human --kernel | more   (Información de los Logs del Kernel)
 
 INFORMACIÓN DE HARDWARE
 --
-root@chacka0101:~# lshw -short
-- Drivers o Firmware:
-root@hacker:/lib/firmware# ls -la
-- Información de Hardware Detallada:
-root@chacka0101:~# lspci -vv | less
-- Información de la CPU:
-root@chacka0101:~# dmesg | grep CPU0:
-[    0.708219] smpboot: CPU0: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz (family: 0x6, model: 0x8e, stepping: 0xa)
-- Información de Ethernet:
-root@chacka0101:~# lspci | grep Ethernet
-02:01.0 Ethernet controller: Intel Corporation 82545EM Gigabit Ethernet Controller (Copper) (rev 01)
-- Información de Tarjeta de Video:
-root@chacka0101:~# lspci -v -s `lspci | grep VGA | cut -f1 -d\ `
-- Información de Hardware USB Detallada:
-root@chacka0101:~# lsusb -vv | less
-- Información de Hardware sencilla:
-root@chacka0101:~# lspci
-- Información de Hardware USB sencilla:
-root@chacka0101:~# lsusb
-- Instalar el lshw: root@chacka0101:~# sudo apt-get install lshw
+- root@hacker:/lib/firmware# ls -la (Drivers o Firmware)
+ -root@chacka0101:~# lshw -short (Información de Hardware)
+- root@chacka0101:~# lspci -vv | less  (Información de Hardware Detallada)
+- root@chacka0101:~# dmesg | grep CPU0:    (Información de la CPU)
+  * [    0.708219] smpboot: CPU0: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz (family: 0x6, model: 0x8e, stepping: 0xa)
+- root@chacka0101:~# lspci | grep Ethernet    (Información de Ethernet)
+  * 02:01.0 Ethernet controller: Intel Corporation 82545EM Gigabit Ethernet Controller (Copper) (rev 01)
+- root@chacka0101:~# lspci -v -s `lspci | grep VGA | cut -f1 -d\ `  (Información de Tarjeta de Video)
+- root@chacka0101:~# lsusb -vv | less  (Información de Hardware USB Detallada)
+- root@chacka0101:~# lspci   (Información de Hardware sencilla)
+- root@chacka0101:~# lsusb    (Información de Hardware USB sencilla)
+- root@chacka0101:~# sudo apt-get install lshw   (Instalar el lshw)
 
 Calcular el tiempo de ejecución de comandos:
 --
-root@chacka0101:~# time locate "*rockyou.txt.gz*"
-/usr/share/wordlists/rockyou.txt.gz
-real	0m0.369s
-user	0m0.088s
-sys	0m0.016s
-root@chacka0101:~# time find / -name "*rockyou.txt.gz*"
-find: ‘/run/user/130/gvfs’: Permission denied
-/usr/share/wordlists/rockyou.txt.gz
-real	0m2.965s
-user	0m0.276s
-sys	0m0.594s
-
-
-
-MONTAR LA MEMORIA USB CON LA TERMINAL:
-PENDIENTE...
-
-Consideraciones de BIOS
---
-Si bien las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debes deshabilitar 
-esa característica en la configuración de BIOS.
+- root@chacka0101:~# time locate "*rockyou.txt.gz*"
+  * /usr/share/wordlists/rockyou.txt.gz
+   > real	0m0.369s
+   > user	0m0.088s
+   > sys	0m0.016s
+- root@chacka0101:~# time find / -name "*rockyou.txt.gz*"
+  * find: ‘/run/user/130/gvfs’: Permission denied
+  * /usr/share/wordlists/rockyou.txt.gz
+   > real	0m2.965s
+   > user	0m0.276s
+   > sys	0m0.594s
 
 KERNEL
 --
-- Seguridad de Kernel basada en anillos: https://es.wikipedia.org/wiki/Anillo_(seguridad_inform%C3%A1tica)
-- El kernel exporta datos sobre el hardware detectado a través de los sistemas de archivos /proc/y /sys/virtuales.
-- Las aplicaciones a menudo acceden a los dispositivos por medio de archivos creados dentro /dev/. 
-- Los archivos específicos representan unidades de disco (por ejemplo, /dev/sda)
-Particiones ( /dev/sda1)
-Mouse ( /dev/input/mouse0)
-Teclados ( /dev/input/event0)
-Tarjetas de sonido ( /dev/snd/*)
-Puertos Seriales ( /dev/ttyS*) y otros componentes.
+* Seguridad de Kernel basada en anillos: https://es.wikipedia.org/wiki/Anillo_(seguridad_inform%C3%A1tica)
+ * El kernel exporta datos sobre el hardware detectado a través de los sistemas de archivos /proc/y /sys/virtuales.
+ * Las aplicaciones a menudo acceden a los dispositivos por medio de archivos creados dentro /dev/. 
+ * Los archivos específicos representan unidades de disco (por ejemplo, /dev/sda)
+  > Particiones ( /dev/sda1)
+  > Mouse ( /dev/input/mouse0)
+  > Teclados ( /dev/input/event0)
+  > Tarjetas de sonido ( /dev/snd/*)
+  > Puertos Seriales ( /dev/ttyS*) y otros componentes.
 
-- Tipos de Dispositivos "Device files" son dos (2):
-(b)block: Tiene un tamaño finito y puede acceder a bytes en cualquier posición del bloque.
-(c)character: Puede leer y escribir caracteres, pero no puede buscar una posición determinada y cambiar bytes arbitrarios.
-Ejemplo de Tipo de Archivo en Bloque por que inicia con la letra (b) brw-rw y la comprobación se hace digitando # ls -l:
-root@chacka0101:~# ls -l /dev/sda
-brw-rw---- 1 root disk 8, 0 Feb 27 11:00 /dev/sda
-The programming interface includes device-specific commands that can be invoked through the ioctl system call.
-- Comprobar el tipo de dispositivo:
-root@chacka0101:~# sudo file /dev/sda
-/dev/sda: block special (8/0)
-root@chacka0101:~# sudo file /dev/ttyS0
-/dev/ttyS0: character special (4/64)
+* Tipos de Dispositivos "Device files" son dos (2):
+  * (b)block: Tiene un tamaño finito y puede acceder a bytes en cualquier posición del bloque.
+  * (c)character: Puede leer y escribir caracteres, pero no puede buscar una posición determinada y cambiar bytes arbitrarios.
+   > Ejemplo de Tipo de Archivo en Bloque por que inicia con la letra (b) brw-rw y la comprobación se hace digitando # ls -l:
+   > root@chacka0101:~# ls -l /dev/sda
+   > brw-rw---- 1 root disk 8, 0 Feb 27 11:00 /dev/sda
+* root@chacka0101:~# sudo file /dev/sda   (Comprobar el tipo de dispositivo)
+  * /dev/sda: block special (8/0)
+* root@chacka0101:~# sudo file /dev/ttyS0
+  * /dev/ttyS0: character special (4/64)
 
 Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
 --
