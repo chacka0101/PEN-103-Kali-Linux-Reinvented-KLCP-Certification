@@ -212,17 +212,20 @@ INFORMACIÓN DE HARDWARE
 Calcular el tiempo de ejecución de comandos:
 --
 - root@chacka0101:~# time locate "*rockyou.txt.gz*"
-  * /usr/share/wordlists/rockyou.txt.gz
+```
+/usr/share/wordlists/rockyou.txt.gz
    > real	0m0.369s
    > user	0m0.088s
    > sys	0m0.016s
+```
 - root@chacka0101:~# time find / -name "*rockyou.txt.gz*"
-  * find: ‘/run/user/130/gvfs’: Permission denied
+```
+find: ‘/run/user/130/gvfs’: Permission denied
   * /usr/share/wordlists/rockyou.txt.gz
    > real	0m2.965s
    > user	0m0.276s
    > sys	0m0.594s
-
+```
 KERNEL
 --
 -  Seguridad de Kernel basada en anillos: https://es.wikipedia.org/wiki/Anillo_(seguridad_inform%C3%A1tica)
@@ -428,25 +431,29 @@ APACHE
 * root@chacka0101:~# mkdir -p /var/www/html/chacka0101.com    (Crear el directorio que contiene la página web)
 * root@chacka0101:~# cd /var/www/html/chacka0101.com
 * root@chacka0101:/var/www/html/chacka0101.com# nano index.html     (Crear la página web)
-  * <html>
-  *   <head>
-  *     <title>Welcome to CHackA - Colombia Hack Agent</title>
-  *   </head>
-  *   <body>
-  *    <h1>CHackA - Colombia Hack Agent</h1>
-  *     Hacked by CHackA!
-  *   </body>
-  * </html>
+```
+<html>
+   <head>
+     <title>Welcome to CHackA - Colombia Hack Agent</title>
+   </head>
+   <body>
+    <h1>CHackA - Colombia Hack Agent</h1>
+     Hacked by CHackA!
+   </body>
+</html>
+```
 * root@chacka0101:/var/www/html/chacka0101.com# chown -R www-data: /var/www/html     (Establecer privilegios para el directorio)
 * root@chacka0101:/var/www/html/chacka0101.com# nano /etc/apache2/sites-available/chacka0101.com.conf  (Configurar el virtual Host)
-  * <VirtualHost *:80>
-  *         ServerAdmin admin@chacka0101.com
-  *         ServerName chacka0101.com
-  *         ServerAlias www.chacka0101.com
-  *         DocumentRoot /var/www/html/chacka0101.com
-  *         ErrorLog ${APACHE_LOG_DIR}/chacka0101.com_error.log
-  *         CustomLog ${APACHE_LOG_DIR}/chacka0101.com_access.log combined
-  * </VirtualHost>
+```
+<VirtualHost *:80>
+   ServerAdmin admin@chacka0101.com
+   ServerName chacka0101.com
+   ServerAlias www.chacka0101.com
+   DocumentRoot /var/www/html/chacka0101.com
+   ErrorLog ${APACHE_LOG_DIR}/chacka0101.com_error.log
+   CustomLog ${APACHE_LOG_DIR}/chacka0101.com_access.log combined
+  </VirtualHost>
+```
 * root@chacka0101:/etc/apache2/sites-available# sudo a2dissite 000-default    (Desactivar el default)
 * root@chacka0101:/var/www/html/chacka0101.com# sudo a2ensite chacka0101.com   (Activar el virtual Host)
   *        Site chacka0101.com already enabled
