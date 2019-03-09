@@ -55,9 +55,9 @@ Historia de los SO en Hacking:
 
 Comprimir o descomprimir:
 --
-- Archivos .tar.xz:
-- Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
-- Descomprimir: tar -Jxvf paquete.tar.xz
+* Archivos .tar.xz:
+** Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
+** Descomprimir: tar -Jxvf paquete.tar.xz
 
 - Archivos .tar.gz:
 - Comprimir: tar -czvf paquete.tar.gz /carpeta/a/empaquetar/
