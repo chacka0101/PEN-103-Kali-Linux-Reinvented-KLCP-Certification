@@ -271,7 +271,7 @@ para instalar las aplicaciones manualmente sin sobrescribir los archivos que man
 NETWORK
 --
 
-
+Format: ![Alt Text](https://kali.training/wp-content/uploads/2017/02/16_network_manager-1024x768.png)
 
 
 Questions and Answers
