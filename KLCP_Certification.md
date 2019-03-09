@@ -155,25 +155,29 @@ Search
 
 Permisos de los archivos y directorios - CHMOD
 --
-chmod(change permissions), chown (change owner), and chgrp (change group).
-Setuid - suid "Set User ID"
-Setgid - setgid "Set Group ID" 
-- Son permisos de acceso que pueden asignarse a archivos o directorios. Se utilizan principalmente para permitir a los usuarios
+* Tipos de Permisos
+  * chmod (change permissions)
+  * chown (change owner)
+  * chgrp (change group).
+  * Setuid - suid "Set User ID"
+  * Setgid - setgid "Set Group ID" 
+
+* Son permisos de acceso que pueden asignarse a archivos o directorios. Se utilizan principalmente para permitir a los usuarios
 del sistema ejecutar con privilegios elevados temporalmente para realizar una tarea específica. Si un fichero tiene activado
 el bit "Setuid" se identifica con una “s” en un listado de la siguiente forma:
--rwsr-xr–x 1 root shadow 27920 ago 15 22:45 /usr/bin/passwd
-- Visualizar Permisos:
-root@chacka0101:~# ls -al /bin/ping
--rwxr-xr-x 1 root root 65272 Aug  3  2018 /bin/ping
+  * -rwsr-xr–x 1 root shadow 27920 ago 15 22:45 /usr/bin/passwd
 
+- root@chacka0101:~# ls -al /bin/ping (Visualizar Permisos)
+-rwxr-xr-x 1 root root 65272 Aug  3  2018 /bin/ping
+* 
 - https://es.wikipedia.org/wiki/Chmod
 - https://chmod-calculator.com
-- El primer dígito establece el tipo de permiso deseado al dueño; el segundo al grupo; y el tercero al resto de los usuarios.
-chmod 766 file.txt   # brinda acceso total al dueño
+* El primer dígito establece el tipo de permiso deseado al dueño; el segundo al grupo; y el tercero al resto de los usuarios.
+  * chmod 766 file.txt# brinda acceso total al dueño
                      # y lectura y escritura a los demás
-chmod 770 file.txt   # brinda acceso total al dueño y al grupo
+  * chmod 770 file.txt   # brinda acceso total al dueño y al grupo
                      # y elimina todos los permisos a los demás usuarios
-chmod 635 file.txt   # Permite lectura y escritura al dueño, 
+  * chmod 635 file.txt   # Permite lectura y escritura al dueño, 
                      # escritura y ejecución al grupo,
                      # y lectura y ejecución al resto
 HARD DISK
