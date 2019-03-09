@@ -228,18 +228,18 @@ KERNEL
  * El kernel exporta datos sobre el hardware detectado a través de los sistemas de archivos /proc/y /sys/virtuales.
  * Las aplicaciones a menudo acceden a los dispositivos por medio de archivos creados dentro /dev/. 
  * Los archivos específicos representan unidades de disco (por ejemplo, /dev/sda)
-   > Particiones ( /dev/sda1)
-   > Mouse ( /dev/input/mouse0)
-   > Teclados ( /dev/input/event0)
-   > Tarjetas de sonido ( /dev/snd/*)
-   > Puertos Seriales ( /dev/ttyS*) y otros componentes.
+   Particiones ( /dev/sda1)
+   Mouse ( /dev/input/mouse0)
+   Teclados ( /dev/input/event0)
+   Tarjetas de sonido ( /dev/snd/*)
+   Puertos Seriales ( /dev/ttyS*) y otros componentes.
 
 - Tipos de Dispositivos "Device files" son dos (2):
   * (b)block: Tiene un tamaño finito y puede acceder a bytes en cualquier posición del bloque.
   * (c)character: Puede leer y escribir caracteres, pero no puede buscar una posición determinada y cambiar bytes arbitrarios.
-    > Ejemplo de Tipo de Archivo en Bloque por que inicia con la letra (b) brw-rw y la comprobación se hace digitando # ls -l:
-    > root@chacka0101:~# ls -l /dev/sda
-    > brw-rw---- 1 root disk 8, 0 Feb 27 11:00 /dev/sda
+    Ejemplo de Tipo de Archivo en Bloque por que inicia con la letra (b) brw-rw y la comprobación se hace digitando # ls -l:
+    root@chacka0101:~# ls -l /dev/sda
+    brw-rw---- 1 root disk 8, 0 Feb 27 11:00 /dev/sda
 - root@chacka0101:~# sudo file /dev/sda   (Comprobar el tipo de dispositivo)
   * /dev/sda: block special (8/0)
 - root@chacka0101:~# sudo file /dev/ttyS0
@@ -247,23 +247,23 @@ KERNEL
 
 Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
 --
-> /bin/:	Programas basicos
-> /boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
-> /dev/:	Archivos de dispositivo
-/etc/:	Archivos de configuración
-/home/:	Archivos personales del usuario
-/lib/:	Bibliotecas básicas
-/mnt/:	Punto de montaje temporal
-/opt/:	Aplicaciones adicionales proporcionadas por terceros
-/root/:	Archivos personales del administrador (raíz)
-/run/:	Datos de tiempo de ejecución volátiles que no persisten en los reinicios (aún no incluidos en el FHS)
-/sbin/:	Programas del sistema
-/srv/:	Datos utilizados por los servidores alojados en este sistema
-/tmp/:	Archivos temporales (este directorio a menudo se vacía en el arranque)
-/var/:	Datos variables manejados por demonios. Esto incluye archivos de registro, colas, spools y cachés.
-/proc/y /sys/: Son específicos para el kernel de Linux (y no son parte del FHS). Son utilizados por el núcleo para exportar
+- /bin/:	Programas basicos
+- /boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
+- /dev/:	Archivos de dispositivo
+- /etc/:	Archivos de configuración
+- /home/:	Archivos personales del usuario
+- /lib/:	Bibliotecas básicas
+- /mnt/:	Punto de montaje temporal
+- /opt/:	Aplicaciones adicionales proporcionadas por terceros
+- /root/:	Archivos personales del administrador (raíz)
+- /run/:	Datos de tiempo de ejecución volátiles que no persisten en los reinicios (aún no incluidos en el FHS)
+- /sbin/:	Programas del sistema
+- /srv/:	Datos utilizados por los servidores alojados en este sistema
+- /tmp/:	Archivos temporales (este directorio a menudo se vacía en el arranque)
+- /var/:	Datos variables manejados por demonios. Esto incluye archivos de registro, colas, spools y cachés.
+- /proc/y /sys/: Son específicos para el kernel de Linux (y no son parte del FHS). Son utilizados por el núcleo para exportar
 datos al espacio de usuario.
-/usr/: Aplicaciones (este directorio es subdividen en bin, sbin, libde acuerdo con la misma lógica que en el directorio raíz)
+- /usr/: Aplicaciones (este directorio es subdividen en bin, sbin, libde acuerdo con la misma lógica que en el directorio raíz)
 Además, /usr/share/contiene los datos independientes de la arquitectura. El /usr/local/administrador debe utilizar el directorio
 para instalar las aplicaciones manualmente sin sobrescribir los archivos que maneja el sistema de empaque ( dpkg).
 
@@ -359,16 +359,16 @@ LUKS and Logical Volume Management (LVM)
 27. Generally speaking, which of these is not a minimum requirement for a Kali Linux desktop?
  512 MB RAM / 2 GB hard drive free space
  
- 28. True or False: The Kali Linux installation will fail if you do not select a network mirror.
+28. True or False: The Kali Linux installation will fail if you do not select a network mirror.
  False
  
- 29. True or False: When booted from the mini.iso, the Kali Linux installation will fail if network hardware can not be detected.
+29. True or False: When booted from the mini.iso, the Kali Linux installation will fail if network hardware can not be detected.
  True
  
- 30. Which partitioning scheme is most likely to be affected by user error?
+30. Which partitioning scheme is most likely to be affected by user error?
  Manual
  
- 31. Which partitioning method is preferred for servers and multi-user systems?
+31. Which partitioning method is preferred for servers and multi-user systems?
  Separate /home, /var, and /tmp partitions
  
 32. Installing a modern version of Windows after a Kali installation will:
@@ -382,3 +382,5 @@ LUKS and Logical Volume Management (LVM)
 
 34. Which method is not readily available for saving debug logs during a failed install?
  Save logs to Kali bug tracker
+  ---
+© 2010 - 2019 - Jairo A. Garcia H. - Todos los derechos reservados. 
