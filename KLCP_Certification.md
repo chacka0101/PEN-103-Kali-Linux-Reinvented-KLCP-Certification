@@ -142,62 +142,62 @@ root@chacka0101:~# ps axjf | less
 - x : Select processes without controlling ttys
 
 - Reiniciar proceso:
-root@chacka0101:~# sudo systemctl restart nombredelproceso
+- root@chacka0101:~# sudo systemctl restart nombredelproceso
 
 - Matar proceso:
-root@chacka0101:~# sudo killall nombredelproceso
-Matar proceso segundo plano:
-root@chacka0101:~# kill %1
+-root@chacka0101:~# sudo killall nombredelproceso
+-Matar proceso segundo plano:
+- root@chacka0101:~# kill %1
 
 - Lista los procesos en tiempo real:
-root@chacka0101:~# top
-Guardarlos en un log:
-root@chacka0101:~# top -b -n1 > /root/Desktop/process.log
+- root@chacka0101:~# top
+- Guardarlos en un log:
+- root@chacka0101:~# top -b -n1 > /root/Desktop/process.log
 
 - Lista los procesos en segundo plano:
-root@chacka0101:~# jobs -l
+- root@chacka0101:~# jobs -l
 
 - Variable de entorno:
-root@chacka0101:~# echo $PATH
+- root@chacka0101:~# echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 - Editar la Variable de Entorno:
-root@chacka0101:/etc# cat profile
+- root@chacka0101:/etc# cat profile
 - Definir variables de entorno no especificas:
-root@chacka0101:/etc# cat environment 
+- root@chacka0101:/etc# cat environment 
 
 - Buscar la ubicación de los comandos:
-root@chacka0101:~# which ls
+- root@chacka0101:~# which ls
 /usr/bin/ls
 
 - Muestra información o tipo sobre de cada comando:
-root@chacka0101:~# type rm
+- root@chacka0101:~# type rm
 rm is /usr/bin/rm
-root@chacka0101:~# type pwd
+- root@chacka0101:~# type pwd
 pwd is a shell builtin
 
 - Listar archivos ocultos en la Ubicación actual:
-root@chacka0101:~# ls -al
+- root@chacka0101:~# ls -al
 Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.
 
 - Visualiza el contenido del archivo:
-root@chacka0101:~# cat archivo.txt
+- root@chacka0101:~# cat archivo.txt
 
 - Buscando archivos y dentro de archivos:
-root@chacka0101:~# find / -name nombreexactodeloquebusco
-root@chacka0101:~# find / -name "nombredeloquebusco*"
+- root@chacka0101:~# find / -name nombreexactodeloquebusco
+- root@chacka0101:~# find / -name "nombredeloquebusco*"
 - Busqueda recursiva con Grep:
-root@chacka0101:~# grep -r "nombredeloquebusco" /
+- root@chacka0101:~# grep -r "nombredeloquebusco" /
 - Buscar todos los ficheros con permisos SUID o SGID
-root@chacka0101:~# find / -path /proc -prune -o -type f -perm +6000 -ls
+- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +6000 -ls
 - Buscar todos los ficheros con permisos solo SUID
-root@chacka0101:~# find / -path /proc -prune -o -type f -perm +4000 -ls
+- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +4000 -ls
 - Buscar todos los ficheros con permisos solo SGID
-root@chacka0101:~# find / -path /proc -prune -o -type f -perm +2000 -ls
+- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +2000 -ls
 - Comando Locate:
-root@chacka0101:~# locate "*rockyou.txt.gz*"
+- root@chacka0101:~# locate "*rockyou.txt.gz*"
 
-
-- Permisos de los archivos y directorios:
+Permisos de los archivos y directorios - CHMOD
+--
 chmod(change permissions), chown (change owner), and chgrp (change group).
 Setuid - suid "Set User ID"
 Setgid - setgid "Set Group ID" 
@@ -209,11 +209,9 @@ el bit "Setuid" se identifica con una “s” en un listado de la siguiente form
 root@chacka0101:~# ls -al /bin/ping
 -rwxr-xr-x 1 root root 65272 Aug  3  2018 /bin/ping
 
-CHOMOD
---
-https://es.wikipedia.org/wiki/Chmod
-https://chmod-calculator.com
-El primer dígito establece el tipo de permiso deseado al dueño; el segundo al grupo; y el tercero al resto de los usuarios.
+- https://es.wikipedia.org/wiki/Chmod
+- https://chmod-calculator.com
+- El primer dígito establece el tipo de permiso deseado al dueño; el segundo al grupo; y el tercero al resto de los usuarios.
 chmod 766 file.txt   # brinda acceso total al dueño
                      # y lectura y escritura a los demás
 chmod 770 file.txt   # brinda acceso total al dueño y al grupo
