@@ -42,7 +42,7 @@ Hackers Data Base:
 - https://www.exploit-db.com/
 - https://github.com/rapid7/metasploit-framework/tree/master/modules
  
-Historia de los SO en Hacking:
+Linea de tiempo de las Distros de Hacking:
 -- 
 - KNOPIX - WhoppiX (2004)
 - SLAX - WHAX (2005)
@@ -59,37 +59,33 @@ Comprimir o descomprimir:
   * Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
   * Descomprimir: tar -Jxvf paquete.tar.xz
 
-- Archivos .tar.gz:
-- Comprimir: tar -czvf paquete.tar.gz /carpeta/a/empaquetar/
-- Descomprimir: tar -xzvf paquete.tar.gz
+* Archivos .tar.gz:
+  * Comprimir: tar -czvf paquete.tar.gz /carpeta/a/empaquetar/
+  * Descomprimir: tar -xzvf paquete.tar.gz
 
-- Archivos .tar:
-- Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
-- Desempaquetar: tar -xvf paquete.tar
+* Archivos .tar:
+  * Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
+  * Desempaquetar: tar -xvf paquete.tar
 
-- Archivos .gz:
-- Comprimir: gzip -9 index.php
-- Descomprimir: gzip -d index.php.gz
+* Archivos .gz:
+  * Comprimir: gzip -9 index.php
+  * Descomprimir: gzip -d index.php.gz
 
-- Archivos .zip:
-- Comprimir: zip archivo.zip carpeta
-- Descomprimir: unzip archivo.zip
+* Archivos .zip:
+  * Comprimir: zip archivo.zip carpeta
+  * Descomprimir: unzip archivo.zip
 
-- Archivos .xz:
-- Comprimir: xz archivo.xz
-- Descomprimir: unxz archivo.xz
+* Archivos .xz:
+  * Comprimir: xz archivo.xz
+  * Descomprimir: unxz archivo.xz
 
 GNOME es el entorno de escritorio predeterminado de Kali Linux
 --
-root@hacker:~# gnome-shell --version
-GNOME Shell 3.30.1
-
-- Lanzar una nueva gnome por shell:
-root@hacker:~# gnome-shell --replace
+- root@hacker:~# gnome-shell --version  (Versión del Gnome)
+- root@hacker:~# gnome-shell --replace  (Lanzar una nueva gnome por shell)
 
 Respositorios o Paquetes
 --
-
 - Kali Linux Git Repositories: http://git.kali.org/gitweb/
 - Kali Linux Package Tracker: http://pkg.kali.org/
 - Mirror original: http.kali.org
@@ -97,11 +93,9 @@ Respositorios o Paquetes
 Soporte de ARM
 --
 Debian soporta de manera completa tres adaptaciones a distintos sabores de hardware ARM little-endian:
-
 La adaptación ARM EABI (armel) está enfocada hacia dispositivos ARM antiguos de 32 bits, en particular, aquellos usados en hardware NAS y una variedad de ordenadores *plug.
 La adaptación más nueva ARM hard-float (armhf) soporta dispositivos más nuevos, y más potentes, de 32 bits, usando la versión 7 de la especificación de la arquitectura ARM.
 La adaptación ARM de 64 bits (arm64) soporta los últimos dispositivos ARM de 64 bits.
-
 
 COMMANDS
 --
@@ -121,13 +115,13 @@ Linux hacker 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64
 - root@chacka0101:~# apt update (Actualizar)
 - root@chacka0101:~# apt list --upgradable (Actualizar)
 - root@chacka0101~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la integridad del ISO)
-1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
+  * 1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
 - root@chacka0101:~# ls -l /dev/sd* (Identificar la USB)
 - root@chacka0101:~# sudo rm archivo.xxx (Borrar archivo)
 - root@chacka0101:~# sudo rm -rf directorio (Borrar directorio)
 - root@chacka0101:~# sudo fdisk -l (Visualizar Disco Duro y Particiones)
 - root@chacka0101:~# cat /proc/filesystems  (Tipos de sistemas de Archivos soportados por Kali)
-Mas info: https://wiki.debian.org/FileSystem
+  * Mas info: https://wiki.debian.org/FileSystem
 - root@chacka0101:~# ls /etc/init.d  (Procesos Abiertos)
 - root@chacka0101:~# sudo systemctl restart nombredelproceso (Reiniciar proceso)
 - root@chacka0101:~# sudo killall nombredelproceso  (Matar proceso)
@@ -136,7 +130,7 @@ Mas info: https://wiki.debian.org/FileSystem
 - root@chacka0101:~# top -b -n1 > /root/Desktop/process.log (Guardar procesos en un log)
 - root@chacka0101:~# jobs -l  (Lista los procesos en segundo plano)
 - root@chacka0101:~# echo $PATH  (Variable de entorno)
-/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  * /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 - root@chacka0101:/etc # cat profile (Editar la Variable de Entorno)
 - root@chacka0101:/etc # cat environment  (Definir variables de entorno no especificas)
 - root@chacka0101:~# which ls  (Buscar la ubicación de los comandos)
@@ -145,9 +139,9 @@ Mas info: https://wiki.debian.org/FileSystem
 - root@chacka0101:~# ls -al (Listar archivos ocultos en la Ubicación actual, Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.)
 - root@chacka0101:~# cat archivo.txt  (Visualiza el contenido del archivo)
 - root@chacka0101:~# ps axjf | less  (Lista todos los Procesos - PID)
--- A : Select all processes
--- u : Select all processes on a terminal, including those of other users
--- x : Select processes without controlling ttys
+  * A : Select all processes
+  * u : Select all processes on a terminal, including those of other users
+  * x : Select processes without controlling ttys
 
 Search
 --
