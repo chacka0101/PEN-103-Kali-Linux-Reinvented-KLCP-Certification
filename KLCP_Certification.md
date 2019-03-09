@@ -491,7 +491,7 @@ AuthUserFile /etc/apache2/authfile/htpasswd-private
     * root@chacka0101:/etc/apache2# mkdir authfiles
     * root@chacka0101:/etc/apache2# cd authfiles/
     * root@chacka0101:/etc/apache2/authfiles# nano htpasswd-private
-    * root@chacka0101:/etc/apache2/authfiles# htpasswd /etc/apache2/authfiles/htpasswd-private user
+    * root@chacka0101:/etc/apache2/authfiles# htpasswd /etc/apache2/authfiles/htpasswd-private root
     * New password: 
     * Re-type new password: 
     * Adding password for user root
@@ -512,7 +512,7 @@ AuthUserFile /etc/apache2/authfile/htpasswd-private
  ```
  5. Ingresamos al directorio privado:
  ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackahtaccess1.png?raw=true)
- - Acceso Autorizado
+ - Acceso al área Privada
  ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackahtaccess2.png?raw=true)
  
   
