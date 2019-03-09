@@ -422,58 +422,38 @@ APACHE
 * HOST VIRTUALES
   * Cada host virtual adicional se describe a continuación mediante un archivo almacenado en /etc/apache2/sites-available/. Por lo general, el archivo recibe el nombre del nombre de host del sitio web seguido de un .confsufijo (por ejemplo:) www.chacka0101.com.conf.
 
-- Paso uno: Crear Directorio raíz de documentos para el dominio chacka0101.com. Cree un directorio que contendrá las páginas web para chacka0101.com. Este directorio es conocido como "raíz del documento" para el dominio. Vamos a organizar todos los directorios "raíz de documentos" en /var/www.
-  * root@chacka0101:/# sudo mkdir /var/www/chacka0101.com 
-  * root@chacka0101:/# sudo mkdir /var/log/apache2/chacka0101.com (Crear un directorio de registro (logs) y registo de Errores (erroLog) dedicado para chacka0101.com en /var/log)
-- Creamos la página web de Index.html  
-  *     root@chacka0101:/# sudo nano /var/www/chacka0101.com/index.html    (Creamos y editamos el index.html)
-  *     <html>
-  *     <head>
+* root@chacka0101:~# dpkg -l apache2    (Verificar si el paguete de apache2 está funcionando)
+* root@chacka0101:~# systemctl enable apache2    (Habilitar el servicio de apache2)
+* root@chacka0101:~# systemctl status apache2    (Verificar e servicio de apache2)
+* root@chacka0101:~# mkdir -p /var/www/html/chacka0101.com    (Crear el directorio que contiene la página web)
+* root@chacka0101:~# cd /var/www/html/chacka0101.com
+* root@chacka0101:/var/www/html/chacka0101.com# nano index.html     (Crear la página web)
+  * <html>
+  *   <head>
   *     <title>Welcome to CHackA - Colombia Hack Agent</title>
-  *     </head>
-  *     <body>
-  *     <h1>CHackA - Colombia Hack Agent</h1>
+  *   </head>
+  *   <body>
+  *    <h1>CHackA - Colombia Hack Agent</h1>
   *     Hacked by CHackA!
-  *     </body>
-  *     </html>
-- Cambiamos la propiedad de directorio de raíz del documento, para el usuario se ejecute como servidor web de Apache.
-  * root@chacka0101:/# sudo chown -R www-data:www-data /var/www/chacka0101.com
+  *   </body>
+  * </html>
+* root@chacka0101:/var/www/html/chacka0101.com# chown -R www-data: /var/www/html     (Establecer privilegios para el directorio)
+* root@chacka0101:/var/www/html/chacka0101.com# nano /etc/apache2/sites-available/chacka0101.com.conf  (Configurar el virtual Host)
+  * <VirtualHost *:80>
+  *         ServerAdmin admin@chacka0101.com
+  *         ServerName chacka0101.com
+  *         ServerAlias www.chacka0101.com
+  *         DocumentRoot /var/www/html/chacka0101.com
+  *         ErrorLog ${APACHE_LOG_DIR}/chacka0101.com_error.log
+  *         CustomLog ${APACHE_LOG_DIR}/chacka0101.com_access.log combined
+  * </VirtualHost>
+* root@chacka0101:/etc/apache2/sites-available# sudo a2dissite 000-default    (Desactivar el default)
+* root@chacka0101:/var/www/html/chacka0101.com# sudo a2ensite chacka0101.com   (Activar el virtual Host)
+  *        Site chacka0101.com already enabled
+* root@chacka0101:/var/www/html/chacka0101.com# sudo service apache2 restart    (Reiniciar el servicio de apache) 
+* Abrimos un navegador y digitamos: localhost
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackavirtualhost.png?raw=true)
 
-- Paso dos: Crear un archivo de Host Virtual: Crear un archivo de configuración de host virtual de chacka0101.com. El nombre de cada archivo de configuración debe terminar con: conf.
-  * root@chacka0101:/# sudo nano /etc/apache2/sites-available/chacka0101.com.conf (Creamos y editamos el archivo del host virtual)
-  *     <VirtualHost *:80>   (Si desea asignar una dirección IP distinta (por ejemplo, 172.20.30.41) el dominio, puede reemplazar < VirtualHost *: 80 > con < VirtualHost 172.20.30.41:80 )
-  *     ServerName chacka0101.com
-  *     ServerAlias www.chacka0101.com
-  *     ServerAdmin webmaster@chacka0101.com
-  *     DocumentRoot /var/www/chacka0101.com
-  *     CustomLog /var/log/apache2/chacka0101.com/access.log common
-  *     ErrorLog /var/log/apache2/chacka0101.com/error.log
-  *     </VirtualHost>
- - Habilitar el sitio web:
-  * root@chacka0101:/# sudo a2ensite chacka0101.com.conf
-  * Enabling site chacka0101.com.
-  *  To activate the new configuration, you need to run:
-  * systemctl reload apache2
-- Paso Tres: 
-  * root@chacka0101:/# systemctl reload apache2
-  * root@chacka0101:/# apache2ctl -t  (Detectará cualquier error de sintaxis en su configuración)
-  * Syntax OK
-- Paso Cuatro:
-  * root@chacka0101:/# sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT   (Abrir el puerto HTTP utilizado por el host virtual,en caso de utilizar iptables)
-  * root@chacka0101:/# sudo /etc/init.d/iptables save
-- Paso Cinco:
-  * Configurar DNS para Virtual Host
-  * root@chacka0101:/# nano /etc/hosts  (Editar el archivo hosts)
-  * 127.0.0.1       localhost
-  * 127.0.1.1       chacka0101.chacka0101   chacka0101
-  * chacka0101.com  localhost     (Esta es la linea que de debe agregar)
-  * The following lines are desirable for IPv6 capable hosts
-  * ::1     localhost ip6-localhost ip6-loopback
-  * ff02::1 ip6-allnodes
-  * ff02::2 ip6-allrouters 
-
- 
-  
  
 Questions and Answers
 --
