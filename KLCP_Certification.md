@@ -196,7 +196,7 @@ HARD DISK
 INFORMACIÓN DE HARDWARE
 --
 - root@hacker:/lib/firmware# ls -la (Drivers o Firmware)
- -root@chacka0101:~# lshw -short (Información de Hardware)
+- root@chacka0101:~# lshw -short (Información de Hardware)
 - root@chacka0101:~# lspci -vv | less  (Información de Hardware Detallada)
 - root@chacka0101:~# dmesg | grep CPU0:    (Información de la CPU)
   * [    0.708219] smpboot: CPU0: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz (family: 0x6, model: 0x8e, stepping: 0xa)
