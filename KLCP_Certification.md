@@ -268,11 +268,41 @@ datos al espacio de usuario.
 Además, /usr/share/contiene los datos independientes de la arquitectura. El /usr/local/administrador debe utilizar el directorio
 para instalar las aplicaciones manualmente sin sobrescribir los archivos que maneja el sistema de empaque ( dpkg).
 
-NETWORK
+NETWORKING
 --
+Command | Descripción
+------------ | -------------
+ifconfig | muestra el enlace y el estado de la dirección de los interfaces activos
+ip addr show | muestra el enlace y el estado de la dirección de los interfaces activos
+route -n | muestra la tabla de encaminamiento al completo en direcciones numéricas
+ip route show | muestra la tabla de encaminamiento al completo en direcciones numéricas
+arp | muestra el contenido actual de la tabla de caché ARP
+ip neigh | muestra el contenido actual de la tabla de caché ARP
+plog | display ppp daemon log
+ping | theeaglelabs.com	comprueba la conexión de Internet con «theeaglelabs.com»
+whois theeaglelabs.com | comprueba quién registro «theeaglelabs.com» en la base de datos de dominios
+traceroute theeaglelabs.com | sigue la conexión a Internet hasta «theeaglelabs.com»
+tracepath theeaglelabs.com | sigue la conexión a Internet hasta «theeaglelabs.com»
+mtr theeaglelabs.com | sigue la conexión a Internet hasta «theeaglelabs.com» (de forma repetida)
+dig [@dns-server.com] example.com [{a|mx|any}] | comprueba lso registros DNS de «example.com» por «dns-server.com» para los registros «a», «mx», u «any»
+iptables -L -n | comprueba el filtrado de paquetes
+netstat -a | encuentra todos los puertos abiertos
+netstat -l --inet | encuentra los puertos que están escuchando
+netstat -ln --tcp | encuentra los puertos (numéricos) TCP que están escuchando
+dlint example.com | comprueba la información DNS de la zona «example.com»
 
-Format: ![Alt Text](https://kali.training/wp-content/uploads/2017/02/16_network_manager-1024x768.png)
-
+- Configurar la red WIFI por interfaz gráfica:
+![Alt Text](https://kali.training/wp-content/uploads/2017/02/16_network_manager-1024x768.png)
+- Configurar la tarjeta alámbrica de red manualmente:
+  * root@chacka0101:~# ifconfig -a  (Lista todas las interfaces de red)
+  * root@chacka0101:~# sudo dhclient eth0 (Activar el DHCP)
+  * root@chacka0101:~# sudo service networking restart (Reiniciar el Servicio de red)
+  * root@chacka0101:~# sudo service networking stop (Parar el Servicio de red)
+  * root@chacka0101:~# sudo service networking stop (Iniciar el Servicio de red)
+  * root@chacka0101:~# ifconfig eth0 up  (Active)
+  * root@chacka0101:~# ifconfig eth0 down  (Desactive)
+  * root@chacka0101:~# sudo ifconfig eth0 192.168.2.5 netmask 255.255.255.0 broadcast 192.168.2.7    (Configurar Manualmente la red)
+- Más información: https://www.debian.org/doc/manuals/debian-reference/ch05.es.html
 
 Questions and Answers
 --
