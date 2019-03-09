@@ -107,21 +107,21 @@ COMMANDS
 --
 https://wiki.debian.org/ShellCommands#Z
 
-- root@hacker:~# pwd (Directorio actual)
-- root@hacker:~# d (change directory)
-- root@hacker:~# ls (list file or directory contents)
-- root@hacker:~# mkdir (make directory)
-- root@hacker:~# rmdir (remove directory)
-- root@hacker:~# mv, rm, and cp (move, remove or copy file or directory respectively)
-- root@hacker:~# cat (concatenate or show file)
-- root@hacker:~# less/more (show files a page at a time)
-- root@hacker:~# uname --all (Identificación de Arquitectura de Procesador)
+- root@chacka0101:~# pwd (Directorio actual)
+- root@hchacka0101:~# d (change directory)
+- root@chacka0101:~# ls (list file or directory contents)
+- root@chacka0101:~# mkdir (make directory)
+- root@chacka0101:~# rmdir (remove directory)
+- root@chacka0101:~# mv, rm, and cp (move, remove or copy file or directory respectively)
+- root@chacka0101:~# cat (concatenate or show file)
+- root@chacka0101:~# less/more (show files a page at a time)
+- root@chacka0101:~# uname --all (Identificación de Arquitectura de Procesador)
 Linux hacker 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64 GNU/Linux
 - root@chacka0101:~# uname -r (Versión del Kernel)
-- root@hacker:~# apt update (Actualizar)
-- root@hacker:~# apt list --upgradable (Actualizar)
-- root@hacker:~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la integridad del ISO)
-- root@hacker:~# 1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
+- root@chacka0101:~# apt update (Actualizar)
+- root@chacka0101:~# apt list --upgradable (Actualizar)
+- root@chacka0101~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la integridad del ISO)
+1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
 - root@chacka0101:~# ls -l /dev/sd* (Identificar la USB)
 - root@chacka0101:~# sudo rm archivo.xxx (Borrar archivo)
 - root@chacka0101:~# sudo rm -rf directorio (Borrar directorio)
@@ -149,18 +149,14 @@ Mas info: https://wiki.debian.org/FileSystem
 -- u : Select all processes on a terminal, including those of other users
 -- x : Select processes without controlling ttys
 
-- Buscando archivos y dentro de archivos:
-- root@chacka0101:~# find / -name nombreexactodeloquebusco
-- root@chacka0101:~# find / -name "nombredeloquebusco*"
-- Busqueda recursiva con Grep:
-- root@chacka0101:~# grep -r "nombredeloquebusco" /
-- Buscar todos los ficheros con permisos SUID o SGID
-- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +6000 -ls
-- Buscar todos los ficheros con permisos solo SUID
-- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +4000 -ls
-- Buscar todos los ficheros con permisos solo SGID
-- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +2000 -ls
-- Comando Locate:
+Search
+--
+- root@chacka0101:~# find / -name nombreexactodeloquebusco (Buscando archivos y dentro de archivos)
+- root@chacka0101:~# find / -name "nombredeloquebusco*"  (Buscando archivos y dentro de archivos)
+- root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
+- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +6000 -ls  (Buscar todos los ficheros con permisos SUID o SGID)
+- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +4000 -ls  (Buscar todos los ficheros con permisos solo SUID)
+- root@chacka0101:~# find / -path /proc -prune -o -type f -perm +2000 -ls  (Buscar todos los ficheros con permisos solo SGID)
 - root@chacka0101:~# locate "*rockyou.txt.gz*"
 
 Permisos de los archivos y directorios - CHMOD
