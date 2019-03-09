@@ -39,11 +39,11 @@ Sistemas ARM en Kali Linux
 
 Hackers Data Base:
 --
-
 - https://www.securityfocus.com/
 - https://packetstormsecurity.com/
 - https://www.exploit-db.com/
 - https://github.com/rapid7/metasploit-framework/tree/master/modules
+- https://wpvulndb.com/wordpresses
  
 Linea de tiempo de las Distros de Hacking:
 -- 
@@ -145,6 +145,7 @@ Linux hacker 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64
   * A : Select all processes
   * u : Select all processes on a terminal, including those of other users
   * x : Select processes without controlling ttys
+ - root@chacka0101:~# passwd root  (Cambiar password de Usuario root)
 
 Search
 --
@@ -293,18 +294,74 @@ dlint example.com | comprueba la información DNS de la zona «example.com»
 
 - Configurar la red WIFI por interfaz gráfica:
 ![Alt Text](https://kali.training/wp-content/uploads/2017/02/16_network_manager-1024x768.png)
-Imágen toda de Kali Training
-- Configurar la tarjeta alámbrica de red manualmente:
+Imágen tomada de Kali Training.
+- Comandos de red importantes:
   * root@chacka0101:~# ifconfig -a  (Lista todas las interfaces de red)
   * root@chacka0101:~# sudo dhclient eth0 (Activar el DHCP)
   * root@chacka0101:~# sudo service networking restart (Reiniciar el Servicio de red)
   * root@chacka0101:~# sudo service networking stop (Parar el Servicio de red)
   * root@chacka0101:~# sudo service networking stop (Iniciar el Servicio de red)
-  * root@chacka0101:~# ifconfig eth0 up  (Active)
-  * root@chacka0101:~# ifconfig eth0 down  (Desactive)
+  * root@chacka0101:~# ifconfig eth0 up  (Activar tarjeta de red)
+  * root@chacka0101:~# ifconfig eth0 down  (Desactivar tarjeta de red)
   * root@chacka0101:~# sudo ifconfig eth0 192.168.2.5 netmask 255.255.255.0 broadcast 192.168.2.7    (Configurar Manualmente la red)
 - Más información: https://www.debian.org/doc/manuals/debian-reference/ch05.es.html
 
+Gestión de Usuario y Grupos
+--
+- USUARIOS:
+- root@chacka0101:/etc# cat passwd (lista de usuarios)
+- root@chacka0101:/etc# cat shadow (contraseñas cifradas de los usuarios)
+- root@chacka0101:/etc# getent hosts (Información de Bases de Datos, passwd, group, hosts, services, protocols, o networks).
+- root@chacka0101:~# adduser chacka0101 (Adicionar un usuario)
+- root@chacka0101:~# passwd chacka0101 (Establecer contraseña para un usuario)
+- root@chacka0101:~# adduser user group (Adicionar un usuario a un grupo)
+- root@chacka0101:/etc# cat adduser.conf  (Configuraciones de Usuarios)
+- root@chacka0101:~# passwd -l user (Bloquear un usuario)
+- root@chacka0101:~# passwd -u user (Desbloqeuar un usuario)
+- root@chacka0101:/# id  (Usuario Actual, Grupo Principal Actual, Lista de Grupos)
+  * uid=0(root) gid=0(root) groups=0(root)
+
+- GRUPOS:
+- root@chacka0101:/etc# cat group (listar los grupos)
+- root@chacka0101:/etc# cat gshadow (contraseñas cifradas de grupos)
+- root@chacka0101:/# delgroup grupo (Eliminar un grupo)
+- root@chacka0101:/# addgroup grupo (Adicionar un grupo)
+- root@chacka0101:/# groupmod grupo (Modificar un grupo)
+- root@chacka0101:/# gpasswd grupo (Cambiar password de un grupo)
+- root@chacka0101:/# gpasswd -r grupo  (Remover la contraseña del grupo)
+
+Configuración de Software o Package
+--
+- root@chacka0101:/# dpkg -s paquete (Resumen de información del paquete)
+- root@chacka0101:/# cat /usr/share/doc/paquete/README.md  (Documentación de un Paquete)
+- root@chacka0101:/# dpkg -L paquete (Lista de archivos incluidos en el paquete)
+- root@chacka0101:/# cat /usr/share/doc/paquete/examples/ (Ejemplos de archivos de configuración en el directorio)
+
+SSH
+--
+- root@chacka0101:/# systemctl start ssh (Iniciar el servicio de SSH)
+- root@chacka0101:/# systemctl enable ssh (Iniciar el servicio de SSH desde el arranque del OS)
+   > El servicio de SSH está desactivado por defecto, es importante configurarlo.
+- root@chacka0101:/# cat /etc/ssh/sshd_config | more (Archivo de configuración del SSH)
+- root@chacka0101:/# nano /etc/ssh/sshd_config (Editar el archivo de configuración)
+  > Editar la opción de "PermitRootLogin to yes" para que el usuario root pueda utilizar el servicio.
+- root@chacka0101:/# systemctl reload ssh (Recargar el servicio de SSH)
+- Generando nuevas claves de host SSH
+  * Cada servidor SSH tiene sus propias claves criptográficas; se denominan "claves de host SSH" y se almacenan en /etc/ssh/ssh_host_*. Deben mantenerse en privado si desea confidencialidad y no deben ser compartidas por varias máquinas.
+
+- root@chacka0101:/etc/ssh# rm /etc/ssh/ssh_host_*     (Eliminación KEYS)
+- root@chacka0101:/etc/ssh# dpkg-reconfigure openssh-server   (Creación de nuevas KEYS)
+> Creating SSH2 RSA key; this may take some time ...
+2048 SHA256:9TMrDGlKjhYHTqVcTEn617pynWwYkyiEY/p4VEhc/7c root@chacka0101 (RSA)
+Creating SSH2 ECDSA key; this may take some time ...
+256 SHA256:3kTZYldZ2HHh8+BJRQRwXpgl+eePFGLfHJK8CMw2vbs root@chacka0101 (ECDSA)
+Creating SSH2 ED25519 key; this may take some time ...
+256 SHA256:jHzsoF5JaUkK5/7UFZTSzilAgTJKxJvC//fUhNa0Mtw root@chacka0101 (ED25519)
+rescue-ssh.target is a disabled or a static unit, not starting it.
+- root@chacka0101:/etc/ssh# service ssh restart   (Reiniciar el servicio de SSH)
+
+ 
+ 
 Questions and Answers
 --
 1. What versions of Debian is Kali 1.0 ,2.0 and Rolling based on?
