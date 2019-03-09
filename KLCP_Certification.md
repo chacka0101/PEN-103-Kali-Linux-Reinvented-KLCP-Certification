@@ -174,15 +174,11 @@ el bit "Setuid" se identifica con una “s” en un listado de la siguiente form
   * https://chmod-calculator.com
 * El primer dígito establece el tipo de permiso deseado al dueño; el segundo al grupo; y el tercero al resto de los usuarios.
   * chmod 766 file.txt 
-   * # brinda acceso total al dueño
-   * # y lectura y escritura a los demás
+   > brinda acceso total al dueño y lectura y escritura a los demás
   * chmod 770 file.txt    
-   * # brinda acceso total al dueño y al grupo
-   * # y elimina todos los permisos a los demás usuarios
+   > brinda acceso total al dueño y al grupo y elimina todos los permisos a los demás usuarios
   * chmod 635 file.txt
-   * # Permite lectura y escritura al dueño, 
-   * # escritura y ejecución al grupo,
-   * # y lectura y ejecución al resto
+   > Permite lectura y escritura al dueño, escritura y ejecución al grupo, y lectura y ejecución al resto
    
 HARD DISK
 --
