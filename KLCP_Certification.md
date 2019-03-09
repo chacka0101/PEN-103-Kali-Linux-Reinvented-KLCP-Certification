@@ -461,7 +461,62 @@ APACHE
 * Abrimos un navegador y digitamos: localhost
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackavirtualhost.png?raw=true)
 
+- .htaccess
+1. Habilitar el .htaccess
+  * root@chacka0101:/# sudo a2enmod rewrite
+  * Enabling module rewrite.
+  * root@chacka0101:/# sudo nano /etc/apache2/apache2.conf
+ ```
+ AccessFileName .htaccess (Descomentar la linea (remueve el simbolo #))
  
+ <Directory /var/www/>
+     Options Indexes FollowSymLinks
+     AllowOverride All           (Reemplaza “None” por “All”: AllowOverride All)
+     Require all granted
+</Directory>
+ ```
+  * root@chacka0101:/# sudo service apache2 restart
+
+2. Crear un directorio que quiera proteger por el .htaccess:
+    * root@chacka0101:/var/www/html/chacka0101.com# mkdir privado   (Creamos un directorio privado)
+    * root@chacka0101:/var/www/html/chacka0101.com# cd privado/
+    * root@chacka0101:/var/www/html/chacka0101.com/privado# nano .htaccess    (Copiamos el siguiente codigo)
+ ```
+AuthName "Acceso solo usuarios autorizados"
+AuthType Basic
+require valid-user
+AuthUserFile /etc/apache2/authfile/htpasswd-private
+ ```
+3. Crear un usuario y contraseña de acceso al .htaccess
+    * root@chacka0101:/etc/apache2# mkdir authfiles
+    * root@chacka0101:/etc/apache2# cd authfiles/
+    * root@chacka0101:/etc/apache2/authfiles# nano htpasswd-private
+    * root@chacka0101:/etc/apache2/authfiles# htpasswd /etc/apache2/authfiles/htpasswd-private user
+    * New password: 
+    * Re-type new password: 
+    * Adding password for user root
+    * root@chacka0101:/etc/apache2/authfiles# cat htpasswd-private
+    * root:$apr1$DyqDCKm8$7Dk6m3Pe1qHN.xT5kvwfr0
+
+4. Por último creamos un index.html en el directorio privado que aseguramos con .htaccess
+ ```
+ <html>
+  <head>
+    <title>Welcome to CHackA - Colombia Hack Agent</title>
+  </head>
+  <body>
+    <h1>ACCESO PRIVADO de CHackA - Colombia Hack Agent</h1>
+    Comprobando la seguridad del .htaccess!
+  </body>
+</html>
+ ```
+ 5. Ingresamos al directorio privado:
+ ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackahtaccess1.png?raw=true)
+ - Acceso Autorizado
+ ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackahtaccess2.png?raw=true)
+ 
+  
+
 Questions and Answers
 --
 1. What versions of Debian is Kali 1.0 ,2.0 and Rolling based on?
