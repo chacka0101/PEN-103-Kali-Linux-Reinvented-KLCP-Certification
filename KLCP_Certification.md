@@ -375,7 +375,7 @@ PostgreSQL
 - root@chacka0101:/etc/postgresql/11/main# ls   (Directorio del postgresql)
   * conf.d  environment  pg_ctl.conf  pg_hba.conf  pg_ident.conf  postgresql.conf  start.conf
 - El usuario se llama postgresql, root@chacka0101:/etc/postgresql# cat /etc/passwd
-> postgres:x:113:117:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+> postgres: x :113:117:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
 
 * CREAR UN USUARIO:
   *  root@chacka0101:/# su - postgres
