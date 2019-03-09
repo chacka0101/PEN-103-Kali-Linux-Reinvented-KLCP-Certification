@@ -293,6 +293,7 @@ dlint example.com | comprueba la información DNS de la zona «example.com»
 
 - Configurar la red WIFI por interfaz gráfica:
 ![Alt Text](https://kali.training/wp-content/uploads/2017/02/16_network_manager-1024x768.png)
+Imágen toda de Kali Training
 - Configurar la tarjeta alámbrica de red manualmente:
   * root@chacka0101:~# ifconfig -a  (Lista todas las interfaces de red)
   * root@chacka0101:~# sudo dhclient eth0 (Activar el DHCP)
