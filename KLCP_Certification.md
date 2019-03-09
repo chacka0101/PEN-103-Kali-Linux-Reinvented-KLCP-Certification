@@ -379,6 +379,7 @@ PostgreSQL
 
 * CREAR UN USUARIO:
   *  root@chacka0101:/# su - postgres
+  >  (Comandos createuser, dropuser, createdb, dropdb)
   *  postgres@chacka0101:~$ createuser -P usuariodechacka
   *  Enter password for new role: 
   *  Enter it again: 
