@@ -441,15 +441,14 @@ APACHE
 
 - Paso dos: Crear un archivo de Host Virtual: Crear un archivo de configuración de host virtual de chacka0101.com. El nombre de cada archivo de configuración debe terminar con: conf.
   * root@chacka0101:/# sudo nano /etc/apache2/sites-available/chacka0101.com.conf (Creamos y editamos el archivo del host virtual)
-  *    <VirtualHost *:80>
-  *    # Si desea asignar una dirección IP distinta (por ejemplo, 172.20.30.41) el dominio, puede reemplazar < VirtualHost *: 80 > con < VirtualHost 172.20.30.41:80 >.
-  *        ServerName chacka0101.com
-  *        ServerAlias www.chacka0101.com
-  *        ServerAdmin webmaster@chacka0101.com
-  *        DocumentRoot /var/www/chacka0101.com
-  *        CustomLog /var/log/apache2/chacka0101.com/access.log common
-  *        ErrorLog /var/log/apache2/chacka0101.com/error.log
-  *    </VirtualHost>
+  *     <VirtualHost *:80>   (Si desea asignar una dirección IP distinta (por ejemplo, 172.20.30.41) el dominio, puede reemplazar < VirtualHost *: 80 > con < VirtualHost 172.20.30.41:80 )
+  *     ServerName chacka0101.com
+  *     ServerAlias www.chacka0101.com
+  *     ServerAdmin webmaster@chacka0101.com
+  *     DocumentRoot /var/www/chacka0101.com
+  *     CustomLog /var/log/apache2/chacka0101.com/access.log common
+  *     ErrorLog /var/log/apache2/chacka0101.com/error.log
+  *     </VirtualHost>
  - Habilitar el sitio web:
   * root@chacka0101:/# sudo a2ensite chacka0101.com.conf
   * Enabling site chacka0101.com.
