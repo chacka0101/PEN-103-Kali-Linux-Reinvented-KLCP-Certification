@@ -342,13 +342,14 @@ SSH
 - root@chacka0101:/# systemctl start ssh (Iniciar el servicio de SSH)
 - root@chacka0101:/# systemctl enable ssh (Iniciar el servicio de SSH desde el arranque del OS)
    > El servicio de SSH está desactivado por defecto, es importante configurarlo.
+- root@chacka0101:/# ssh -V (Versión del SSH)
 - root@chacka0101:/# cat /etc/ssh/sshd_config | more (Archivo de configuración del SSH)
 - root@chacka0101:/# nano /etc/ssh/sshd_config (Editar el archivo de configuración)
   > Editar la opción de "PermitRootLogin to yes" para que el usuario root pueda utilizar el servicio.
 - root@chacka0101:/# systemctl reload ssh (Recargar el servicio de SSH)
+- root@chacka0101:/etc/ssh# service ssh status  (Estado del servicio)
 - Generando nuevas claves de host SSH
-  * Cada servidor SSH tiene sus propias claves criptográficas; se denominan "claves de host SSH" y se almacenan en /etc/ssh/ssh_host_*. Deben mantenerse en privado si desea confidencialidad y no deben ser compartidas por varias máquinas.
-
+  > Cada servidor SSH tiene sus propias claves criptográficas; se denominan "claves de host SSH" y se almacenan en /etc/ssh/ssh_host_*. Deben mantenerse en privado si desea confidencialidad y no deben ser compartidas por varias máquinas.
 - root@chacka0101:/etc/ssh# rm /etc/ssh/ssh_host_*     (Eliminación KEYS)
 - root@chacka0101:/etc/ssh# dpkg-reconfigure openssh-server   (Creación de nuevas KEYS)
 > Creating SSH2 RSA key; this may take some time ...
@@ -359,8 +360,53 @@ Creating SSH2 ED25519 key; this may take some time ...
 256 SHA256:jHzsoF5JaUkK5/7UFZTSzilAgTJKxJvC//fUhNa0Mtw root@chacka0101 (ED25519)
 rescue-ssh.target is a disabled or a static unit, not starting it.
 - root@chacka0101:/etc/ssh# service ssh restart   (Reiniciar el servicio de SSH)
+- root@chacka0101:/etc/ssh# service ssh status  (Estado del servicio)
 
- 
+PostgreSQL
+--
+- root@chacka0101:/# systemctl start postgresql  (Iniciar el servicio de postgresql)
+- root@chacka0101:/# systemctl enable postgresql (Iniciar el servicio de SSH desde el arranque del OS)
+- root@chacka0101:/etc/postgresql# psql --version  (Versión del postgresql, en este caso es la 11 y el directorio es 11)
+  * psql (PostgreSQL) 11.1 (Debian 11.1-2)
+- root@chacka0101:/# cat /etc/postgresql/11/main/postgresql.conf | more (Archivo de configuración del SSH)  
+- root@chacka0101:/etc/postgresql/11/main# service postgresql status  (Estado del servicio)
+- root@chacka0101:/# systemctl reload postgresql (Recargar el servicio de postgresql)
+- root@chacka0101:/# service postgresql status  (Estado del servicio)
+- root@chacka0101:/etc/postgresql/11/main# ls   (Directorio del postgresql)
+  * conf.d  environment  pg_ctl.conf  pg_hba.conf  pg_ident.conf  postgresql.conf  start.conf
+- El usuario se llama postgresql, root@chacka0101:/etc/postgresql# cat /etc/passwd
+> postgres:x:113:117:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+
+* CREAR UN USUARIO:
+  *  root@chacka0101:/# su - postgres
+  *  postgres@chacka0101:~$ createuser -P usuariodechacka
+  *  Enter password for new role: 
+  *  Enter it again: 
+  *  postgres@chacka0101:~$ createdb -T template0 -E UTF-8 -O usuariodechacka usuariodechacka
+  *  postgres@chacka0101:~$ exit
+
+* INGRESAR A LA BASE DE DATOS:
+  *  root@chacka0101:/# sudo -u postgres psql
+  *  psql (11.1 (Debian 11.1-2))
+  *  Type "help" for help.
+  *   
+  *  postgres=# \?   (Listar comandos)
+  *  postgres=# \l   (Lista las bases de datos y usuarios)
+
+* Con las teclas (ctrl+z) puede salir de la ventana de comandos
+
+* CONECTARSE A LA BASE DE DATOS:
+  *  root@chacka0101:/# psql -h localhost -U usuariodechacka usuariodechacka
+  *  Password for user usuariodechacka: 
+  *  psql (11.1 (Debian 11.1-2))
+  *  SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+  *  Type "help" for help.
+  *   
+  *  usuariodechacka=> 
+
+
+
+
  
 Questions and Answers
 --
