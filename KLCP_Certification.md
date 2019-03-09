@@ -107,56 +107,39 @@ COMMANDS
 --
 https://wiki.debian.org/ShellCommands#Z
 
-root@hacker:~# pwd (Directorio actual)
-root@hacker:~# d (change directory)
-root@hacker:~# ls (list file or directory contents)
-root@hacker:~# mkdir (make directory)
-root@hacker:~# rmdir (remove directory)
-root@hacker:~# mv, rm, and cp (move, remove or copy file or directory respectively)
-root@hacker:~# cat (concatenate or show file)
-root@hacker:~# less/more (show files a page at a time)
-
-- Identificación de Arquitectura de Procesador:
-root@hacker:~# uname --all
+- root@hacker:~# pwd (Directorio actual)
+- root@hacker:~# d (change directory)
+- root@hacker:~# ls (list file or directory contents)
+- root@hacker:~# mkdir (make directory)
+- root@hacker:~# rmdir (remove directory)
+- root@hacker:~# mv, rm, and cp (move, remove or copy file or directory respectively)
+- root@hacker:~# cat (concatenate or show file)
+- root@hacker:~# less/more (show files a page at a time)
+- root@hacker:~# uname --all (Identificación de Arquitectura de Procesador)
 Linux hacker 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64 GNU/Linux
-Versión del Kernel:
-root@chacka0101:~# uname -r
+- root@chacka0101:~# uname -r (Versión del Kernel)
 4.19.0-kali1-amd64
-
-- Comandos de Actualización:
-root@hacker:~# apt update
-root@hacker:~# apt list --upgradable
-
-- Comando para verificar la integridad del ISO:
-root@hacker:~# sha256sum kali-linux-2016.2-amd64.iso
-root@hacker:~# 1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
-
-- Identificar la USB:
-root@chacka0101:~# ls -l /dev/sd*
-
-- Borrar archivo:
-root@chacka0101:~# sudo rm archivo.xxx
-
-- Borrar directorio:
-root@chacka0101:~# sudo rm -rf directorio
-
-- Visualizar Disco Duro y Particiones:
-root@chacka0101:~# sudo fdisk -l
-
-- Tipos de sistemas de Archivos soportados por Kali:
-root@chacka0101:~# cat /proc/filesystems
+root@hacker:~# apt update (Actualizar)
+root@hacker:~# apt list --upgradable (Actualizar)
+- root@hacker:~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la integridad del ISO)
+- root@hacker:~# 1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
+- root@chacka0101:~# ls -l /dev/sd* (Identificar la USB)
+- root@chacka0101:~# sudo rm archivo.xxx (Borrar archivo)
+- root@chacka0101:~# sudo rm -rf directorio (Borrar directorio)
+- root@chacka0101:~# sudo fdisk -l (Visualizar Disco Duro y Particiones)
+- root@chacka0101:~# cat /proc/filesystems  (Tipos de sistemas de Archivos soportados por Kali)
 Mas info: https://wiki.debian.org/FileSystem
 
-PROCESOS
+Procesos
 --
 - Procesos Abiertos:
 root@chacka0101:~# ls /etc/init.d
 
 - Lista todos los Procesos - PID:
 root@chacka0101:~# ps axjf | less
-A : Select all processes
-u : Select all processes on a terminal, including those of other users
-x : Select processes without controlling ttys
+- A : Select all processes
+- u : Select all processes on a terminal, including those of other users
+- x : Select processes without controlling ttys
 
 - Reiniciar proceso:
 root@chacka0101:~# sudo systemctl restart nombredelproceso
