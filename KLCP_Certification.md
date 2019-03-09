@@ -427,15 +427,15 @@ APACHE
   * root@chacka0101:/# sudo mkdir /var/log/apache2/chacka0101.com (Crear un directorio de registro (logs) y registo de Errores (erroLog) dedicado para chacka0101.com en /var/log)
 - Creamos la página web de Index.html  
   * root@chacka0101:/# sudo nano /var/www/chacka0101.com/index.html    (Creamos y editamos el index.html)
-  * <html>
-  *   <head>
+  *     <html>
+  *     <head>
   *     <title>Welcome to CHackA - Colombia Hack Agent</title>
-  *   </head>
-  *   <body>
+  *     </head>
+  *     <body>
   *     <h1>CHackA - Colombia Hack Agent</h1>
   *     Hacked by CHackA!
-  *   </body>
-  * </html>
+  *     </body>
+  *     </html>
 - Cambiamos la propiedad de directorio de raíz del documento, para el usuario se ejecute como servidor web de Apache.
   * root@chacka0101:/# sudo chown -R www-data:www-data /var/www/chacka0101.com
 
