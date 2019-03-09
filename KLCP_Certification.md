@@ -377,9 +377,9 @@ PostgreSQL
 - El usuario se llama postgresql, root@chacka0101:/etc/postgresql# cat /etc/passwd
 > postgres: x :113:117:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
 
-* CREAR UN USUARIO:
+* Comandos de Postgres:
   *  root@chacka0101:/# su - postgres
-  >  (Comandos createuser, dropuser, createdb, dropdb)
+  >  (Comandos; createuser, dropuser, createdb, dropdb)
   *  postgres@chacka0101:~$ createuser -P usuariodechacka
   *  Enter password for new role: 
   *  Enter it again: 
@@ -403,11 +403,79 @@ PostgreSQL
   *  SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
   *  Type "help" for help.
   *   
-  *  usuariodechacka=> 
+  *  usuariodechacka=> \help
+  
+* Mas informacion: https://wiki.debian.org/es/PostgreSql
 
+APACHE
+--
+* Nombre del paquete "apache2"
+- root@chacka0101:/# systemctl start apache2 (Iniciar el servicio Apache)
+- root@chacka0101:/# systemctl enable apache2 (Iniciar el servicio de Apache desde el arranque del OS)
+   > El servicio de APACHE está desactivado por defecto, es importante configurarlo.
+- root@chacka0101:/# apache2 -V (Versión del Apache)
+* Archivo de configuración de Apache2
+  * root@chacka0101:/etc/apache2/sites-enabled# ls
+  * 000-default.conf
+  * root@chacka0101:/etc/apache2/sites-enabled# cat 000-default.conf 
 
+* HOST VIRTUALES
+  * Cada host virtual adicional se describe a continuación mediante un archivo almacenado en /etc/apache2/sites-available/. Por lo general, el archivo recibe el nombre del nombre de host del sitio web seguido de un .confsufijo (por ejemplo:) www.chacka0101.com.conf.
 
+- Paso uno: Crear Directorio raíz de documentos para el dominio chacka0101.com. Cree un directorio que contendrá las páginas web para chacka0101.com. Este directorio es conocido como "raíz del documento" para el dominio. Vamos a organizar todos los directorios "raíz de documentos" en /var/www.
+  * root@chacka0101:/# sudo mkdir /var/www/chacka0101.com 
+  * root@chacka0101:/# sudo mkdir /var/log/apache2/chacka0101.com (Crear un directorio de registro (logs) y registo de Errores (erroLog) dedicado para chacka0101.com en /var/log)
+- Creamos la página web de Index.html  
+  * root@chacka0101:/# sudo nano /var/www/chacka0101.com/index.html    (Creamos y editamos el index.html)
+  * <html>
+  *   <head>
+  *     <title>Welcome to CHackA - Colombia Hack Agent</title>
+  *   </head>
+  *   <body>
+  *     <h1>CHackA - Colombia Hack Agent</h1>
+  *     Hacked by CHackA!
+  *   </body>
+  * </html>
+- Cambiamos la propiedad de directorio de raíz del documento, para el usuario se ejecute como servidor web de Apache.
+  * root@chacka0101:/# sudo chown -R www-data:www-data /var/www/chacka0101.com
 
+- Paso dos: Crear un archivo de Host Virtual: Crear un archivo de configuración de host virtual de chacka0101.com. El nombre de cada archivo de configuración debe terminar con: conf.
+  * root@chacka0101:/# sudo nano /etc/apache2/sites-available/chacka0101.com.conf (Creamos y editamos el archivo del host virtual)
+  *    <VirtualHost *:80>
+  *    # Si desea asignar una dirección IP distinta (por ejemplo, 172.20.30.41) el dominio, puede reemplazar < VirtualHost *: 80 > con < VirtualHost 172.20.30.41:80 >.
+  *        ServerName chacka0101.com
+  *        ServerAlias www.chacka0101.com
+  *        ServerAdmin webmaster@chacka0101.com
+  *        DocumentRoot /var/www/chacka0101.com
+  *        CustomLog /var/log/apache2/chacka0101.com/access.log common
+  *        ErrorLog /var/log/apache2/chacka0101.com/error.log
+  *    </VirtualHost>
+ - Habilitar el sitio web:
+  * root@chacka0101:/# sudo a2ensite chacka0101.com.conf
+  * Enabling site chacka0101.com.
+  *  To activate the new configuration, you need to run:
+  * systemctl reload apache2
+- Paso Tres: 
+  * root@chacka0101:/# systemctl reload apache2
+  * root@chacka0101:/# apache2ctl -t  (Detectará cualquier error de sintaxis en su configuración)
+  * Syntax OK
+- Paso Cuatro:
+  * root@chacka0101:/# sudo iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT   (Abrir el puerto HTTP utilizado por el host virtual,en caso de utilizar iptables)
+  * root@chacka0101:/# sudo /etc/init.d/iptables save
+- Paso Cinco:
+  * Configurar DNS para Virtual Host
+  * root@chacka0101:/# nano /etc/hosts
+  * 127.0.0.1       localhost
+  * 127.0.1.1       chacka0101.chacka0101   chacka0101
+  * chacka0101.com  localhost
+  * 
+  * # The following lines are desirable for IPv6 capable hosts
+  * ::1     localhost ip6-localhost ip6-loopback
+  * ff02::1 ip6-allnodes
+  * ff02::2 ip6-allrouters 
+
+ 
+  
  
 Questions and Answers
 --
