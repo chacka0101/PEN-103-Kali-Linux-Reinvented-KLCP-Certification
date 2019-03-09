@@ -224,32 +224,32 @@ Calcular el tiempo de ejecución de comandos:
 
 KERNEL
 --
-* Seguridad de Kernel basada en anillos: https://es.wikipedia.org/wiki/Anillo_(seguridad_inform%C3%A1tica)
+-  Seguridad de Kernel basada en anillos: https://es.wikipedia.org/wiki/Anillo_(seguridad_inform%C3%A1tica)
  * El kernel exporta datos sobre el hardware detectado a través de los sistemas de archivos /proc/y /sys/virtuales.
  * Las aplicaciones a menudo acceden a los dispositivos por medio de archivos creados dentro /dev/. 
  * Los archivos específicos representan unidades de disco (por ejemplo, /dev/sda)
-  > Particiones ( /dev/sda1)
-  > Mouse ( /dev/input/mouse0)
-  > Teclados ( /dev/input/event0)
-  > Tarjetas de sonido ( /dev/snd/*)
-  > Puertos Seriales ( /dev/ttyS*) y otros componentes.
+   > Particiones ( /dev/sda1)
+   > Mouse ( /dev/input/mouse0)
+   > Teclados ( /dev/input/event0)
+   > Tarjetas de sonido ( /dev/snd/*)
+   > Puertos Seriales ( /dev/ttyS*) y otros componentes.
 
-* Tipos de Dispositivos "Device files" son dos (2):
+- Tipos de Dispositivos "Device files" son dos (2):
   * (b)block: Tiene un tamaño finito y puede acceder a bytes en cualquier posición del bloque.
   * (c)character: Puede leer y escribir caracteres, pero no puede buscar una posición determinada y cambiar bytes arbitrarios.
-   > Ejemplo de Tipo de Archivo en Bloque por que inicia con la letra (b) brw-rw y la comprobación se hace digitando # ls -l:
-   > root@chacka0101:~# ls -l /dev/sda
-   > brw-rw---- 1 root disk 8, 0 Feb 27 11:00 /dev/sda
-* root@chacka0101:~# sudo file /dev/sda   (Comprobar el tipo de dispositivo)
+    > Ejemplo de Tipo de Archivo en Bloque por que inicia con la letra (b) brw-rw y la comprobación se hace digitando # ls -l:
+    > root@chacka0101:~# ls -l /dev/sda
+    > brw-rw---- 1 root disk 8, 0 Feb 27 11:00 /dev/sda
+- root@chacka0101:~# sudo file /dev/sda   (Comprobar el tipo de dispositivo)
   * /dev/sda: block special (8/0)
-* root@chacka0101:~# sudo file /dev/ttyS0
+- root@chacka0101:~# sudo file /dev/ttyS0
   * /dev/ttyS0: character special (4/64)
 
 Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
 --
-/bin/:	Programas basicos
-/boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
-/dev/:	Archivos de dispositivo
+> /bin/:	Programas basicos
+> /boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
+> /dev/:	Archivos de dispositivo
 /etc/:	Archivos de configuración
 /home/:	Archivos personales del usuario
 /lib/:	Bibliotecas básicas
