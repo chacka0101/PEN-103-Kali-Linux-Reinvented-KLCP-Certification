@@ -303,7 +303,7 @@ Imágen tomada de Kali Training.
   * root@chacka0101:~# sudo dhclient eth0 (Activar el DHCP)
   * root@chacka0101:~# sudo service networking restart (Reiniciar el Servicio de red)
   * root@chacka0101:~# sudo service networking stop (Parar el Servicio de red)
-  * root@chacka0101:~# sudo service networking stop (Iniciar el Servicio de red)
+  * root@chacka0101:~# sudo service networking start (Iniciar el Servicio de red)
   * root@chacka0101:~# ifconfig eth0 up  (Activar tarjeta de red)
   * root@chacka0101:~# ifconfig eth0 down  (Desactivar tarjeta de red)
   * root@chacka0101:~# sudo ifconfig eth0 192.168.2.5 netmask 255.255.255.0 broadcast 192.168.2.7    (Configurar Manualmente la red)
@@ -323,6 +323,23 @@ Gestión de Usuario y Grupos
 - root@chacka0101:~# passwd -u user (Desbloqeuar un usuario)
 - root@chacka0101:/# id  (Usuario Actual, Grupo Principal Actual, Lista de Grupos)
   * uid=0(root) gid=0(root) groups=0(root)
+- usermode Options:
+  * -c = We can add comment field for the useraccount.
+  * -d = To modify the directory for any existing user account.
+  * -e = Using this option we can make the account expiry in specific period.
+  * -g = Change the primary group for a User.
+  * -G = To add a supplementary groups.
+  * -a = To add anyone of the group to a secondary group.
+  * -l = To change the login name from tecmint to tecmint_admin.
+  * -L = To lock the user account. This will lock the password so we can’t use the account.
+  * -m = moving the contents of the home directory from existing home dir to new dir.
+  * -p = To Use un-encrypted password for the new password. (NOT Secured).
+  * -s = Create a Specified shell for new accounts.
+  * -u = Used to Assigned UID for the user account between 0 to 999.
+  * -U = To unlock the user accounts. This will remove the password lock and allow us to use the user account.
+  * root@chacka0101:/# usermod -a -G sudo usuario1
+  * root@chacka0101:/# chsh -s /bin/bash usuario1 (chsh define la shell de login de un usuario)
+
 
 - GRUPOS:
 - root@chacka0101:/etc# cat group (listar los grupos)
