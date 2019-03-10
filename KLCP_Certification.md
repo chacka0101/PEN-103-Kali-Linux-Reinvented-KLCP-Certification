@@ -534,8 +534,13 @@ Service Management
   * root@chacka0101:~# systemctl is-active application.service
   * root@chacka0101:~# systemctl is-enabled application.service
   * root@chacka0101:~# systemctl is-failed application.service
-
-
+  * root@chacka0101:~# systemctl list-dependencies sshd.service   (Listar todas las depedependencias de un servicio)
+  * root@chacka0101:~# systemctl show sshd.service (Listar todas las propiedades de un servicio)
+- Systemd también tiene la capacidad de marcar una unidad como completamente inestable, automática o manualmente, al vincularla a /dev/null. Esto se denomina enmascarar la unidad, y es posible con el comando de máscara:
+  * root@chacka0101:~# sudo systemctl mask sshd.service
+  * root@chacka0101:~# sudo systemctl unmask sshd.service
+  * root@chacka0101:~# systemctl list-unit-files   (Listar el estado)
+- Más información: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
 Questions and Answers
 --
