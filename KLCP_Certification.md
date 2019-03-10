@@ -564,7 +564,7 @@ Service Management
 - Más información: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
 
-HELP - RECURSOS
+HELP - BUGS - ERRORES
 --
   * root@chacka0101:~# man ls  (Manual para el comando ls)
   * root@chacka0101:~# apropos "copy file"  (Busca la palabra copy file dentro de Manuales y lista donde están contenidos)
@@ -572,11 +572,21 @@ HELP - RECURSOS
   * root@chacka0101:~# apt install pinfo (Instalar pinfo)
   * root@chacka0101:~# pinfo (Interfaz gráfica de información de comandos)
   * root@chacka0101:~# cat /usr/share/doc/sqlmap/README.pdf  (Manual de paquete sqlmap, puede venir en diferentes formatos)
-- Si el software devuelve un mensaje de error muy específico, ingréselo en un motor de búsqueda (entre comillas dobles, para buscar la frase completa, en lugar de las palabras clave individuales). En la mayoría de los casos, los primeros enlaces devueltos contendrán la respuesta que necesita.
+  * root@chacka0101:/# reportbug (Reportar un BUG)
+  * root@chacka0101:/# reportbug sqlmap  (Reportar un BUG con un paquete en especifico)
+  * root@chacka0101:/# dpkg -s sparta | grep ^Homepage:  (Página web oficial del paquete, ejemplo: sparta)
+  * Homepage: https://github.com/SECFORCE/sparta
   * root@chacka0101:~# cat /usr/share/doc/paquete/copyright   (Buscar la página web oficial del paquete)
+- Si el software devuelve un mensaje de error muy específico, ingréselo en un motor de búsqueda (entre comillas dobles, para buscar la frase completa, en lugar de las palabras clave individuales). En la mayoría de los casos, los primeros enlaces devueltos contendrán la respuesta que necesita.
   * Documentación específica de KALI LINUX: http://docs.kali.org/
-  * # kali-linux IRC Channel en Freenode
+  * kali-linux IRC Channel en Freenode
   * Foro Oficial de Kali Linux: https://forums.kali.org/
+  * Página Oficial de Bugs de Kali Linux - Bug Tracker: http://bugs.kali.org 
+  * Página Oficial de Bugs de Debian - Debbug: https://debbugs.gnu.org/
+  * Los errores asociados a paquetes en Debian se pueden consultar tambien en: https://tracker.debian.org/pkg/sqlmap
+- Un Fe de errata, se conoce como la publicación de errores posteriorES a la publicación final.
+
+
 
 Questions and Answers
 --
