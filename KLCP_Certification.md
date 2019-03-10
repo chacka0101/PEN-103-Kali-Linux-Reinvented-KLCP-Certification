@@ -515,7 +515,27 @@ AuthUserFile /etc/apache2/authfile/htpasswd-private
  - Acceso al área Privada
  ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackahtaccess2.png?raw=true)
  
-  
+Service Management
+---
+* Para ver una lista de todas las unidades activas que systemd conoce, podemos usar el comando list-units:
+  * root@chacka0101:~# systemctl list-units
+  * UNIT: El nombre de la unidad systemd.
+  * LOAD: Si systemd ha analizado la configuración de la unidad. La configuración de las unidades cargadas se mantiene en la memoria.
+  * ACTIVE: Un estado de resumen sobre si la unidad está activa. Esta suele ser una forma bastante básica de saber si la unidad se ha iniciado con éxito o no.
+  * SUB: Este es un estado de nivel inferior que indica información más detallada sobre la unidad. Esto a menudo varía según el tipo de unidad, el estado y el método real en el que se ejecuta la unidad.
+  * DESCRIPTION: Una breve descripción textual de lo que es / hace la unidad.
+  * root@chacka0101:~# sudo systemctl start application.service
+  * root@chacka0101:~# sudo systemctl stop application.service
+  * root@chacka0101:~# sudo systemctl restart application.service
+  * root@chacka0101:~# sudo systemctl reload application.service
+  * root@chacka0101:~# sudo systemctl enable application.service
+  * root@chacka0101:~# sudo systemctl disable application.service
+  * root@chacka0101:~# systemctl status application.service
+  * root@chacka0101:~# systemctl is-active application.service
+  * root@chacka0101:~# systemctl is-enabled application.service
+  * root@chacka0101:~# systemctl is-failed application.service
+
+
 
 Questions and Answers
 --
