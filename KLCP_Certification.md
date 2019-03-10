@@ -26,6 +26,9 @@ Recursos
 - Dojo: https://www.kali.org/kali-linux-dojo-workshop/
 - Mirror List: http://cdimage.kali.org/README.mirrorlist
 - Generar Passwords Robustas: https://www.pwdgen.org/
+- GitHub de Unix Ninja: https://github.com/unix-ninja
+- Blog de g0tmi1k: https://blog.g0tmi1k.com/
+- Github de Offensive Security: https://github.com/offensive-security
 
 El Sistema Operativo de KALI LINUX es DEBIAN
 --
@@ -320,6 +323,7 @@ Gestión de Usuario y Grupos
 - root@chacka0101:~# adduser user group (Adicionar un usuario a un grupo)
 - root@chacka0101:/etc# cat adduser.conf  (Configuraciones de Usuarios)
 - root@chacka0101:~# passwd -l user (Bloquear un usuario)
+- root@chacka0101:~# passwd -l olduser (Suspender un usuario)
 - root@chacka0101:~# passwd -u user (Desbloqeuar un usuario)
 - root@chacka0101:/# id  (Usuario Actual, Grupo Principal Actual, Lista de Grupos)
   * uid=0(root) gid=0(root) groups=0(root)
@@ -559,6 +563,10 @@ Service Management
   * root@chacka0101:~# systemctl list-unit-files   (Listar el estado)
 - Más información: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
+
+
+
+
 Questions and Answers
 --
 1. What versions of Debian is Kali 1.0 ,2.0 and Rolling based on?
@@ -668,5 +676,64 @@ LUKS and Logical Volume Management (LVM)
 
 34. Which method is not readily available for saving debug logs during a failed install?
  Save logs to Kali bug tracker
+ 
+35. You can use GNOME’s control center to graphically set network options with which tool?
+NetworkManager
+
+36. The interfaces file is an important part of command-line network configuration. What directory is it in?
+/etc/network
+
+37. What is the name of a command-line package typically used in Kali to configure the network from the command line?
+ifupdown
+
+38. When configuring a network from the command line (say with ifup or ifdown) which line will begin the section for a manual network configuration?
+  * iface eth0 inet static
+
+39. Which methods can be used to configure network devices in Kali Linux? Choose all that apply:
+  * Graphically with NetworkManager
+  * On the command line with .network files in the /etc/systemd/network directory
+  * On the command line via the /etc/network/interfaces file
+  * On the command line with systemd-networkd
+  * On the command line with ifupdown
+
+40. Which file contains encrypted user passwords?
+/etc/shadow
+
+41. Which command is used to add users to the system?
+adduser
+
+42. Which command will suspend a user account?
+passwd -l olduser
+
+43. Which is true of the SSH service on a default Kali install? Select all that apply.
+The SSH service is disabled by default
+The SSH service is installed by default
+The default configuration blocks password-based logins
+The default keys from a live image are pre-generated
+
+44. Which command is commonly used to start services like ssh and postgresql?
+systemctl
+
+45. Which command can used to create a new postgresql database?
+createdb
+
+46. Which command is not a postgresql command?
+pg_createuser
+
+47. Which command will create a postgres database name db_new?
+createdb -T template0 -E UTF-8 -O dbuser db_new
+
+48. Which of the following are not associated with Apache2? Choose one.
+systemctl start apache
+
+49. Which of the following are not associated with Apache2?
+apachectl
+
+50. In Kali, what is responsible for the boot sequence, but also permanently acts as a full featured service manager, starting and monitoring services?
+systemd
+
+51. Which command will inspect the current status of the postgresql service?
+systemctl status postgresql
+
   ---
 © 2010 - 2019 - Jairo A. Garcia H. - Todos los derechos reservados. 
