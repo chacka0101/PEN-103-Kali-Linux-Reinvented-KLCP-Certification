@@ -22,7 +22,7 @@ Recursos
 - Training: https://kali.training/lessons/introduction/
 - Foros: https://forums.kali.org/
 - Blog: https://www.kali.org/blog/-
-- Docs: https://docs.kali.org/ 
+- Documentación de Kali Linux: https://docs.kali.org/ 
 - Dojo: https://www.kali.org/kali-linux-dojo-workshop/
 - Mirror List: http://cdimage.kali.org/README.mirrorlist
 - Generar Passwords Robustas: https://www.pwdgen.org/
@@ -564,8 +564,19 @@ Service Management
 - Más información: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
 
-
-
+HELP - RECURSOS
+--
+  * root@chacka0101:~# man ls  (Manual para el comando ls)
+  * root@chacka0101:~# apropos "copy file"  (Busca la palabra copy file dentro de Manuales y lista donde están contenidos)
+  * root@chacka0101:~# yelp (Gnome Help)
+  * root@chacka0101:~# apt install pinfo (Instalar pinfo)
+  * root@chacka0101:~# pinfo (Interfaz gráfica de información de comandos)
+  * root@chacka0101:~# cat /usr/share/doc/sqlmap/README.pdf  (Manual de paquete sqlmap, puede venir en diferentes formatos)
+- Si el software devuelve un mensaje de error muy específico, ingréselo en un motor de búsqueda (entre comillas dobles, para buscar la frase completa, en lugar de las palabras clave individuales). En la mayoría de los casos, los primeros enlaces devueltos contendrán la respuesta que necesita.
+  * root@chacka0101:~# cat /usr/share/doc/paquete/copyright   (Buscar la página web oficial del paquete)
+  * Documentación específica de KALI LINUX: http://docs.kali.org/
+  * # kali-linux IRC Channel en Freenode
+  * Foro Oficial de Kali Linux: https://forums.kali.org/
 
 Questions and Answers
 --
@@ -708,7 +719,6 @@ passwd -l olduser
 43. Which is true of the SSH service on a default Kali install? Select all that apply.
 The SSH service is disabled by default
 The SSH service is installed by default
-The default configuration blocks password-based logins
 The default keys from a live image are pre-generated
 
 44. Which command is commonly used to start services like ssh and postgresql?
