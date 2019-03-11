@@ -790,7 +790,4 @@ reportbug
   * Use the official Debian bug tracker at https://bugs.debian.org
   * Send an email (with a special syntax) to submit@bugs.debian.org
   * Submit the bug to the official Kali bug tracker at https://bugs.kali.org and mark the issue for an upstream Debian patch.
-
-
-  ---
-© 2010 - 2019 - Jairo A. Garcia H. - GNU GPL. 
+---
