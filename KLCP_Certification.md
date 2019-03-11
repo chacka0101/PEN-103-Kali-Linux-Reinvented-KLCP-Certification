@@ -24,6 +24,7 @@ Recursos
 - Blog: https://www.kali.org/blog/-
 - Documentación de Kali Linux: https://docs.kali.org/ 
 - Dojo: https://www.kali.org/kali-linux-dojo-workshop/
+- Tools de Kali Linux: https://tools.kali.org/
 - Mirror List: http://cdimage.kali.org/README.mirrorlist
 - Generar Passwords Robustas: https://www.pwdgen.org/
 - GitHub de Unix Ninja: https://github.com/unix-ninja
@@ -47,6 +48,7 @@ Hackers Data Base:
 - https://www.exploit-db.com/
 - https://github.com/rapid7/metasploit-framework/tree/master/modules
 - https://wpvulndb.com/wordpresses
+- https://tools.kali.org/
  
 Linea de tiempo de las Distros de Hacking:
 -- 
@@ -360,6 +362,7 @@ Configuración de Software o Package
 - root@chacka0101:/# cat /usr/share/doc/paquete/README.md  (Documentación de un Paquete)
 - root@chacka0101:/# dpkg -L paquete (Lista de archivos incluidos en el paquete)
 - root@chacka0101:/# cat /usr/share/doc/paquete/examples/ (Ejemplos de archivos de configuración en el directorio)
+- Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
 
 SSH
 --
@@ -585,8 +588,30 @@ HELP - BUGS - ERRORES
   * Página Oficial de Bugs de Debian - Debbug: https://debbugs.gnu.org/
   * Los errores asociados a paquetes en Debian se pueden consultar tambien en: https://tracker.debian.org/pkg/sqlmap
 - Un Fe de errata, se conoce como la publicación de errores posteriorES a la publicación final.
+  * Rporte de Bugs en Github: https://help.github.com/en/articles/creating-an-issue
+  * Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
 
+SECURITY - MONITORING
+---
+- fail2ban Bloquea la IP fuente de ataques despues de determinado número de intentos de ataques.
+  * root@chacka0101:/# apt install fail2ban
+- lnav Analiza los registros de eventos de Linux.
+  * root@chacka0101:/# apt install lnav
+  * root@chacka0101:/# service fail2ban stop
+  * root@chacka0101:/# service fail2ban status
+  * root@chacka0101:/# service fail2ban start
+  * root@chacka0101:/# nano /etc/fail2ban/jail.conf
+```
+bantime = 10m (Tiempo de 10 minutos en que se va a tener una IP banneada)
+findtime = 10m (Tiempo de 10 minutos en que se va a tener una IP banneada despues del numer de maxretry)
+maxretry = 5  (Máximo numero de intentos en lo que bannea una IP)
+Entre otras configuraciones como las de envío de alertas al correo.
+```
+  * root@chacka0101:/# lvan /var/log/fail2ban.log   (Iniciar el Analizador de Logs)
+  
+  root@chacka0101:~# apt install logcheck
 
+  
 
 Questions and Answers
 --
@@ -727,9 +752,9 @@ adduser
 passwd -l olduser
 
 43. Which is true of the SSH service on a default Kali install? Select all that apply.
-The SSH service is disabled by default
-The SSH service is installed by default
-The default keys from a live image are pre-generated
+  * The SSH service is disabled by default
+  * The SSH service is installed by default
+  * The default keys from a live image are pre-generated
 
 44. Which command is commonly used to start services like ssh and postgresql?
 systemctl
@@ -754,6 +779,18 @@ systemd
 
 51. Which command will inspect the current status of the postgresql service?
 systemctl status postgresql
+
+52. Which command will determine if nmap has been modified by Kali?
+All of the above
+
+53. Which command is used to report a bug to the Debian developers?
+reportbug
+
+54. Which of these actions can be used to submit a bug to the Debian developers?
+  * Use the official Debian bug tracker at https://bugs.debian.org
+  * Send an email (with a special syntax) to submit@bugs.debian.org
+  * Submit the bug to the official Kali bug tracker at https://bugs.kali.org and mark the issue for an upstream Debian patch.
+
 
   ---
 © 2010 - 2019 - Jairo A. Garcia H. - Todos los derechos reservados. 
