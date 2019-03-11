@@ -793,4 +793,4 @@ reportbug
 
 
   ---
-© 2010 - 2019 - Jairo A. Garcia H. - Todos los derechos reservados. 
+© 2010 - 2019 - Jairo A. Garcia H. - GNU GPL. 
