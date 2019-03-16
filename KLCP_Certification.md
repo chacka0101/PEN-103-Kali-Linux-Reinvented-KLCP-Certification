@@ -60,7 +60,7 @@ Linea de tiempo de las Distros de Hacking:
 - DEBIAN - Kali Linux 1.0 (2013)
 - DEBIAN - Kali Linux 2.0 (2015-2016)
 - DEBIAN - Kali Linux 2019.1 (2019)
-- Time Line: https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
+- Linux Distribution Timeline: https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
 
 Comprimir o descomprimir:
 --
