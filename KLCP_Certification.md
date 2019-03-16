@@ -612,7 +612,42 @@ Entre otras configuraciones como las de envío de alertas al correo.
   
   root@chacka0101:~# apt install logcheck
 
+FIREWALL NETFILTER
+---
+* El kernel de Linux integra el firewall netfilter. Netfilter utiliza cuatro tablas distintas, que almacenan reglas que regulan tres tipos de operaciones en paquetes:
+  * filter: Se refiere a las reglas de filtrado (aceptar, rechazar o ignorar un paquete);
+  * nat (Traducción de direcciones de red) se refiere a la traducción de direcciones de origen o destino y puertos de paquetes;
+  * mangle: Cambios en los paquetes IP (incluyendo ToS— Tipo de servicio — campo y opciones);
+  * raw: Permite otras modificaciones manuales en los paquetes antes de que alcancen el sistema de seguimiento de la conexión.
   
+* filter tiene tres cadenas estándar:
+  * INPUT: se refiere a paquetes cuyo destino es el propio firewall;
+  * OUTPUT: se refiere a los paquetes emitidos por el firewall;
+  * FORWARD: se refiere a los paquetes que pasan a través del firewall (que no es su origen ni su destino).
+  
+* nat También tiene tres cadenas estándar:
+  * PREROUTING: para modificar los paquetes tan pronto como lleguen;
+  * POSTROUTING: para modificar paquetes cuando estén listos para seguir su camino;
+  * OUTPUT: para modificar los paquetes generados por el propio firewall.
+  
+* Aciones de Netfilter:
+
+  * ACCEPT: Permitir que el paquete siga su camino.
+  * REJECT: Rechazar el paquete con un paquete de error del protocolo de mensajes de control de Internet (ICMP) (la opción determina el tipo de error a enviar).--reject-with typeiptables
+  * DROP: Borrar (ignorar) el paquete.
+  * LOG: Registra (vía syslogd) un mensaje con una descripción del paquete. Tenga en cuenta que esta acción no interrumpe el procesamiento, y la ejecución de la cadena continúa en la siguiente regla, por lo que el registro de paquetes rechazados requiere tanto un registro como una regla de RECHAZO / RECHAZO. Los parámetros comunes asociados con el registro incluyen:
+  * --log-level, con valor por defecto warning, indica el syslognivel de severidad.
+  * --log-prefix permite especificar un prefijo de texto para diferenciar entre los mensajes registrados.
+  * --log-tcp-sequence, --log-tcp-optionsY --log-ip-optionsindican datos adicionales que deben integrarse en el mensaje: respectivamente, el número de secuencia TCP, opciones TCP, IP y opciones.
+  * ULOG: registre un mensaje a través ulogd, que puede adaptarse mejor y ser más eficiente que syslogd para manejar un gran número de mensajes; tenga en cuenta que esta acción, como LOG, también devuelve el procesamiento a la siguiente regla en la cadena de llamada.
+  * chain_name : salta a la cadena dada y evalúa sus reglas.
+  * RETURN: interrumpir el procesamiento de la cadena actual y volver a la cadena de llamada; en caso de que la cadena actual sea estándar, no hay cadena de llamadas, la opción -P de iptables, ejecuta la acción predeterminada (definida con la opción a).
+  * SNAT(solo en la nattabla): aplique Traducción de direcciones de red de origen ( SNAT ). Las opciones adicionales describen los cambios exactos a aplicar, incluida la opción, que define la nueva dirección IP de origen y / o el puerto.--to-source address:port
+  * DNAT(solo en la tabla de nat): aplica para la traducción de direcciones de red de destino (DNAT). Las opciones adicionales describen los cambios exactos que deben aplicarse, incluida la opción, que define la nueva dirección IP y / o puerto de destino.--to-destination address:port
+  * MASQUERADE(solo en la tabla de nat): aplique enmascaramiento (un caso especial de Source NAT).
+  * REDIRECT(solo en la tabla de nata): redirige de manera transparente un paquete a un puerto dado del propio firewall; La opción indica el puerto, o rango de puertos, donde los paquetes deben ser redirigidos.--to-ports port(s)
+  * root@chacka0101:~# man iptables  (Para consultar más información IPv4)
+  * root@chacka0101:~# man ip6tables  (Para consultar más información IPv6)
 
 Questions and Answers
 --
