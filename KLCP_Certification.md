@@ -49,6 +49,8 @@ Hackers Data Base:
 - https://github.com/rapid7/metasploit-framework/tree/master/modules
 - https://wpvulndb.com/wordpresses
 - https://tools.kali.org/
+- https://github.com/danielmiessler?tab=repositories
+- https://github.com/rapid7/metasploit-framework
  
 Linea de tiempo de las Distros de Hacking:
 -- 
@@ -98,6 +100,8 @@ Respositorios o Paquetes
 - Kali Linux Git Repositories: http://git.kali.org/gitweb/
 - Kali Linux Package Tracker: http://pkg.kali.org/
 - Mirror original: http.kali.org
+- root@chacka0101:/var/lib/dpkg/info# apt install dpkg
+- Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
 
 Soporte de ARM
 --
@@ -540,7 +544,7 @@ AuthUserFile /etc/apache2/authfile/htpasswd-private
  - Acceso al área Privada
  ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/chackahtaccess2.png?raw=true)
  
-Service Management
+Service Management - Administrador de Servicios
 ---
 * Para ver una lista de todas las unidades activas que systemd conoce, podemos usar el comando list-units:
   * root@chacka0101:~# systemctl list-units
@@ -566,6 +570,8 @@ Service Management
   * root@chacka0101:~# sudo systemctl unmask sshd.service
   * root@chacka0101:~# systemctl list-unit-files   (Listar el estado)
 - Más información: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
+
+  * root@chacka0101:/# netstat -tulpen  (Puertos Abiertos)
 
 
 HELP - BUGS - ERRORES
@@ -609,8 +615,80 @@ maxretry = 5  (Máximo numero de intentos en lo que bannea una IP)
 Entre otras configuraciones como las de envío de alertas al correo.
 ```
   * root@chacka0101:/# lvan /var/log/fail2ban.log   (Iniciar el Analizador de Logs)
-  
-  root@chacka0101:~# apt install logcheck
+
+- logcheck: El logcheckprograma monitorea los archivos de registro cada hora de manera predeterminada y envía mensajes de registro inusuales en correos electrónicos al administrador para su posterior análisis.
+  * root@chacka0101:/# cat /etc/rsyslog.conf   (lista de archivos monitoreados predeterminados syslog)
+  * root@chacka0101:~# apt install logcheck
+  * root@chacka0101:/usr/share/doc/logcheck-database# gzip -d README.logcheck-database.gz 
+  * root@chacka0101:/usr/share/doc/logcheck-database# cat README.logcheck-database | more  (Consideraciones importantes para leer)
+  * root@chacka0101:/etc/logcheck# ls -la
+ ```
+total 60
+drwxr-xr-x  10 root logcheck  4096 Mar 10 21:07 .
+drwxr-xr-x 190 root root     12288 Mar 16 21:23 ..
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 cracking.d  (Directorio de aquellos que califican un mensaje como un intento de craqueo)
+drwxr-s---   2 root logcheck  4096 May 30  2018 cracking.ignore.d   (Directorio de intentos de craqueo ignorados)
+-rw-r--r--   1 root logcheck   187 May 30  2018 header.txt
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.paranoid (considerados como eventos del sistema)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.server (considerados como eventos del sistema)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.workstation (considerados como eventos del sistema)
+-rw-r-----   1 root logcheck  2647 May 30  2018 logcheck.conf
+-rw-r-----   1 root logcheck   131 May 30  2018 logcheck.logfiles (lista de archivos monitoreados)
+drwxr-s---   2 root logcheck  4096 May 30  2018 logcheck.logfiles.d  (Directorios de lista de archivos monitoreados)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.d      (Aquellos que clasifican un mensaje como una alerta de seguridad)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.ignore.d   (Alertas de seguridad ignoradas)
+ ```
+  * root@chacka0101:/# tail -f /var/log/auth.log
+
+* Software de Monitoreo de Procesos
+  * root@chacka0101:/# top
+  * root@chacka0101:/# gnome-system-monitor
+
+* Integridad de archivos con MD5SUM
+  * root@chacka0101:/var/lib/dpkg/info# cat openssh-server.md5sums  (Identificar los md5sums)
+```
+8ec138e332aa1fbc3f081c17e81b62f9  lib/systemd/system/rescue-ssh.target
+3841c38ccbff81c6bcab65bfd307c41c  lib/systemd/system/ssh.service
+3f25171928b9546beb6a67bf51694eb3  lib/systemd/system/ssh.socket
+```  
+  * root@chacka0101:/# sudo apt-get install debsums
+  * root@chacka0101:/# debsums openssh-server   (Verificar los md5sums)
+```
+/lib/systemd/system/rescue-ssh.target                                         OK
+/lib/systemd/system/ssh.service                                               OK
+/lib/systemd/system/ssh.socket                                                OK
+```
+  * root@chacka0101:/# dpkg -V (Muestra los archivos del sistema que han sido modificados)
+  * Identificados por la letra “c” se modificaron legítimamente.
+  * Identificados con “5“ en el tercer carácter cuando falla.
+```
+root@chacka0101:/# dpkg -V
+??5??????   /lib/systemd/system/ssh.service
+??5?????? c /etc/libvirt/qemu/networks/default.xml
+??5?????? c /etc/lvm/lvm.conf
+??5?????? c /etc/salt/roster
+ ```
+ 
+ Advanced Intrusion Detection Environment (AIDE)
+ ---
+La herramienta Advanced Intrusion Detection Environment (AIDE) verifica la integridad del archivo y detecta cualquier cambio en una imagen previamente grabada del sistema válido
+   * root@chacka0101:/# apt install aide
+   * root@chacka0101:/var/lib/aide# aide.db   (La imagen se almacena como una base de datos ( /var/lib/aide/aide.db) que contiene la información relevante sobre todos los archivos del sistema (huellas dactilares, permisos, marcas de tiempo, etc.).
+   * root@chacka0101:/var/lib/aide# aide.db.new   (Una nueva versión de la base de datos se genera diariamente)
+   * root@chacka0101:/etc/aide# cat aide.conf (Archivo de configuración de AIDE)
+   * root@chacka0101:/var/log/aide# X.log   (Logs de AIDE)
+   
+Rootkits - Malware Scanner
+---
+   * root@chacka0101:/# apt install chkrootkit 
+   * root@chacka0101:/# sudo chkrootkit -q   (Busca Rootkits)
+   * root@chacka0101:/# apt install rkhunter
+   * root@chacka0101:/# sudo rkhunter --check  (Escaneo completo de Malware)
+   * root@chacka0101:/# apt install checksecurity
+   * root@chacka0101:/# cat /etc/checksecurity/check-setuid.conf
+   * root@chacka0101:/# checksecurity
+   
+
 
 FIREWALL NETFILTER
 ---
@@ -647,6 +725,29 @@ FIREWALL NETFILTER
   * MASQUERADE(solo en la tabla de nat): aplique enmascaramiento (un caso especial de Source NAT).
   * REDIRECT(solo en la tabla de nata): redirige de manera transparente un paquete a un puerto dado del propio firewall; La opción indica el puerto, o rango de puertos, donde los paquetes deben ser redirigidos.--to-ports port(s)
   
+- Eliminar toldas las reglas del Firewall:
+  * root@chacka0101:~# iptables -F INPUT
+  * root@chacka0101:~# iptables -P INPUT ACCEPT
+  * root@chacka0101:~# iptables -P FORWARD ACCEPT
+  * root@chacka0101:~# iptables -P OUTPUT ACCEPT
+- Configure el firewall Kali para permitir conexiones TCP entrantes solo en los puertos 22, 80 y 443:
+  * root@chacka0101:~# iptables -P INPUT DROP
+  * root@chacka0101:~# iptables -A INPUT -i lo -j ACCEPT
+  * root@chacka0101:~# iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+  * root@chacka0101:~# iptables -A INPUT -m state --state NEW -p tcp --dport 22 -j ACCEPT
+  * root@chacka0101:~# iptables -A INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT
+  * root@chacka0101:~# iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
+- Script de iptables a partir de estas reglas:
+  * root@chacka0101:~# iptables-save > /usr/local/etc/myconfig.fw
+- Registre el script de configuración en una directiva previa del archivo /etc/network/interfaces. ¡Reinicia para ver si las reglas persisten!
+```
+auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet dhcp
+pre-up iptables-restore < /usr/local/etc/myconfig.fw
+```
+
 * Instalar interfaz gráfica FWBuilder
   * root@chacka0101:~# apt install fwbuilder
   * root@chacka0101:~# fwbuilder
@@ -655,6 +756,25 @@ FIREWALL NETFILTER
 * Más información:
   * root@chacka0101:~# man iptables  (Para consultar más información IPv4)
   * root@chacka0101:~# man ip6tables  (Para consultar más información IPv6)
+  * https://packages.debian.org/jessie/net/fwbuilder
+  * https://github.com/fwbuilder/fwbuilder
+
+NETCAT
+---
+  * root@chacka0101:/# nc -lnvp 4444    (Poner a escuchar el puerto 444)
+  * root@chacka0101:/# nc -v 172.16.161.136 4444   (Desde otra maquina conectarse por netcat al puerto 444)
+
+PASSWORD CRACKING
+---
+- Fuerza Bruta al Servicio de SSH
+  * root@chacka0101:~/Downloads# wget https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/500-worst-passwords.txt
+  * root@chacka0101:~/Downloads# ls
+  * 500-worst-passwords.txt
+  * root@chacka0101:~/Downloads# hydra -l root -P 500-worst-passwords.txt 127.0.0.1 ssh
+  * [DATA] attacking ssh://127.0.0.1:22/
+- Recursos: https://github.com/danielmiessler/SecLists
+
+
 
 Questions and Answers
 --
