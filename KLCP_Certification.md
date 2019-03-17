@@ -646,6 +646,13 @@ FIREWALL NETFILTER
   * DNAT(solo en la tabla de nat): aplica para la traducción de direcciones de red de destino (DNAT). Las opciones adicionales describen los cambios exactos que deben aplicarse, incluida la opción, que define la nueva dirección IP y / o puerto de destino.--to-destination address:port
   * MASQUERADE(solo en la tabla de nat): aplique enmascaramiento (un caso especial de Source NAT).
   * REDIRECT(solo en la tabla de nata): redirige de manera transparente un paquete a un puerto dado del propio firewall; La opción indica el puerto, o rango de puertos, donde los paquetes deben ser redirigidos.--to-ports port(s)
+  
+* Instalar interfaz gráfica FWBuilder
+  * root@chacka0101:~# apt install fwbuilder
+  * root@chacka0101:~# fwbuilder
+  * Firewall Builder GUI 5.3.7
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/FirewallBuilder.png)
+* Más información:
   * root@chacka0101:~# man iptables  (Para consultar más información IPv4)
   * root@chacka0101:~# man ip6tables  (Para consultar más información IPv6)
 
