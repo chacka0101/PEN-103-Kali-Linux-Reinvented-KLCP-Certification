@@ -308,6 +308,9 @@ dlint example.com | comprueba la información DNS de la zona «example.com»
 - Configurar la red WIFI por interfaz gráfica:
 ![Alt Text](https://kali.training/wp-content/uploads/2017/02/16_network_manager-1024x768.png)
 Imágen tomada de Kali Training.
+
+- Turn any computer into a wireless access point with Hostapd: https://seravo.fi/2014/create-wireless-access-point-hostapd
+
 - Comandos de red importantes:
   * root@chacka0101:~# ifconfig -a  (Lista todas las interfaces de red)
   * root@chacka0101:~# sudo dhclient eth0 (Activar el DHCP)
@@ -761,6 +764,7 @@ pre-up iptables-restore < /usr/local/etc/myconfig.fw
   * root@chacka0101:~# man ip6tables  (Para consultar más información IPv6)
   * https://packages.debian.org/jessie/net/fwbuilder
   * https://github.com/fwbuilder/fwbuilder
+  * https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands
 
 NETCAT
 ---
