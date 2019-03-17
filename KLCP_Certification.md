@@ -668,6 +668,10 @@ root@chacka0101:/# dpkg -V
 ??5?????? c /etc/lvm/lvm.conf
 ??5?????? c /etc/salt/roster
  ```
+ - Tripwire: File integrity assessment application.
+  * root@chacka0101:~# apt install tripwire
+  * root@chacka0101:/etc/tripwire# cat twcfg.txt    (Archivo de Configuración).
+
  
  Advanced Intrusion Detection Environment (AIDE)
  ---
@@ -687,7 +691,6 @@ Rootkits - Malware Scanner
    * root@chacka0101:/# apt install checksecurity
    * root@chacka0101:/# cat /etc/checksecurity/check-setuid.conf
    * root@chacka0101:/# checksecurity
-   
 
 
 FIREWALL NETFILTER
@@ -708,7 +711,7 @@ FIREWALL NETFILTER
   * POSTROUTING: para modificar paquetes cuando estén listos para seguir su camino;
   * OUTPUT: para modificar los paquetes generados por el propio firewall.
   
-* Aciones de Netfilter:
+* Acciones de Netfilter:
 
   * ACCEPT: Permitir que el paquete siga su camino.
   * REJECT: Rechazar el paquete con un paquete de error del protocolo de mensajes de control de Internet (ICMP) (la opción determina el tipo de error a enviar).--reject-with typeiptables
