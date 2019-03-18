@@ -674,6 +674,7 @@ root@chacka0101:/# dpkg -V
  - Tripwire: File integrity assessment application.
   * root@chacka0101:~# apt install tripwire
   * root@chacka0101:/etc/tripwire# cat twcfg.txt    (Archivo de Configuración).
+  * https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/
 
  
  Advanced Intrusion Detection Environment (AIDE)
@@ -960,4 +961,53 @@ reportbug
   * Use the official Debian bug tracker at https://bugs.debian.org
   * Send an email (with a special syntax) to submit@bugs.debian.org
   * Submit the bug to the official Kali bug tracker at https://bugs.kali.org and mark the issue for an upstream Debian patch.
+  
+55. Select all of the built-in security functions of a default installation of Kali Linux:
+No services enabled by default
+
+56. Which of the following are associated with the Kali Linux firewall? Select all that apply.
+  *  ip6tables
+  *  iptables
+  *  fwbuilder
+  *  netfilter
+ 
+ 57. Which of the following is a default chain in the Kali Linux firewall?
+INPUT
+
+58. Which of the following actions of the Kali Linux firewall will not interfere with handled packets?
+  *  ULOG
+  *  LOG
+  *  ACCEPT
+  
+59. Place the chains in the proper processing order, from first to last:
+PREROUTING
+INPUT
+FORWARD
+OUTPUT
+POSTROUTING
+
+60. Which of the following will apply a special case of source NAT to packets in the Kali Linux firewall?
+  * MASQUERADE
+
+61. Which of the following commands will block all packets originating from 8.8.8.8?
+  * iptables -A INPUT -s 8.8.8.8 -j DROP
+
+62. Which of the following commands is used to delete all rules in the INPUT chain?
+  * iptables -F INPUT
+
+63. Which of the following will explicitly allow SSH connections to your Kali Linux machine?
+  * iptables -A INPUT -m state –state NEW -p tcp –dport 22 -j ACCEPT
+  
+64. Which file should be updated to enable custom firewall rules at boot-time?
+   * /etc/network/interfaces
+   
+65. Which tool can be used to graphically monitor process status?
+   * gnome-system-monitor
+
+66. Which easily-subverted command can be used to detect suspicious packages?
+   * dpkg -V
+
+67. Which of the following can be used to protect against brute-force logins?
+   * fail2ban
+
 ---
