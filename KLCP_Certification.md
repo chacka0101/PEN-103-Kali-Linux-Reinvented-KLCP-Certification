@@ -97,14 +97,11 @@ GNOME es el entorno de escritorio predeterminado de Kali Linux
 
 Respositorios o Paquetes
 --
-- Kali Linux Git Repositories: http://git.kali.org/gitweb/
-- Kali Linux Package Tracker: http://pkg.kali.org/
-
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
 
-Package Source: Es un repositorio (sitio web, servidor FTP, CD-ROM, directorio local, etc.) que contenga paquetes.
-Source Package: Es un paquete que contiene el código fuente de un programa.
+- Package Source: Es un repositorio (sitio web, servidor FTP, CD-ROM, directorio local, etc.) que contenga paquetes.
+- Source Package: Es un paquete que contiene el código fuente de un programa.
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 
@@ -137,6 +134,10 @@ Source Package: Es un paquete que contiene el código fuente de un programa.
 
 - Mirror original: http.kali.org
 - Otros Mirror: http://http.kali.org/README.mirrorlist  -  http://cdimage.kali.org/README.mirrorlist
+
+- Otras Referencias:
+  *  Kali Linux Git Repositories: http://git.kali.org/gitweb/
+  *  Kali Linux Package Tracker: http://pkg.kali.org/
 
 - DPKG
   * root@chacka0101:/# dpkg --unpack paquete.deb   (Desempaqueatar el paquete.deb)
