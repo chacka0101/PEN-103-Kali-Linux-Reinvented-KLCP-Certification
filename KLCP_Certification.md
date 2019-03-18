@@ -99,9 +99,44 @@ Respositorios o Paquetes
 --
 - Kali Linux Git Repositories: http://git.kali.org/gitweb/
 - Kali Linux Package Tracker: http://pkg.kali.org/
-- Mirror original: http.kali.org
+
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
+
+Package Source: Es un repositorio (sitio web, servidor FTP, CD-ROM, directorio local, etc.) que contenga paquetes.
+Source Package: Es un paquete que contiene el código fuente de un programa.
+
+- root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
+
+- root@chacka0101:~# cat /etc/apt/sources.list.d/kali-bleeding-edge.list (Creando un NUEVO archivo (kali-bleeding-edge.list) en el directorio /etc/apt/sources.list.d lo que tiene la ventaja de dejar el sources.list archivo del sistema original sin alterar. En este ejemplo, optamos por crear un /etc/apt/sources.list.d/kali-bleeding-edge.list archivo separado.
+
+- Archivos deb para paquetes binarios.
+- Archivos deb-src para paquetes fuente.
+
+- La URL puede comenzar con:
+  * file://para indicar una fuente local instalada en la jerarquía de archivos del sistema.
+  * http://para indicar una fuente accesible desde un servidor web.
+  * ftp://para una fuente disponible en un servidor FTP.
+  * cdrom:instalaciones basadas en CD-ROM / DVD-ROM / Blu-ray, aunque esto es menos frecuente ya que los métodos de instalación basados en red son cada vez más comunes.
+
+- Debian y Kali usan tres secciones para diferenciar paquetes según las licencias elegidas por los autores de cada trabajo.
+  * Main: Contiene todos los paquetes que cumplen totalmente con las Pautas de software libre de Debian.
+  * El non-free: Contiene software que no se ajusta (totalmente) a estos principios, pero que, sin embargo, se puede distribuir sin restricciones.
+  * Contrib(contribuciones): Es un conjunto de software de código abierto que no puede funcionar sin algunos elementos no libres. Estos elementos pueden incluir software de la non-freesección o archivos no libres, como ROMs de juegos, BIOS de consolas, etc.
+  
+- Repositorio de Kali-Rolling: Este repositorio es para uso público. Es donde se alojan los paquetes específicos de Kali, también se actualizan periódicamente a medida que supervisamos las versiones anteriores de los paquetes más importantes.
+
+- Repositorio de Kali-Dev: Este repositorio no es para uso público. Es un espacio donde los desarrolladores de Kali resuelven los problemas de dependencia que surgen de la combinación de los paquetes específicos de Kali en Debian Testing. También es el lugar donde los paquetes actualizados se ubican primero.
+
+- Repositorio de Kali-Bleeding-Edge: Este repositorio contiene paquetes construidos automáticamente fuera del repositorio Git (o Subversion) ascendente. La ventaja es que inmediatamente tiene acceso a las últimas funciones y correcciones de errores en menos de 24 horas después de que se hayan confirmado. Esta es una forma ideal de verificar si se solucionó un error que reportó en sentido ascendente. Debido a esto, el repositorio está marcado de tal manera que APT no instala paquetes automáticamente, especialmente durante una actualización.
+
+- MirrorBrain: Es un marco de código abierto para ejecutar una red de entrega de contenido utilizando servidores espejo. Soporta una avalancha de solicitudes de descarga, a menudo magnitudes más de lo que prácticamente cualquier sitio único podría manejar.
+  * root@chacka0101:/# curl -sI http://http.kali.org/README
+  * http://kali.download/
+  * http://cdimage.kali.org/
+
+- Mirror original: http.kali.org
+- Otros Mirror: http://http.kali.org/README.mirrorlist  -  http://cdimage.kali.org/README.mirrorlist
 
 Soporte de ARM
 --
