@@ -155,7 +155,7 @@ Respositorios o Paquetes
   * root@chacka0101:/# apt remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# apt purge paquete   (Eliminar o Purgar todos los datos asociados al paquete)
   
-ACTUALIZACIÓN DE PAQUETES
+Actualización de Paquetes
 --
 - Recomendamos que actualice Kali al menos una vez por semana:
   * root@chacka0101:/# apt update   (Descargar la lista de paquetes actualmente disponibles)
