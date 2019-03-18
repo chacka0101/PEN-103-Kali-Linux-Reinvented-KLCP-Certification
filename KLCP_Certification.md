@@ -138,6 +138,30 @@ Source Package: Es un paquete que contiene el código fuente de un programa.
 - Mirror original: http.kali.org
 - Otros Mirror: http://http.kali.org/README.mirrorlist  -  http://cdimage.kali.org/README.mirrorlist
 
+- DPKG
+  * root@chacka0101:/# dpkg --unpack paquete.deb   (Desempaqueatar el paquete.deb)
+  * root@chacka0101:/# dpkg --configure paquete    (Ejecutar scripts del paquete)
+  * root@chacka0101:/# dpkg -i paquete.deb  (Instalar dpkg que incluye el desempaquetar y ejecutar scripts)
+  * root@chacka0101:/# dpkg -i --force-overwrite paquete.deb   (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
+  * root@chacka0101:/# dpkg --remove paquete   (Desinstalar el paquete)
+  * root@chacka0101:/# dpkg -P paquete   (Eliminar o Purgar todos los datos asociados al paquete)
+  
+- APT - Advanced Packaging Tool
+  * root@chacka0101:/# apt install paquete (Instalar paquete con dpkg)
+  * root@chacka0101:/# apt-get install paquete    (Instalar paquete con dpkg)
+  * root@chacka0101:/# aptitude install paquete     (Instalar paquete con dpkg)
+  * root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
+  * root@chacka0101:/# apt remove paquete   (Desinstalar el paquete)
+  * root@chacka0101:/# apt purge paquete   (Eliminar o Purgar todos los datos asociados al paquete)
+  
+ACTUALIZACIÓN DE PAQUETES
+--
+- Recomendamos que actualice Kali al menos una vez por semana:
+  * root@chacka0101:/# apt update   (Descargar la lista de paquetes actualmente disponibles)
+  * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
+  * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales)
+  
+
 Soporte de ARM
 --
 Debian soporta de manera completa tres adaptaciones a distintos sabores de hardware ARM little-endian:
