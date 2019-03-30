@@ -54,6 +54,8 @@ Hackers Data Base:
  
 Linea de tiempo de las Distros de Hacking:
 -- 
+- Unix History: https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg
+- Linux Distribution Timeline: https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
 - KNOPIX - WhoppiX (2004)
 - SLAX - WHAX (2005)
 - SLAX - BackTrack (2006)
@@ -62,7 +64,6 @@ Linea de tiempo de las Distros de Hacking:
 - DEBIAN - Kali Linux 1.0 (2013)
 - DEBIAN - Kali Linux 2.0 (2015-2016)
 - DEBIAN - Kali Linux 2019.1 (2019)
-- Linux Distribution Timeline: https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
 
 Comprimir o descomprimir:
 --
