@@ -163,6 +163,43 @@ Actualización de Paquetes
   * root@chacka0101:/# apt update   (Descargar la lista de paquetes actualmente disponibles)
   * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales)
+
+Manejo de problemas o errores después de una actualización
+--
+- 1. Paso. https://bugs.kali.org/my_view_page.php  (Revisar si los usuarios pueden haber encontrado una solución alternativa para el problema y compartir sus ideas al respecto en sus respuestas al informe)
+- 2. Paso. https://www.debian.org/Bugs/  (Revisar si los usuarios pueden haber encontrado una solución alternativa para el problema y compartir sus ideas al respecto en sus respuestas al informe)
+- 3. Paso  https://bugs.kali.org/my_view_page.php   (En caso que no esté deberá reportarlo usted)
+- 4. Paso  root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
+- 5. Paso  Instalar manualmente el paquete desde /var/cache/apt/archives/
+- 6. Paso  Este enlace mantiene las versiones históricas de todos los paquetes de Debian. http://snapshot.debian.org
+- Otras consideraciones:
+- root@chacka0101:/var/lib/dpkg/info# ls -la | more  (Scripts de mantenimiento)
+
+
+HELP - BUGS - ERRORES
+--
+  * root@chacka0101:~# man ls  (Manual para el comando ls)
+  * root@chacka0101:~# apropos "copy file"  (Busca la palabra copy file dentro de Manuales y lista donde están contenidos)
+  * root@chacka0101:~# yelp (Gnome Help)
+  * root@chacka0101:~# apt install pinfo (Instalar pinfo)
+  * root@chacka0101:~# pinfo (Interfaz gráfica de información de comandos)
+  * root@chacka0101:~# cat /usr/share/doc/sqlmap/README.pdf  (Manual de paquete sqlmap, puede venir en diferentes formatos)
+  * root@chacka0101:/# reportbug (Reportar un BUG)
+  * root@chacka0101:/# reportbug sqlmap  (Reportar un BUG con un paquete en especifico)
+  * root@chacka0101:/# dpkg -s sparta | grep ^Homepage:  (Página web oficial del paquete, ejemplo: sparta)
+  * Homepage: https://github.com/SECFORCE/sparta
+  * root@chacka0101:~# cat /usr/share/doc/paquete/copyright   (Buscar la página web oficial del paquete)
+- Si el software devuelve un mensaje de error muy específico, ingréselo en un motor de búsqueda (entre comillas dobles, para buscar la frase completa, en lugar de las palabras clave individuales). En la mayoría de los casos, los primeros enlaces devueltos contendrán la respuesta que necesita.
+  * Documentación específica de KALI LINUX: http://docs.kali.org/
+  * kali-linux IRC Channel en Freenode
+  * Foro Oficial de Kali Linux: https://forums.kali.org/
+  * Página Oficial de Bugs de Kali Linux - Bug Tracker: http://bugs.kali.org 
+  * Página Oficial de Bugs de Debian - Debbug: https://debbugs.gnu.org/
+  * Los errores asociados a paquetes en Debian se pueden consultar tambien en: https://tracker.debian.org/pkg/sqlmap
+- Un Fe de errata, se conoce como la publicación de errores posteriorES a la publicación final.
+  * Rporte de Bugs en Github: https://help.github.com/en/articles/creating-an-issue
+  * Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
+
   
 Manejo de Cache
 --
@@ -171,6 +208,8 @@ Manejo de Cache
 - root@chacka0101:/var/cache/apt/archives# apt clean (Vacía completamente el directorio de caché de /var/cache/apt/archives)
 - root@chacka0101:/var/cache/apt/archives# apt autoclean (Colo elimina los paquetes que ya no se pueden descargar porque han desaparecido del espejo y, por lo tanto, son inútiles).
 - root@chacka0101:/# apt-cache search term | more   (Busqueda de Descripciones de los paquetes)
+
+
   
   
 dpkg - Inspeccionar Paquetes - Base de Datos DPKG
@@ -670,29 +709,7 @@ Service Management - Administrador de Servicios
   * root@chacka0101:/# netstat -tulpen  (Puertos Abiertos)
 
 
-HELP - BUGS - ERRORES
---
-  * root@chacka0101:~# man ls  (Manual para el comando ls)
-  * root@chacka0101:~# apropos "copy file"  (Busca la palabra copy file dentro de Manuales y lista donde están contenidos)
-  * root@chacka0101:~# yelp (Gnome Help)
-  * root@chacka0101:~# apt install pinfo (Instalar pinfo)
-  * root@chacka0101:~# pinfo (Interfaz gráfica de información de comandos)
-  * root@chacka0101:~# cat /usr/share/doc/sqlmap/README.pdf  (Manual de paquete sqlmap, puede venir en diferentes formatos)
-  * root@chacka0101:/# reportbug (Reportar un BUG)
-  * root@chacka0101:/# reportbug sqlmap  (Reportar un BUG con un paquete en especifico)
-  * root@chacka0101:/# dpkg -s sparta | grep ^Homepage:  (Página web oficial del paquete, ejemplo: sparta)
-  * Homepage: https://github.com/SECFORCE/sparta
-  * root@chacka0101:~# cat /usr/share/doc/paquete/copyright   (Buscar la página web oficial del paquete)
-- Si el software devuelve un mensaje de error muy específico, ingréselo en un motor de búsqueda (entre comillas dobles, para buscar la frase completa, en lugar de las palabras clave individuales). En la mayoría de los casos, los primeros enlaces devueltos contendrán la respuesta que necesita.
-  * Documentación específica de KALI LINUX: http://docs.kali.org/
-  * kali-linux IRC Channel en Freenode
-  * Foro Oficial de Kali Linux: https://forums.kali.org/
-  * Página Oficial de Bugs de Kali Linux - Bug Tracker: http://bugs.kali.org 
-  * Página Oficial de Bugs de Debian - Debbug: https://debbugs.gnu.org/
-  * Los errores asociados a paquetes en Debian se pueden consultar tambien en: https://tracker.debian.org/pkg/sqlmap
-- Un Fe de errata, se conoce como la publicación de errores posteriorES a la publicación final.
-  * Rporte de Bugs en Github: https://help.github.com/en/articles/creating-an-issue
-  * Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
+
 
 SECURITY - MONITORING
 ---
