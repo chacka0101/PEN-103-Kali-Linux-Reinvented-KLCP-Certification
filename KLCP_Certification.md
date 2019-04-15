@@ -98,6 +98,7 @@ GNOME es el entorno de escritorio predeterminado de Kali Linux
 
 Respositorios o Paquetes
 --
+- Referencia de repositorios Oficiales: https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
 
@@ -163,6 +164,37 @@ Actualización de Paquetes
   * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales)
   
+Manejo de Cache
+--
+- root@chacka0101:/var/lib/apt/lists# ls -la (APT almacena una copia de archivos en cache)
+- root@chacka0101:/var/cache/apt/archives# ls -la (Contiene una copia en caché de los paquetes ya descargados para evitar volver a descargarlos si necesita volver a instalarlos)
+- root@chacka0101:/var/cache/apt/archives# apt clean (Vacía completamente el directorio de caché de /var/cache/apt/archives)
+- root@chacka0101:/var/cache/apt/archives# apt autoclean (Colo elimina los paquetes que ya no se pueden descargar porque han desaparecido del espejo y, por lo tanto, son inútiles).
+- root@chacka0101:/# apt-cache search term | more   (Busqueda de Descripciones de los paquetes)
+  
+  
+dpkg - Inspeccionar Paquetes - Base de Datos DPKG
+--
+- root@chacka0101:/var/lib/dpkg# ls -la  (Consultar la base de datos interna de dpkg)
+- root@chacka0101:/# dpkg -L paquete (Enumera los archivos que fueron instalados por el paquete)
+- root@chacka0101:/# dpkg -S /bin/date (Busca cualquier paquete que esté en la ruta)
+- root@chacka0101:/# dpkg -s paquete (Muestra los encabezados de un paquete instalado)
+- root@chacka0101:/# dpkg -I /var/cache/apt/archives/gnupg_1.4.18-6_amd64.deb (Muestra los encabezados de un paquete instalado)
+- root@chacka0101:/# dpkg -l paquete (Muestra el estatus del paquete instalado)
+- root@chacka0101:/# dpkg -l 'b*' (Muestra el estatus de los paquetes que inician por la letra b)
+- root@chacka0101:/# dpkg -c /var/cache/apt/archives/gnupg_1.4.18-6_amd64.deb (Enumera todos los archivos en un paquete especifico)
+- COMPARAR VERSIONES:
+- Si la comparación es correcta, dpkg devuelve 0 (éxito); si no, da un valor de retorno distinto de cero (indicando falla)
+- root@chacka0101:/# dpkg --compare-versions version1 gt version2 (Compara la version1 con version2)
+  * lt(menor que)
+  * le(menor o igual que)
+  * eq(igual)
+  * ne(no igual)
+  * ge(mayor o igual que)
+  * gt(estrictamente mayor que)
+  
+
+
 
 Soporte de ARM
 --
@@ -184,7 +216,7 @@ https://wiki.debian.org/ShellCommands#Z
 - root@chacka0101:~# cat (concatenate or show file)
 - root@chacka0101:~# less/more (show files a page at a time)
 - root@chacka0101:~# uname --all (Identificación de Arquitectura de Procesador)
-Linux hacker 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64 GNU/Linux
+  * Linux hacker 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64 GNU/Linux
 - root@chacka0101:~# uname -r (Versión del Kernel)
 - root@chacka0101:~# apt update (Actualizar)
 - root@chacka0101:~# apt list --upgradable (Actualizar)
