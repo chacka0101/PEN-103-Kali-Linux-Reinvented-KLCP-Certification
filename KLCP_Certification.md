@@ -174,6 +174,9 @@ Manejo de problemas o errores después de una actualización
 - 6. Paso  Este enlace mantiene las versiones históricas de todos los paquetes de Debian. http://snapshot.debian.org
 - Otras consideraciones:
 - root@chacka0101:/var/lib/dpkg/info# ls -la | more  (Scripts de mantenimiento)
+- Podrá tambien depurar el codigo de scripts mendiante el siguiente hacklab:
+  * https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20PARA%20DEPURAR%20SHELL%20SCRIPTS%20EN%20KALI%20LINUX.pdf 
+- deb-postrm: Paquete de Mantenimiento de Sripts: https://manpages.debian.org/testing/dpkg-dev/deb-postrm.5.en.html
 
 
 HELP - BUGS - ERRORES
@@ -708,9 +711,6 @@ Service Management - Administrador de Servicios
 
   * root@chacka0101:/# netstat -tulpen  (Puertos Abiertos)
 
-
-
-
 SECURITY - MONITORING
 ---
 - fail2ban Bloquea la IP fuente de ataques despues de determinado número de intentos de ataques.
@@ -728,30 +728,6 @@ maxretry = 5  (Máximo numero de intentos en lo que bannea una IP)
 Entre otras configuraciones como las de envío de alertas al correo.
 ```
   * root@chacka0101:/# lvan /var/log/fail2ban.log   (Iniciar el Analizador de Logs)
-
-- logcheck: El logcheckprograma monitorea los archivos de registro cada hora de manera predeterminada y envía mensajes de registro inusuales en correos electrónicos al administrador para su posterior análisis.
-  * root@chacka0101:/# cat /etc/rsyslog.conf   (lista de archivos monitoreados predeterminados syslog)
-  * root@chacka0101:~# apt install logcheck
-  * root@chacka0101:/usr/share/doc/logcheck-database# gzip -d README.logcheck-database.gz 
-  * root@chacka0101:/usr/share/doc/logcheck-database# cat README.logcheck-database | more  (Consideraciones importantes para leer)
-  * root@chacka0101:/etc/logcheck# ls -la
- ```
-total 60
-drwxr-xr-x  10 root logcheck  4096 Mar 10 21:07 .
-drwxr-xr-x 190 root root     12288 Mar 16 21:23 ..
-drwxr-s---   2 root logcheck  4096 Mar 10 21:07 cracking.d  (Directorio de aquellos que califican un mensaje como un intento de craqueo)
-drwxr-s---   2 root logcheck  4096 May 30  2018 cracking.ignore.d   (Directorio de intentos de craqueo ignorados)
--rw-r--r--   1 root logcheck   187 May 30  2018 header.txt
-drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.paranoid (considerados como eventos del sistema)
-drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.server (considerados como eventos del sistema)
-drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.workstation (considerados como eventos del sistema)
--rw-r-----   1 root logcheck  2647 May 30  2018 logcheck.conf
--rw-r-----   1 root logcheck   131 May 30  2018 logcheck.logfiles (lista de archivos monitoreados)
-drwxr-s---   2 root logcheck  4096 May 30  2018 logcheck.logfiles.d  (Directorios de lista de archivos monitoreados)
-drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.d      (Aquellos que clasifican un mensaje como una alerta de seguridad)
-drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.ignore.d   (Alertas de seguridad ignoradas)
- ```
-  * root@chacka0101:/# tail -f /var/log/auth.log
 
 * Software de Monitoreo de Procesos
   * root@chacka0101:/# top
@@ -785,6 +761,43 @@ root@chacka0101:/# dpkg -V
   * root@chacka0101:~# apt install tripwire
   * root@chacka0101:/etc/tripwire# cat twcfg.txt    (Archivo de Configuración).
   * https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/
+
+
+LOGS
+---
+- root@chacka0101:~# cat /var/log/dpkg.log  (Logs asociados a dpkg)
+- root@chacka0101:/var/log/aide# X.log   (Logs de AIDE)
+- root@chacka0101:~# top -b -n1 > /root/Desktop/process.log (Guardar procesos en un log)
+- root@chacka0101:~# journalctl --all  (Información de Logs Disco Duro)
+- root@chacka0101:~# journalctl -u ssh.service  (Información de Logs en especifico Disco Duro)
+- root@chacka0101:~# dmesg --human --kernel | more   (Información de los Logs del Kernel)
+- root@chacka0101:~# plog | display ppp daemon log (Logs Networking)
+- ErrorLog ${APACHE_LOG_DIR}/chacka0101.com_error.log
+- CustomLog ${APACHE_LOG_DIR}/chacka0101.com_access.log combined
+- logcheck: El logcheckprograma monitorea los archivos de registro cada hora de manera predeterminada y envía mensajes de registro inusuales en correos electrónicos al administrador para su posterior análisis.
+  * root@chacka0101:/# cat /etc/rsyslog.conf   (lista de archivos monitoreados predeterminados syslog)
+  * root@chacka0101:~# apt install logcheck
+  * root@chacka0101:/usr/share/doc/logcheck-database# gzip -d README.logcheck-database.gz 
+  * root@chacka0101:/usr/share/doc/logcheck-database# cat README.logcheck-database | more  (Consideraciones importantes para leer)
+  * root@chacka0101:/etc/logcheck# ls -la
+ ```
+total 60
+drwxr-xr-x  10 root logcheck  4096 Mar 10 21:07 .
+drwxr-xr-x 190 root root     12288 Mar 16 21:23 ..
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 cracking.d  (Directorio de aquellos que califican un mensaje como un intento de craqueo)
+drwxr-s---   2 root logcheck  4096 May 30  2018 cracking.ignore.d   (Directorio de intentos de craqueo ignorados)
+-rw-r--r--   1 root logcheck   187 May 30  2018 header.txt
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.paranoid (considerados como eventos del sistema)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.server (considerados como eventos del sistema)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 ignore.d.workstation (considerados como eventos del sistema)
+-rw-r-----   1 root logcheck  2647 May 30  2018 logcheck.conf
+-rw-r-----   1 root logcheck   131 May 30  2018 logcheck.logfiles (lista de archivos monitoreados)
+drwxr-s---   2 root logcheck  4096 May 30  2018 logcheck.logfiles.d  (Directorios de lista de archivos monitoreados)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.d      (Aquellos que clasifican un mensaje como una alerta de seguridad)
+drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.ignore.d   (Alertas de seguridad ignoradas)
+ ```
+  * root@chacka0101:/# tail -f /var/log/auth.log
+
 
  
  Advanced Intrusion Detection Environment (AIDE)
