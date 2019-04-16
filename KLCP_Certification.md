@@ -162,7 +162,7 @@ Actualización de Paquetes
 - Recomendamos que actualice Kali al menos una vez por semana:
   * root@chacka0101:/# apt update   (Descargar la lista de paquetes actualmente disponibles)
   * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
-  * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales)
+  * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales,además repara dependencias rotas)
 
 Manejo de problemas o errores después de una actualización
 --
@@ -177,7 +177,6 @@ Manejo de problemas o errores después de una actualización
 - Podrá tambien depurar el codigo de scripts mendiante el siguiente hacklab:
   * https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20PARA%20DEPURAR%20SHELL%20SCRIPTS%20EN%20KALI%20LINUX.pdf 
 - deb-postrm: Paquete de Mantenimiento de Sripts: https://manpages.debian.org/testing/dpkg-dev/deb-postrm.5.en.html
-
 
 HELP - BUGS - ERRORES
 --
@@ -202,6 +201,13 @@ HELP - BUGS - ERRORES
 - Un Fe de errata, se conoce como la publicación de errores posteriorES a la publicación final.
   * Rporte de Bugs en Github: https://help.github.com/en/articles/creating-an-issue
   * Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
+  * root@chacka0101:/# apt --reinstall install paquete  (Cuando dañas tu sistema por error al eliminar o modificar ciertos archivos, la forma más fácil de restaurarlos es reinstalar el paquete afectado. Cuando el paquete ya está instalado y se niega instalaro nuevamente se debe re-instalar).
+  * root@chacka0101:/# aptitude reinstall paquete  (Otra opción para re-instalar)
+  * NOTA: No utilizar (# apt --reinstall) para recuperarse de un ataque.
+  * root@chacka0101:/# apt install w3af/kali-rolling  (Re-instalar una versión anterior)
+
+
+  
 
   
 Manejo de Cache
@@ -234,9 +240,6 @@ dpkg - Inspeccionar Paquetes - Base de Datos DPKG
   * ne(no igual)
   * ge(mayor o igual que)
   * gt(estrictamente mayor que)
-  
-
-
 
 Soporte de ARM
 --
@@ -506,6 +509,8 @@ Configuración de Software o Package
 - root@chacka0101:/# dpkg -L paquete (Lista de archivos incluidos en el paquete)
 - root@chacka0101:/# cat /usr/share/doc/paquete/examples/ (Ejemplos de archivos de configuración en el directorio)
 - Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
+
+
 
 SSH
 --
@@ -798,9 +803,7 @@ drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.ignore.d   (Alertas d
  ```
   * root@chacka0101:/# tail -f /var/log/auth.log
 
-
- 
- Advanced Intrusion Detection Environment (AIDE)
+Advanced Intrusion Detection Environment (AIDE)
  ---
 La herramienta Advanced Intrusion Detection Environment (AIDE) verifica la integridad del archivo y detecta cualquier cambio en una imagen previamente grabada del sistema válido
    * root@chacka0101:/# apt install aide
