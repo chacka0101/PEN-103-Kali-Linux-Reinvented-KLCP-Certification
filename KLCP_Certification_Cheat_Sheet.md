@@ -12,7 +12,7 @@ https://www.edx.org/course/introduction-to-linux
   * amd64, i386, armel, armhf, arm64
 
 * Consideraciones de BIOS
-  * Si bien las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debes deshabilitar esa característica en la configuración de BIOS.
+  * Las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debe deshabilitar esa característica en la configuración de BIOS.
 
 Recursos
 --
