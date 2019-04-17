@@ -196,6 +196,7 @@ Gestión de Paquetes con Interfaz Gráfica
 ![Alt Text](https://raw.githubusercontent.com/chacka0101/Kali_Linux_Certified_Professional/master/Aptiude.png)
   * root@chacka0101:~# sudo apt install synaptic
   * root@chacka0101:~# synaptic
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/Synaptic.png?raw=true)
 
 
 Actualización de Paquetes
