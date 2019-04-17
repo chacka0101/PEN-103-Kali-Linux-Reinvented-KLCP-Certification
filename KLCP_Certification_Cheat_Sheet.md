@@ -176,6 +176,42 @@ deb http://www.deb-multimedia.org stretch main non-free
   * root@chacka0101:/# dpkg -i --force-overwrite paquete.deb   (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
   * root@chacka0101:/# dpkg --remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# dpkg -P paquete   (Eliminar o Purgar todos los datos asociados al paquete)
+
+- Habilitando Multi-Arch
+  * El soporte para múltiples arquitecturas dpkg permite a los usuarios definir arquitecturas que pueden instalarse en el sistema actual.
+```
+root@chacka0101:/# dpkg --print-architecture
+amd64
+root@chacka0101:/# wine
+it looks like wine32 is missing, you should install it.
+multiarch needs to be enabled first.  as root, please
+execute "dpkg --add-architecture i386 & apt-get update &
+apt-get install wine32"
+Usage: wine PROGRAM [ARGUMENTS...]   Run the specified program
+       wine --help                   Display this help and exit
+       wine --version                Output version information and exit
+root@chacka0101:/# dpkg --add-architecture i386
+root@chacka0101:/# dpkg --print-foreign-architectures
+i386
+root@chacka0101:/# apt update
+[...]
+root@chacka0101:/# apt install wine32
+[...]
+Setting up libwine:i386 (1.8.6-5) ...
+Setting up vdpau-driver-all:i386 (1.1.1-6) ...
+Setting up wine32:i386 (1.8.6-5) ...
+Setting up libasound2-plugins:i386 (1.1.1-1) ...
+Processing triggers for libc-bin (2.24-9)
+root@chacka0101:/# wine
+Usage: wine PROGRAM [ARGUMENTS...]   Run the specified program
+     wine --help                   Display this help and exit
+     wine --version                Output version information and exit
+root@chacka0101:/# dpkg --remove-architecture i386
+dpkg: error: cannot remove architecture 'i386' currently in use by the database
+root@chacka0101:/# dpkg --print-foreign-architectures
+i386
+```
+- Cambios relacionados con la arquitectura: https://wiki.debian.org/Multiarch/HOWTO
   
 - APT - Advanced Packaging Tool
   * root@chacka0101:/# apt install paquete (Instalar paquete con dpkg)
@@ -184,6 +220,8 @@ deb http://www.deb-multimedia.org stretch main non-free
   * root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
   * root@chacka0101:/# apt remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# apt purge paquete   (Eliminar o Purgar todos los datos asociados al paquete)
+  * root@chacka0101:/# apt autoremove    (Elimina paquetes paquetes automáticos que ya no son necesarios)
+
 
 - Archivos de Configuración
   * root@chacka0101:/etc/apt/apt.conf.d# ls -la  (Los directorios de configuración con extenciones .d representa un archivo de configuración que se divide en varios archivos. En este sentido, todos los archivos en /etc/apt/apt.conf.d/ son instrucciones para la configuración de APT)
