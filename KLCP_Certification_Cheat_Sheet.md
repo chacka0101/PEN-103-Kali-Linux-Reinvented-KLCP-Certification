@@ -1,9 +1,8 @@
 KLCP_Certification - Kali_Linux: Kali Linux Certified Professional Cheat Sheet
 ==
 
-Kali Linux es una distribución de Linux para auditoría de seguridad lista para la empresa basada en Debian GNU / Linux. 
-Kali está dirigido a profesionales de la seguridad y administradores de TI, lo que les permite realizar pruebas avanzadas
-de penetración, análisis forense y auditorías de seguridad.
+Kali Linux es una distribución de Linux para PenTest basada en Debian GNU / Linux. 
+Kali está dirigido a profesionales de la seguridad, PenTesters, Hackers y administradores de TI, lo que les permite realizar pruebas avanzadas de hacking, pentest, análisis forense y auditorías de seguridad.
 
 Prerrequisitos
 --
