@@ -156,7 +156,14 @@ Respositorios o Paquetes
   * root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
   * root@chacka0101:/# apt remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# apt purge paquete   (Eliminar o Purgar todos los datos asociados al paquete)
-  
+
+Gestión de Paquetes con Interfaz Gráfica
+-
+  * root@chacka0101:~# sudo apt install aptitude
+  * root@chacka0101:~# aptitude
+
+
+
 Actualización de Paquetes
 --
 - Recomendamos que actualice Kali al menos una vez por semana:
@@ -206,8 +213,6 @@ HELP - BUGS - ERRORES
   * NOTA: No utilizar (# apt --reinstall) para recuperarse de un ataque.
   * root@chacka0101:/# apt install w3af/kali-rolling  (Re-instalar una versión anterior)
 
-
-  
 
   
 Manejo de Cache
