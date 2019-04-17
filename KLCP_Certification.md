@@ -106,6 +106,12 @@ Respositorios o Paquetes
 - Source Package: Es un paquete que contiene el código fuente de un programa.
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
+- root@chacka0101:~# nano /etc/apt/sources.list
+deb-src http://http.kali.org/kali kali-rolling main non-free contrib
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+![Alt Text](https://raw.githubusercontent.com/chacka0101/Kali_Linux_Certified_Professional/master/SourceList.png)
 
 - root@chacka0101:~# cat /etc/apt/sources.list.d/kali-bleeding-edge.list (Creando un NUEVO archivo (kali-bleeding-edge.list) en el directorio /etc/apt/sources.list.d lo que tiene la ventaja de dejar el sources.list archivo del sistema original sin alterar. En este ejemplo, optamos por crear un /etc/apt/sources.list.d/kali-bleeding-edge.list archivo separado.
 
@@ -162,8 +168,8 @@ Gestión de Paquetes con Interfaz Gráfica
   * root@chacka0101:~# sudo apt install aptitude
   * root@chacka0101:~# aptitude
 ![Alt Text](https://raw.githubusercontent.com/chacka0101/Kali_Linux_Certified_Professional/master/Aptiude.png)
-  * root@chacka0101:~# sudo apt install Synaptic
-  * root@chacka0101:~# aptitude
+  * root@chacka0101:~# sudo apt install synaptic
+  * root@chacka0101:~# synaptic
 
 
 Actualización de Paquetes
