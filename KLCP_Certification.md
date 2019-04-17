@@ -208,6 +208,10 @@ Actualización de Paquetes
   * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales,además repara dependencias rotas)
 
+Gestión de Prioridades en Paquetes
+--
+
+
 Manejo de problemas o errores después de una actualización
 --
 - 1. Paso. https://bugs.kali.org/my_view_page.php  (Revisar si los usuarios pueden haber encontrado una solución alternativa para el problema y compartir sus ideas al respecto en sus respuestas al informe)
