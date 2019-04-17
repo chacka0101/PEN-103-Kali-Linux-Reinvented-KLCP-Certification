@@ -20,6 +20,7 @@ Recursos
 - WEB: https://kali.training
 - Book: https://kali.training/downloads/Kali-Linux-Revealed-1st-edition.pdf
 - Training: https://kali.training/lessons/introduction/
+- Indice ONLINE de Training: https://kali.training/topic/index/
 - Foros: https://forums.kali.org/
 - Blog: https://www.kali.org/blog/-
 - Documentación de Kali Linux: https://docs.kali.org/ 
@@ -126,7 +127,6 @@ deb http://ftp.us.debian.org/debian/ stretch-updates main contrib non-free
 deb-src http://ftp.us.debian.org/debian/ stretch-updates main contrib non-free
 # debian-multimedia
 deb http://www.deb-multimedia.org stretch main non-free
-b
 ```
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/SourceList.png?raw=true)
 
@@ -135,9 +135,6 @@ b
 
 - Package Source: Es un repositorio (sitio web, servidor FTP, CD-ROM, directorio local, etc.) que contenga paquetes.
 - Source Package: Es un paquete que contiene el código fuente de un programa.
-
-
-
 
 - root@chacka0101:~# cat /etc/apt/sources.list.d/kali-bleeding-edge.list (Creando un NUEVO archivo (kali-bleeding-edge.list) en el directorio /etc/apt/sources.list.d lo que tiene la ventaja de dejar el sources.list archivo del sistema original sin alterar. En este ejemplo, optamos por crear un /etc/apt/sources.list.d/kali-bleeding-edge.list archivo separado.
 
@@ -188,6 +185,11 @@ b
   * root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
   * root@chacka0101:/# apt remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# apt purge paquete   (Eliminar o Purgar todos los datos asociados al paquete)
+
+- Archivos de Configuración
+  * root@chacka0101:/etc/apt/apt.conf.d# ls -la  (Los directorios de configuración con extenciones .d representa un archivo de configuración que se divide en varios archivos. En este sentido, todos los archivos en /etc/apt/apt.conf.d/ son instrucciones para la configuración de APT)
+
+  * Consultar los archivos de configuraciones de los paquetes en (/usr/share/doc/paquete/README.Debian)
 
 Gestión de Paquetes con Interfaz Gráfica
 -
@@ -846,6 +848,15 @@ drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.ignore.d   (Alertas d
  ```
   * root@chacka0101:/# tail -f /var/log/auth.log
 
+Navegar en Internet por Terminal
+ ---
+  * root@chacka0101:/# apt install w3m    (Instalar el navegador w3m)
+  * root@chacka0101:/# w3m theeaglelabs.com  (Ingresar a una web)
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/w3m.png?raw=true)
+  * NOTA: Clic derecho para ver las opciones de w3m.
+
+
+
 Advanced Intrusion Detection Environment (AIDE)
  ---
 La herramienta Advanced Intrusion Detection Environment (AIDE) verifica la integridad del archivo y detecta cualquier cambio en una imagen previamente grabada del sistema válido
@@ -950,6 +961,15 @@ PASSWORD CRACKING
   * root@chacka0101:~/Downloads# hydra -l root -P 500-worst-passwords.txt 127.0.0.1 ssh
   * [DATA] attacking ssh://127.0.0.1:22/
 - Recursos: https://github.com/danielmiessler/SecLists
+
+SUIGUIENTES PASOS
+---
+- https://debian-handbook.info/browse/stable/  (Manual del administrador de Debian)
+- https://www.offensive-security.com/metasploit-unleashed/   (Primeros pasos en PenTest - ONLINE Ingles)
+- https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20CURSO%20DE%20HACKING%20DE%20METASPLOIT%20UNLEASHED%20EN%20ESPA%C3%91OL.pdf   (Primeros pasos en PenTest - Español)
+- https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/ (Penetration Testing Training with Kali Linux)
+- 
+
 
 
 
