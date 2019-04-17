@@ -111,7 +111,8 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 deb http://http.kali.org/kali kali-rolling main non-free contrib
 deb-src http://http.kali.org/kali kali-rolling main contrib non-free
 deb http://http.kali.org/kali kali-rolling main contrib non-free
-![Alt Text](https://raw.githubusercontent.com/chacka0101/Kali_Linux_Certified_Professional/master/SourceList.png)
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/SourceList.png?raw=true)
+
 
 - root@chacka0101:~# cat /etc/apt/sources.list.d/kali-bleeding-edge.list (Creando un NUEVO archivo (kali-bleeding-edge.list) en el directorio /etc/apt/sources.list.d lo que tiene la ventaja de dejar el sources.list archivo del sistema original sin alterar. En este ejemplo, optamos por crear un /etc/apt/sources.list.d/kali-bleeding-edge.list archivo separado.
 
