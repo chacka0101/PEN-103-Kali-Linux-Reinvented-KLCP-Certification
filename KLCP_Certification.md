@@ -161,7 +161,10 @@ Gestión de Paquetes con Interfaz Gráfica
 -
   * root@chacka0101:~# sudo apt install aptitude
   * root@chacka0101:~# aptitude
-![Alt Text](https://kali.training/wp-content/uploads/2017/02/Aptitude.png)
+![Alt Text](https://raw.githubusercontent.com/chacka0101/Kali_Linux_Certified_Professional/master/Aptiude.png)
+  * root@chacka0101:~# sudo apt install Synaptic
+  * root@chacka0101:~# aptitude
+
 
 Actualización de Paquetes
 --
