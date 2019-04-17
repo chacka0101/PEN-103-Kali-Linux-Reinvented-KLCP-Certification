@@ -107,10 +107,12 @@ Respositorios o Paquetes
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 - root@chacka0101:~# nano /etc/apt/sources.list
+```
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 deb http://http.kali.org/kali kali-rolling main non-free contrib
-deb-src http://http.kali.org/kali kali-rolling main contrib non-free
-deb http://http.kali.org/kali kali-rolling main contrib non-free
+deb http://security.debian.org/ testing/updates main contrib non-free
+deb http://ftp.de.debian.org/debian/ testing main contrib non-free
+```
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/SourceList.png?raw=true)
 
 
