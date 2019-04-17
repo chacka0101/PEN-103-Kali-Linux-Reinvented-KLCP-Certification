@@ -36,6 +36,9 @@ El Sistema Operativo de KALI LINUX es DEBIAN
 
 - Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
 - https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
+- root@chacka0101:~# lsb_release -a   (Versión del OS)
+- root@chacka0101:~# cat /etc/os-release  (Información del OS)
+- root@chacka0101:~# hostnamectl   (Información del Host)
 
 Sistemas ARM en Kali Linux
 --
@@ -268,6 +271,9 @@ COMMANDS
 --
 https://wiki.debian.org/ShellCommands#Z
 
+- root@chacka0101:~# lsb_release -a   (Versión del OS)
+- root@chacka0101:~# cat /etc/os-release  (Información del OS)
+- root@chacka0101:~# hostnamectl   (Información del Host)
 - root@chacka0101:~# pwd (Directorio actual)
 - root@hchacka0101:~# d (change directory)
 - root@chacka0101:~# ls (list file or directory contents)
