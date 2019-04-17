@@ -209,7 +209,28 @@ Actualización de Paquetes
 
 Gestión de Prioridades en Paquetes
 --
-
+- APT usa el siguiente algoritmo para establecer las prioridades de cada versión de un paquete.
+-  El formato «específico» asigna una prioridad («Pin-Priority») a uno más paquetes definidos con una versión o un rango de versiones especificados. Por ejemplo, el siguiente registro asigna una prioridad alta a todas las versiones del paquete perl cuyo número de versión empiece con «5.20». Puede especificar varios paquetes separados por espacios.
+```
+Package: perl
+Pin: version 5.20*
+Pin-Priority: 1001
+```
+- priority 1: A las versiones provenientes de archivos con la opción «NotAutomatic: yes» en su fichero Release, pero no como «ButAutomaticUpgrades: yes», como el archivo experimental de Debian.
+- prioridad 100: A la versión ya instalada (si existe) y a las versiones provenientes de archivos con las opciones «NotAutomatic: yes» y «ButAutomaticUpgrades: yes» en su fichero Release, como el archivo Debian de paquetes adaptados a una versión anterior («backports») a partir de squeeze-backports.
+- prioridad 500: A las versiones que no se define la versión objetivo.
+- prioridad 990: A las versiones que si se define la versión objetivo. La más alta de las prioridades cuya descripción coincide con la versión se asigna a la versión.
+- prioridad 1000 o superior: Nunca se instala una versión anterior de un paquete en lugar de la instalada a menos que la prioridad de la versión disponible supere 1000 («Desactualizar» significa instalar una versión menos reciente de un paquete. Tenga en cuenta que ninguna de las prioridades que asigna APT por omisión superan 1000; éstas prioridades sólo se pueden establecer mediante el fichero de preferencias. Observe que instalar una versión anterior del paquete puede ser peligroso).
+- root@chacka0101:/etc/apt# apt-cache policy
+- root@chacka0101:/etc/apt# apt-cache policy phpmyadmin
+```
+phpmyadmin:
+  Installed: (none)
+  Candidate: 4:4.6.6-4
+  Version table:
+     4:4.6.6-4 500
+        500 http://ftp.us.debian.org/debian stretch/main amd64 Packages
+```
 
 Manejo de problemas o errores después de una actualización
 --
