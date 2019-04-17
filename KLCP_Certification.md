@@ -161,8 +161,7 @@ Gestión de Paquetes con Interfaz Gráfica
 -
   * root@chacka0101:~# sudo apt install aptitude
   * root@chacka0101:~# aptitude
-
-
+![Alt Text](https://kali.training/wp-content/uploads/2017/02/Aptitude.png)
 
 Actualización de Paquetes
 --
