@@ -174,8 +174,17 @@ deb http://www.deb-multimedia.org stretch main non-free
   * root@chacka0101:/# dpkg --configure paquete    (Ejecutar scripts del paquete)
   * root@chacka0101:/# dpkg -i paquete.deb  (Instalar dpkg que incluye el desempaquetar y ejecutar scripts)
   * root@chacka0101:/# dpkg -i --force-overwrite paquete.deb   (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
+  * root@chacka0101:/# dpkg -I paquete.deb control    (El "control" del paquete contiene la información más importante sobre el paquete)
+  * root@chacka0101:/# dpkg -I /var/cache/apt/archives/zsh_5.3-1_amd64.deb | head   (Lista los Scripts de configuración del paquete)
+  * root@chacka0101:/# dpkg -I zsh_5.3-1_amd64.deb preinst    (Visualizar el script llamado preinst)
+  * root@chacka0101:/# ls /var/lib/dpkg/info/zsh.*     (Lista de archivos que contiene el paquete)
+  * root@chacka0101:/# head /var/lib/dpkg/info/zsh.list   (Lista de archivos a los cuales se asocian a una extensión .list)
+  * root@chacka0101:/# more /var/lib/dpkg/status    (Estado de cada paquete)
+  * Más información de Scripts en paquetes: https://people.debian.org/~srivasta/MaintainerScripts.html
+  * Más información de Scripts en paquetes: https://wiki.debian.org/MaintainerScripts
   * root@chacka0101:/# dpkg --remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# dpkg -P paquete   (Eliminar o Purgar todos los datos asociados al paquete)
+
 
 - Habilitando Multi-Arch
   * El soporte para múltiples arquitecturas dpkg permite a los usuarios definir arquitecturas que pueden instalarse en el sistema actual.
@@ -214,15 +223,21 @@ i386
 - Cambios relacionados con la arquitectura: https://wiki.debian.org/Multiarch/HOWTO
   
 - APT - Advanced Packaging Tool
-  * root@chacka0101:/# apt install paquete (Instalar paquete con dpkg)
+* root@chacka0101:/# apt install paquete (Instalar paquete con dpkg)
   * root@chacka0101:/# apt-get install paquete    (Instalar paquete con dpkg)
   * root@chacka0101:/# aptitude install paquete     (Instalar paquete con dpkg)
   * root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
   * root@chacka0101:/# apt remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# apt purge paquete   (Eliminar o Purgar todos los datos asociados al paquete)
   * root@chacka0101:/# apt autoremove    (Elimina paquetes paquetes automáticos que ya no son necesarios)
+  * root@chacka0101:/# apt-key fingerprint    (Integridad de los paquetes)
 
-
+  * root@chacka0101:/var/cache/apt/archives# ar -h   (Ayuda de referencia de paquetes con APT)
+  * root@chacka0101:/var/cache/apt/archives# ar t winexe_1.1~20140107-0kali7+b8_amd64.deb  (Muestra contenido del archivo)
+  * root@chacka0101:/var/cache/apt/archives# ar p winexe_1.1~20140107-0kali7+b8_amd64.deb debian-binary  (Archivo Binario de un paquete)
+  * root@chacka0101:/var/cache/apt/archives# ar p apt_1.4~beta1_amd64.debwinexe_1.1~20140107-0kali7+b8_amd64.deb control.tar.gz | tar -tzf -     (Metadata de un paquete)
+   * root@chacka0101:/var/cache/apt/archives# ar p apt_1.4~beta1_amd64.debwinexe_1.1~20140107-0kali7+b8_amd64.deb data.tar.xz | tar -tJf -     (Metadata de un paquete)
+  
 - Archivos de Configuración
   * root@chacka0101:/etc/apt/apt.conf.d# ls -la  (Los directorios de configuración con extenciones .d representa un archivo de configuración que se divide en varios archivos. En este sentido, todos los archivos en /etc/apt/apt.conf.d/ son instrucciones para la configuración de APT)
 
@@ -272,6 +287,11 @@ phpmyadmin:
         500 http://ftp.us.debian.org/debian stretch/main amd64 Packages
 ```
 - Más información: https://manpages.debian.org/stretch/apt/apt_preferences.5.es.html
+
+Dependencias de paquetes
+--
+- Información sobre dependencias de paquetes: https://www.debian.org/doc/manuals/debian-reference/ch02.es.html#_package_dependencies
+- Más información: https://www.debian.org/doc/debian-policy/ch-relationships
 
 Manejo de problemas o errores después de una actualización
 --
@@ -872,11 +892,12 @@ root@chacka0101:/# dpkg -V
 ??5?????? c /etc/lvm/lvm.conf
 ??5?????? c /etc/salt/roster
  ```
+ - root@chacka0101:/# apt-key fingerprint    (Integridad de los paquetes)
  - Tripwire: File integrity assessment application.
   * root@chacka0101:~# apt install tripwire
   * root@chacka0101:/etc/tripwire# cat twcfg.txt    (Archivo de Configuración).
   * https://www.howtoforge.com/tutorial/how-to-monitor-and-detect-modified-files-using-tripwire-on-ubuntu-1604/
-
+  
 
 LOGS
 ---
