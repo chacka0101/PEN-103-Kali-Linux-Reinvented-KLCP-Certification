@@ -1,4 +1,4 @@
-KLCP_Certification - Kali_Linux: Kali Linux Certified Professional - 2019
+KLCP_Certification - Kali_Linux: Kali Linux Certified Professional Cheat Sheet
 ==
 
 Kali Linux es una distribución de Linux para auditoría de seguridad lista para la empresa basada en Debian GNU / Linux. 
