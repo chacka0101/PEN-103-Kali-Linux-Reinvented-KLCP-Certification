@@ -216,6 +216,8 @@ Package: perl
 Pin: version 5.20*
 Pin-Priority: 1001
 ```
+- Para definir la prioridad, debe crear un archivo llamado "preferences" en el directorio /etc/apt/
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/preferences.png?raw=true)
 - priority 1: A las versiones provenientes de archivos con la opción «NotAutomatic: yes» en su fichero Release, pero no como «ButAutomaticUpgrades: yes», como el archivo experimental de Debian.
 - prioridad 100: A la versión ya instalada (si existe) y a las versiones provenientes de archivos con las opciones «NotAutomatic: yes» y «ButAutomaticUpgrades: yes» en su fichero Release, como el archivo Debian de paquetes adaptados a una versión anterior («backports») a partir de squeeze-backports.
 - prioridad 500: A las versiones que no se define la versión objetivo.
@@ -231,6 +233,7 @@ phpmyadmin:
      4:4.6.6-4 500
         500 http://ftp.us.debian.org/debian stretch/main amd64 Packages
 ```
+- Más información: https://manpages.debian.org/stretch/apt/apt_preferences.5.es.html
 
 Manejo de problemas o errores después de una actualización
 --
