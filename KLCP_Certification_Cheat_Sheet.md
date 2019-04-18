@@ -483,27 +483,30 @@ https://wiki.debian.org/ShellCommands#Z
   * x : Select processes without controlling ttys
  - root@chacka0101:~# passwd root  (Cambiar password de Usuario root)
 
-Search
+Buscar, Search, Find, Which, Locate
 --
-- Busqueda de Archivos
 - root@chacka0101:~# find | head  (Busqueda y lista todos los archivos en el directorio actual)
 - root@chacka0101:~# find /root | head  (Busqueda y lista todos los archivos en el directorio específico, en este caso /root)
 - root@chacka0101:~# find / -name nombreexactodeloquebusco (Buscando archivos y dentro de archivos)
 - root@chacka0101:~# find / -name "nombredeloquebusco*"  (Buscando archivos y dentro de archivos)
 - root@chacka0101:~# find / -iname nombreexactodeloquebusco.txt  (Buscando archivos ignorando mayusculas o minusculas)
+- Buscar archivos de extensión .php
 - root@chacka0101:~# find . -type f -name "*.php"
 - root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
 - root@chacka0101:~# locate "*rockyou.txt.gz*"   (Busqueda de Archivos)
-- Busqueda de Directorios
 - root@chacka0101:~# find / -type d -name root   (Buscar el directorio con la palabra root)
 - root@chacka0101:~# which ls (Buscar la ubicación o directorio)
+- root@chacka0101:/# whereis wireshark  (Directorios de la palabra Wireshark)
 - El comando find busca todos los archivos y carpetas hasta la última profundidad. Esto puede llevar mucho tiempo y tener muchos recursos cuando busca en un directorio grande o si tiene demasiados archivos pequeños divididos en varios directorios. Es posible limitar el comando de búsqueda para buscar solo hasta 1 niveles hacia abajo (o 2 o 3 o cualquier cosa que desee) de los subdirectorios. Esto se puede hacer usando la opción maxdepth)
+- root@chacka0101:~# find /etc -maxdepth 1 -name "*.conf" | tail
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/find.png?raw=true)
 - Buscar archivos Ejecutables:
 - root@chacka0101:~# find . -perm /a=x | head
 - Buscar archivos Ocultos:
 - root@chacka0101:~# find /tmp -type f -name ".*"
-- root@chacka0101:~# cat /usr/share/doc/paquete/copyright (Buscar la página web oficial del paquete)
+- Buscar la página web oficial del paquete:
+- root@chacka0101:~# cat /usr/share/doc/paquete/copyright
+- Buscar con permisos
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +6000 -ls  (Buscar todos los ficheros con permisos SUID o SGID)
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +4000 -ls  (Buscar todos los ficheros con permisos solo SUID)
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +2000 -ls  (Buscar todos los ficheros con permisos solo SGID)
