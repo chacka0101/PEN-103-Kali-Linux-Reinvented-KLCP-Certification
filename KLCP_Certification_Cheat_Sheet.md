@@ -259,9 +259,16 @@ Actualización de Kali Linux
   * root@chacka0101:/# apt update   (Descargar la lista de paquetes actualmente disponibles)
   * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales,además repara dependencias rotas)
+- conffiles
   * root@chacka0101:/etc/apt/apt.conf.d# cat local   (Para indicarle a APT que use una distribución específica al buscar paquetes actualizados, puede agregar APT::Default-Release "kali-rolling"; al archivo /etc/apt/apt.conf.d/local.)
  ```
  APT::Default-Release "kali-rolling"
+ ```
+  * Una de las cosas más molestas de los programas es cuando pasas mucho tiempo y esfuerzo adaptando un programa (como usuario) y una actualización destroza todos tus cambios. Debian resuelve este problema marcando los ficheros de configuración. Así, cuando actualizas un paquete se te pregunta si deseas mantener la nueva configuración o no.
+  * root@chacka0101:/etc/apt/apt.conf.d# cat local 
+  ```
+apt -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" full-upgrade
+DPkg::options { "--force-confdef"; "--force-confold"; }
  ```
 
 Gestión de Prioridades en Paquetes
@@ -465,7 +472,7 @@ https://wiki.debian.org/ShellCommands#Z
   * /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 - root@chacka0101:/etc # cat profile (Editar la Variable de Entorno)
 - root@chacka0101:/etc # cat environment  (Definir variables de entorno no especificas)
-- root@chacka0101:~# which ls  (Buscar la ubicación de los comandos)
+- root@chacka0101:~# which ls  (Buscar las rutas o ubicaciones)
 - root@chacka0101:~# type rm (Muestra información de los comandos)
 - root@chacka0101:~# type pwd (Tipo de cada comando)
 - root@chacka0101:~# ls -al (Listar archivos ocultos en la Ubicación actual, Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.)
@@ -478,13 +485,29 @@ https://wiki.debian.org/ShellCommands#Z
 
 Search
 --
+- Busqueda de Archivos
+- root@chacka0101:~# find | head  (Busqueda y lista todos los archivos en el directorio actual)
+- root@chacka0101:~# find /root | head  (Busqueda y lista todos los archivos en el directorio específico, en este caso /root)
 - root@chacka0101:~# find / -name nombreexactodeloquebusco (Buscando archivos y dentro de archivos)
 - root@chacka0101:~# find / -name "nombredeloquebusco*"  (Buscando archivos y dentro de archivos)
+- root@chacka0101:~# find / -iname nombreexactodeloquebusco.txt  (Buscando archivos ignorando mayusculas o minusculas)
+- root@chacka0101:~# find . -type f -name "*.php"
 - root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
+- root@chacka0101:~# locate "*rockyou.txt.gz*"   (Busqueda de Archivos)
+- Busqueda de Directorios
+- root@chacka0101:~# find / -type d -name root   (Buscar el directorio con la palabra root)
+- root@chacka0101:~# which ls (Buscar la ubicación o directorio)
+- El comando find busca todos los archivos y carpetas hasta la última profundidad. Esto puede llevar mucho tiempo y tener muchos recursos cuando busca en un directorio grande o si tiene demasiados archivos pequeños divididos en varios directorios. Es posible limitar el comando de búsqueda para buscar solo hasta 1 niveles hacia abajo (o 2 o 3 o cualquier cosa que desee) de los subdirectorios. Esto se puede hacer usando la opción maxdepth)
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/find.png?raw=true)
+- Buscar archivos Ejecutables:
+- root@chacka0101:~# find . -perm /a=x | head
+- Buscar archivos Ocultos:
+- root@chacka0101:~# find /tmp -type f -name ".*"
+- root@chacka0101:~# cat /usr/share/doc/paquete/copyright (Buscar la página web oficial del paquete)
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +6000 -ls  (Buscar todos los ficheros con permisos SUID o SGID)
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +4000 -ls  (Buscar todos los ficheros con permisos solo SUID)
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +2000 -ls  (Buscar todos los ficheros con permisos solo SGID)
-- root@chacka0101:~# locate "*rockyou.txt.gz*"
+- Más información: https://www.blackmoreops.com/2014/08/18/practical-examples-linux-find-command/
 
 Permisos de los archivos y directorios - CHMOD
 --
@@ -1099,7 +1122,8 @@ PASSWORD CRACKING
   * [DATA] attacking ssh://127.0.0.1:22/
 - Recursos: https://github.com/danielmiessler/SecLists
 
-SUIGUIENTES PASOS
+
+SIGUIENTES PASOS
 ---
 - https://debian-handbook.info/browse/stable/  (Manual del administrador de Debian)
 - https://www.offensive-security.com/metasploit-unleashed/   (Primeros pasos en PenTest - ONLINE Ingles)
