@@ -253,12 +253,16 @@ Gestión de Paquetes con Interfaz Gráfica
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/Synaptic.png?raw=true)
 
 
-Actualización de Paquetes
+Actualización de Kali Linux
 --
 - Recomendamos que actualice Kali al menos una vez por semana:
   * root@chacka0101:/# apt update   (Descargar la lista de paquetes actualmente disponibles)
   * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales,además repara dependencias rotas)
+  * root@chacka0101:/etc/apt/apt.conf.d# cat local   (Para indicarle a APT que use una distribución específica al buscar paquetes actualizados, puede agregar APT::Default-Release "kali-rolling"; al archivo /etc/apt/apt.conf.d/local.)
+ ```
+ APT::Default-Release "kali-rolling"
+ ```
 
 Gestión de Prioridades en Paquetes
 --
@@ -276,7 +280,7 @@ Pin-Priority: 1001
 - prioridad 500: A las versiones que no se define la versión objetivo.
 - prioridad 990: A las versiones que si se define la versión objetivo. La más alta de las prioridades cuya descripción coincide con la versión se asigna a la versión.
 - prioridad 1000 o superior: Nunca se instala una versión anterior de un paquete en lugar de la instalada a menos que la prioridad de la versión disponible supere 1000 («Desactualizar» significa instalar una versión menos reciente de un paquete. Tenga en cuenta que ninguna de las prioridades que asigna APT por omisión superan 1000; éstas prioridades sólo se pueden establecer mediante el fichero de preferencias. Observe que instalar una versión anterior del paquete puede ser peligroso).
-- root@chacka0101:/etc/apt# apt-cache policy
+- root@chacka0101:/etc/apt# apt-cache policy (Para obtener una mejor comprensión del mecanismo de prioridad)
 - root@chacka0101:/etc/apt# apt-cache policy phpmyadmin
 ```
 phpmyadmin:
@@ -344,6 +348,7 @@ Manejo de Cache
 - root@chacka0101:/var/cache/apt/archives# apt clean (Vacía completamente el directorio de caché de /var/cache/apt/archives)
 - root@chacka0101:/var/cache/apt/archives# apt autoclean (Colo elimina los paquetes que ya no se pueden descargar porque han desaparecido del espejo y, por lo tanto, son inútiles).
 - root@chacka0101:/# apt-cache search term | more   (Busqueda de Descripciones de los paquetes)
+- root@chacka0101:/# apt-cache policy (Para obtener una mejor comprensión del mecanismo de prioridad)
 
 
   
@@ -367,6 +372,52 @@ dpkg - Inspeccionar Paquetes - Base de Datos DPKG
   * ne(no igual)
   * ge(mayor o igual que)
   * gt(estrictamente mayor que)
+- NOTA: Para una actualización dpkg ejecuta .old-postrm upgrade new-version
+- root@chacka0101:/# dpkg -r paquete (Elimina el paquete)
+  * 1. dpkg ejecuta un prerm remove.
+  * 2. dpkg elimina los archivos del paquete, sin los archivos de configruación y los scripts de configuración.
+  * 3. dpkg ejecuta postrm remove. Excepto postrm.
+  * 4. Para eliminar completamente se ejecuta (dpkg --purge o dpkg -P)
+- root@chacka0101:/# dpkg -P paquete (Elimina el paquete completo)
+
+Integridad
+--
+- root@chacka0101:/# ar p /var/cache/apt/archives/bash_4.4-2_amd64.deb control.tar.gz | tar -tzf -
+```
+./
+./conffiles
+./control
+./md5sums
+./postinst
+./postrm
+./preinst
+./prerm
+```
+- El archivo md5sum contiene los hash de integridad de los archivos
+- root@chacka0101:/var/lib/dpkg/info# cat md5sums (Identificar los md5sums)
+```
+8ec138e332aa1fbc3f081c17e81b62f9  lib/systemd/system/rescue-ssh.target
+3841c38ccbff81c6bcab65bfd307c41c  lib/systemd/system/ssh.service
+3f25171928b9546beb6a67bf51694eb3  lib/systemd/system/ssh.socket
+```
+- root@chacka0101:/# debsums openssh-server (Verificar los md5sums)
+```
+/lib/systemd/system/rescue-ssh.target                                         OK
+/lib/systemd/system/ssh.service                                               OK
+/lib/systemd/system/ssh.socket                                                OK
+```
+- Verificar con dpkg --verify o dpkg -V
+- root@chacka0101:/# dpkg -V (Muestra los archivos del sistema que han sido modificados)
+- Identificados por la letra “c” se modificaron legítimamente.
+- Identificados con “5“ en el tercer carácter cuando falla.
+- root@chacka0101:/# dpkg -V
+```
+??5??????   /lib/systemd/system/ssh.service
+??5?????? c /etc/libvirt/qemu/networks/default.xml
+??5?????? c /etc/lvm/lvm.conf
+??5?????? c /etc/salt/roster
+```
+
 
 Soporte de ARM
 --
@@ -395,7 +446,7 @@ https://wiki.debian.org/ShellCommands#Z
 - root@chacka0101:~# uname -r (Versión del Kernel)
 - root@chacka0101:~# apt update (Actualizar)
 - root@chacka0101:~# apt list --upgradable (Actualizar)
-- root@chacka0101~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la integridad del ISO)
+- root@chacka0101~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la 
   * 1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
 - root@chacka0101:~# ls -l /dev/sd* (Identificar la USB)
 - root@chacka0101:~# sudo rm archivo.xxx (Borrar archivo)
@@ -1054,9 +1105,6 @@ SUIGUIENTES PASOS
 - https://www.offensive-security.com/metasploit-unleashed/   (Primeros pasos en PenTest - ONLINE Ingles)
 - https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20CURSO%20DE%20HACKING%20DE%20METASPLOIT%20UNLEASHED%20EN%20ESPA%C3%91OL.pdf   (Primeros pasos en PenTest - Español)
 - https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/ (Penetration Testing Training with Kali Linux)
-- 
-
-
 
 
 Questions and Answers
