@@ -1330,7 +1330,7 @@ El Kali (y Debian) ISO es un  isohíbrido . Cuando se crea la ISO, una utilidad 
   * Submit the bug to the official Kali bug tracker at https://bugs.kali.org and mark the issue for an upstream Debian patch.
   
 55. Select all of the built-in security functions of a default installation of Kali Linux:
-No services enabled by default
+  *  No services enabled by default
 
 56. Which of the following are associated with the Kali Linux firewall? Select all that apply.
   *  ip6tables
@@ -1339,7 +1339,7 @@ No services enabled by default
   *  netfilter
  
  57. Which of the following is a default chain in the Kali Linux firewall?
-INPUT
+  * INPUT
 
 58. Which of the following actions of the Kali Linux firewall will not interfere with handled packets?
   *  ULOG
@@ -1347,11 +1347,11 @@ INPUT
   *  ACCEPT
   
 59. Place the chains in the proper processing order, from first to last:
-PREROUTING
-INPUT
-FORWARD
-OUTPUT
-POSTROUTING
+  * PREROUTING
+  * INPUT
+  * FORWARD
+  * OUTPUT
+  * POSTROUTING
 
 60. Which of the following will apply a special case of source NAT to packets in the Kali Linux firewall?
   * MASQUERADE
