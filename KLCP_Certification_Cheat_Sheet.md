@@ -1148,121 +1148,122 @@ SIGUIENTES PASOS
 Questions and Answers
 --
 1. What versions of Debian is Kali 1.0 ,2.0 and Rolling based on?
-Kali 1.0 was based on Debian Wheezy. Kali 2.0 is based on Jessie.
+  * Kali 1.0 was based on Debian Wheezy. 
+  * Kali 2.0 is based on Jessie.
 
 2. What are the main differences between a Live boot instance of Kali, and an Installed instance?
-Live mode boots to RAM, and an installed instance of Kali boots to a storage device.
+  * Live mode boots to RAM, and an installed instance of Kali boots to a storage device.
 
 3. What’s the difference between live and forensics mode?
-Live mode boots to RAM, but may auto-mount disks. Forensics mode does not auto-mount drives.
+  * Live mode boots to RAM, but may auto-mount disks. Forensics mode does not auto-mount drives.
 
 4. How can we verify that forensics mode is working?
-Use the mount command to verify that no disks are mounted. You can also md5 the system’s swap and disk devices, reboot into forensic mode and md5 again. The md5 hashes should match if forensics mode succeeded. Try this in a system you don’t care about “tainting”!
+  * Use the mount command to verify that no disks are mounted. You can also md5 the system’s swap and disk devices, reboot into forensic mode and md5 again. The md5 hashes should match if forensics mode succeeded. Try this in a system you don’t care about “tainting”!
 
 5. What’s the best way to get a tool included in Kali ?
-The best way to request for a tool addition is to open a “New Tool Requests” ticket in the Kali Bug Tracker.
+  * The best way to request for a tool addition is to open a “New Tool Requests” ticket in the Kali Bug Tracker.
 
 6. Name some of the cool features in Kali!
-A live system, forensics mode, a custom linux kernel, completely customizable, a trusted operating system with default disabled network services, ARM support, preloaded security tools, penetration testing platform!
+  * A live system, forensics mode, a custom linux kernel, completely customizable, a trusted operating system with default disabled network services, ARM support, preloaded security tools, penetration testing platform!
 
 7. The most current version of Kali is:
-A rolling distribution based on Debian testing
+  * A rolling distribution based on Debian testing
 
 8. ¿En qué buenos ejemplos puedes pensar para arrancar Kali en vivo? ¿Qué pasa con los malos ejemplos?
-Kali Live es genial cuando desea: mantener una copia portátil de Kali en su bolsillo; pruebe Kali Linux sin hacer ningún cambio en su computadora; Necesito activar el modo forense. Es una mala idea usar Kali live como cualquier tipo de instalación permanente, especialmente si está esperando guardar cambios (¡no persistir!) O si tiene memoria limitada en la máquina de arranque.
+  * Kali Live es genial cuando desea: mantener una copia portátil de Kali en su bolsillo; pruebe Kali Linux sin hacer ningún cambio en su computadora; Necesito activar el modo forense. Es una mala idea usar Kali live como cualquier tipo de instalación permanente, especialmente si está esperando guardar cambios (¡no persistir!) O si tiene memoria limitada en la máquina de arranque.
 
 9. ¿Te parece extraño que puedas simplemente copiar una ISO en una llave USB y hacer que arranque?
 El Kali (y Debian) ISO es un  isohíbrido . Cuando se crea la ISO, una utilidad syslinux ejecuta el comando isohybrid en la ISO, que agrega una tabla de partición a la ISO, a la vez que mantiene un archivo ISO válido.
 
-10. Si tiene un escritorio Intel de 64 bits, ¿qué imagen de Kali arrancará en su máquina? Seleccione todas las que correspondan.
-Kali de 32 bits
-Kali de 64 bits
+10. If you have a 64-bit Intel desktop, which Kali image will boot on your machine? Select all that apply.
+  * Kali 64-bit
+  * Kali 32-bit
 
-11. ¿Qué archivo virtual puede verificar para determinar si la CPU en su máquina Kali Linux es de 32 o 64 bits?
-/ proc / cpuinfo
+11. What virtual file can you check to determine whether the CPU in your Kali Linux machine is 32 or 64-bit?
+  * /proc/cpuinfo
 
-12. ¿Qué comando descargará e importará la clave pública de Kali a través de https?
-gpg_import https://www.kali.org/archive-key.asc
+12. Which command will download and import the Kali public key over https?
+  *  wget -q -O – https://www.kali.org/archive-key.asc | gpg –import
 
-13. Al instalar Kali Linux en una máquina virtual, ¿qué método de instalación producirá una instalación limpia?
-Cargar imagen oficial, validada Kali VM.
+13. When installing Kali Linux to a virtual machine, which installation method will most likely produce a clean install?
+  *  Load official, validated Kali VM image
  
 14. Which character is used to represent the user’s home directory?
-Usage of ~ for Home directory
+  * ~
 
 15. Which tools can be used to get file information? Check all that apply.
-type
-which
+  * type
+  * which
  
 16. Which of the following is not a block or character device?
-drwxr-xr-x 2 root root 60 Mar 21 08:30 vfio
+  * drwxr-xr-x 2 root root 60 Mar 21 08:30 vfio
  
 17. How can the file permissions -r—w—- be represented in octal notation?
-420
+  * 420
 
 18. Based on the following partial directory listing, what permissions does user have on the file test?
--r-x--x--- 1 user root 0 Mar 24 01:19 test
- Read, Execute
+  * -r-x--x--- 1 user root 0 Mar 24 01:19 test
+  *  Read, Execute
  
 19. You have two jobs running in the background. How do you kill the first job you executed?
-kill %1
+  * kill %1
 
 20. Which command does not control the permissions or user attributes associated with a file?
-chperm
+  * chperm
 
 21. Which command displays the identity of the user running the session along with the list of groups they belong to?
- id
+  *  id
  
 22. Which command summarizes the PCI hardware through the /proc and /sys virtual filesystems?
-lspci
+  * lspci
 
 23. According to the FHS, which directory contains log files, queues, spools and cache data handled by daemons?
- /var
+  *  /var
 
 24. What are the minimum required resources to a VM machine? 
-2GB RAM, 20 GB disk space!
+  * 2GB RAM, 20 GB disk space!
 
 25. What technologies are used for encryption?
-LUKS and Logical Volume Management (LVM)
+  * LUKS and Logical Volume Management (LVM)
 
 26. Which is the recommended configuration for simple Intel-based Kali SSH server with no desktop (headless)?
- 512 MB RAM / 2 GB hard drive free space / amd64 CPU
+  *  512 MB RAM / 2 GB hard drive free space / amd64 CPU
 
 27. Generally speaking, which of these is not a minimum requirement for a Kali Linux desktop?
- 512 MB RAM / 2 GB hard drive free space
+  *  512 MB RAM / 2 GB hard drive free space
  
 28. True or False: The Kali Linux installation will fail if you do not select a network mirror.
- False
+  *  False
  
 29. True or False: When booted from the mini.iso, the Kali Linux installation will fail if network hardware can not be detected.
- True
+  *  True
  
 30. Which partitioning scheme is most likely to be affected by user error?
- Manual
+  *  Manual
  
 31. Which partitioning method is preferred for servers and multi-user systems?
- Separate /home, /var, and /tmp partitions
+  *  Separate /home, /var, and /tmp partitions
  
 32. Installing a modern version of Windows after a Kali installation will:
- Erase the boot loader and prevent Kali from booting
+  *  Erase the boot loader and prevent Kali from booting
 
 33. What is the purpose of preseed.cfg?
- Provide predetermined answers to installation questions
+  *  Provide predetermined answers to installation questions
 
 34. What is the simplest and most effective procedure for installing Kali on an ARM device?
- Boot from an official, validated Kali ARM image and log in with root/toor
+  *  Boot from an official, validated Kali ARM image and log in with root/toor
 
 34. Which method is not readily available for saving debug logs during a failed install?
- Save logs to Kali bug tracker
+  *  Save logs to Kali bug tracker
  
 35. You can use GNOME’s control center to graphically set network options with which tool?
-NetworkManager
+  * NetworkManager
 
 36. The interfaces file is an important part of command-line network configuration. What directory is it in?
-/etc/network
+  * /etc/network
 
 37. What is the name of a command-line package typically used in Kali to configure the network from the command line?
-ifupdown
+  * ifupdown
 
 38. When configuring a network from the command line (say with ifup or ifdown) which line will begin the section for a manual network configuration?
   * iface eth0 inet static
