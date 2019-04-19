@@ -1465,10 +1465,10 @@ POSTROUTING
   * mkfs.ext3 -L persistence /dev/sdc3
 
 99. Which command could prepare a LUKS container on /dev/sdb3 for user interaction?
-  * # cryptsetup luksOpen /dev/sdb3 kali_persistence
+  * cryptsetup luksOpen /dev/sdb3 kali_persistence
 
 100. Which of the following commands will add a “nuke” password to the LUKS partition on /dev/sdb4?
-  * # cryptsetup luksAddNuke /dev/sdb4
+  * cryptsetup luksAddNuke /dev/sdb4
 
 101. Which of the following are required to install Kali over the network on a machine without an operating system?
   * All of the above
@@ -1487,12 +1487,32 @@ POSTROUTING
   * Architectures
   * Codename
 
-106. Select all of the fields required in a repo configuration file:
-  * Architectures
-  * Components
-  * Codename
-  
-107. Which file should be updated on client machines wishing to access a custom repository?
+106. Which file should be updated on client machines wishing to access a custom repository?
   * sources.list
+  
+107. Which of the following are not a part of the “CIA triad”?
+  * Classification
+  * Information
+  * Authentication
+  * Information
+  * Accessibility
+  
+108. An organization owns a web server which generates revenue based on uptime. Which of the following security attributes of the system will be the primary focus of the organization?
+  * Availability
+
+109. A flaw has been found in a cryptographic algorithm that weakens the cryptographic system. Which of the following elements of the CIA triad are affected by this?
+  * Confidentiality
+
+110. Which of the following best describes describe software that can be used to take advantage of a security weakness?
+  * exploit
+  
+111. Which of the following (derived from likelihood of occurrence and impact) provides guidance to those responsible for securing and maintaining the systems in question?
+  * Overall Risk
+  
+112. Which of the following leverages identified issues to uncover the worst-case scenario?  * 
+  * Penetration Test
+
+113. Which of the following best describes a technique that is used to target the various applications installed on the workstation of an employee within a target organization?
+  * Client-Side Attack
 
 ---
