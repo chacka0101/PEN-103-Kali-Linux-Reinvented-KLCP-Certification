@@ -261,15 +261,7 @@ Actualización de Kali Linux
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales,además repara dependencias rotas)
 - conffiles
   * root@chacka0101:/etc/apt/apt.conf.d# cat local   (Para indicarle a APT que use una distribución específica al buscar paquetes actualizados, puede agregar APT::Default-Release "kali-rolling"; al archivo /etc/apt/apt.conf.d/local.)
- ```
- APT::Default-Release "kali-rolling"
- ```
-  * Una de las cosas más molestas de los programas es cuando pasas mucho tiempo y esfuerzo adaptando un programa (como usuario) y una actualización destroza todos tus cambios. Debian resuelve este problema marcando los ficheros de configuración. Así, cuando actualizas un paquete se te pregunta si deseas mantener la nueva configuración o no.
-  * root@chacka0101:/etc/apt/apt.conf.d# cat local 
-  ```
-apt -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" full-upgrade
-DPkg::options { "--force-confdef"; "--force-confold"; }
- ```
+
 
 Gestión de Prioridades en Paquetes
 --
@@ -363,10 +355,11 @@ Manejo de Cache
 dpkg - Inspeccionar Paquetes - Base de Datos DPKG
 --
 - root@chacka0101:/var/lib/dpkg# ls -la  (Consultar la base de datos interna de dpkg)
-- root@chacka0101:/# dpkg -L paquete (Enumera los archivos que fueron instalados por el paquete)
+- root@chacka0101:/# dpkg -L metasploit-framework (Lista todos los archivos instalados de metasploit-framework)
 - root@chacka0101:/# dpkg -S /bin/date (Busca cualquier paquete que esté en la ruta)
-- root@chacka0101:/# dpkg -s paquete (Muestra los encabezados de un paquete instalado)
+- root@chacka0101:/# dpkg -s paquete (Muestra el estado del paquete)
 - root@chacka0101:/# dpkg -I /var/cache/apt/archives/gnupg_1.4.18-6_amd64.deb (Muestra los encabezados de un paquete instalado)
+- root@chacka0101:/# dpkg -l (Lista todos los paquetes instalados)
 - root@chacka0101:/# dpkg -l paquete (Muestra el estatus del paquete instalado)
 - root@chacka0101:/# dpkg -l 'b*' (Muestra el estatus de los paquetes que inician por la letra b)
 - root@chacka0101:/# dpkg -c /var/cache/apt/archives/gnupg_1.4.18-6_amd64.deb (Enumera todos los archivos en un paquete especifico)
@@ -492,6 +485,8 @@ Buscar, Search, Find, Which, Locate
 - root@chacka0101:~# find / -iname nombreexactodeloquebusco.txt  (Buscando archivos ignorando mayusculas o minusculas)
 - Buscar archivos de extensión .php
 - root@chacka0101:~# find . -type f -name "*.php"
+- Lista los archivos que contiene el paquete nmap:
+- root@chacka0101:/# ls /var/lib/dpkg/info/*nmap*.*
 - root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
 - root@chacka0101:~# locate "*rockyou.txt.gz*"   (Busqueda de Archivos)
 - root@chacka0101:~# find / -type d -name root   (Buscar el directorio con la palabra root)
@@ -1125,6 +1120,21 @@ PASSWORD CRACKING
   * [DATA] attacking ssh://127.0.0.1:22/
 - Recursos: https://github.com/danielmiessler/SecLists
 
+INSTALACIÓN DE NESSUS EN KALI LINUX
+---
+- HackLab para instalación de Nessus en Kali Linux:
+
+INSTALACIÓN DE WINE EN KALI LINUX
+---
+- root@chacka0101:~# wine -v
+  * it looks like wine32 is missing, you should install it...
+- root@chacka0101:~# dpkg --add-architecture i386    (Adicionar el tipo de arquitectura i386 a Kali)
+- root@chacka0101:~# apt update    (Actualizamos paquetes)
+- root@chacka0101:~# apt install wine32    (Instalamos WINE)
+- root@chacka0101:~# wine uninstaller
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/wine.png?raw=true)
+- Seguir los pasos de la instalación.
+
 
 SIGUIENTES PASOS
 ---
@@ -1359,5 +1369,65 @@ POSTROUTING
 
 67. Which of the following can be used to protect against brute-force logins?
    * fail2ban
+   
+68. Which tool directly installs packages without regard for dependencies or other packages?
+   * dpkg
+   
+69. Which tool is a complete package management system designed to to install and remove applications, update packages, and even upgrade your entire system?
+   *  Advanced Package Tool
+
+70. Which is the key configuration file for defining package sources?
+   * /etc/apt/sources.list
+   
+71. Select the syntactically correct apt source description:
+   *  deb http://http.kali.org/kali kali-rolling main non-free contrib
+
+72. Which apt source description points to software that does not conform to the Debian Free Software Guidelines?
+   *   deb http://http.kali.org/kali kali-rolling main non-free contrib
+
+73. Which of the following repositories is recommended for most users?
+   *  kali-rolling
+   
+74. Which command will install the man-db package?
+   *  dpkg -i man-db_2.7.0.2-5_amd64.deb
+   
+75. Which command should be used for regular updates of Kali Linux and will remove obsolete packages and install new dependencies?apt-   *  apt-get full-upgrade
+
+76. Which of the following commands downloads the latest list of available packages and should be run before working with apt?
+  *  apt update
+
+77. Which command will show all the files installed by the metaploit-framework package?
+  *  dpkg -L metasploit-framework
+  
+78. Which of the following commands will display the name of the package that installed the file “msfconsole”?
+  *  dpkg -S msfconsole
+
+79. Which of the following commands will list all packages installed on the system?
+  *  dpkg -l
+
+80. You need to install a package for a CPU other than the one on the current system. How would you enable this?
+  *  dpkg –add-architecture
+  
+81. Which of the following are graphical front ends to Kali’s package manager?
+  * synaptic
+  * aptitude
+  
+82. Which of the following commands shows the architectures that are installed on the current system?
+  *  dpkg –print-architecture
+
+83. Which file contains the most vital information about a Debian package?
+  *  control.tar.gz
+
+84. Which of the following is not a part of a standard Debian package?
+  *  manifest
+
+85. Which file in a Debian package contains the actual files to be installed on the file system?
+  *  data.tar.xz
+  
+86. Which field in the package header will cause dpkg to refuse to install a package and trigger apt to resolve the problem by updating the incompatible package to a newer version?
+  * Breaks
+  
+87. Which of the following is not a valid Debian package configuration script?
+  * postconf
 
 ---
