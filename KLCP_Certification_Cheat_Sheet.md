@@ -430,6 +430,7 @@ COMMANDS
 --
 https://wiki.debian.org/ShellCommands#Z
 
+- root@chacka0101:/proc# cat cpuinfo   (Arquitectura 32 o 64 bits)
 - root@chacka0101:~# lsb_release -a   (Versión del OS)
 - root@chacka0101:~# cat /etc/os-release  (Información del OS)
 - root@chacka0101:~# hostnamectl   (Información del Host)
@@ -475,6 +476,9 @@ https://wiki.debian.org/ShellCommands#Z
   * u : Select all processes on a terminal, including those of other users
   * x : Select processes without controlling ttys
  - root@chacka0101:~# passwd root  (Cambiar password de Usuario root)
+ - root@chacka0101:~# wget -q -O – https://www.kali.org/archive-key.asc | gpg –import    (Descarga e importa la clave pública de Kali a través de https)
+ - root@chacka0101:~# adduser (Adicionar un usuario)
+ - root@chacka0101:~# passwd -l olduser (suspenderá una cuenta de usuario)
 
 Buscar, Search, Find, Which, Locate
 --
@@ -555,7 +559,7 @@ INFORMACIÓN DE HARDWARE
   * 02:01.0 Ethernet controller: Intel Corporation 82545EM Gigabit Ethernet Controller (Copper) (rev 01)
 - root@chacka0101:~# lspci -v -s `lspci | grep VGA | cut -f1 -d\ `  (Información de Tarjeta de Video)
 - root@chacka0101:~# lsusb -vv | less  (Información de Hardware USB Detallada)
-- root@chacka0101:~# lspci   (Información de Hardware sencilla)
+- root@chacka0101:~# lspci   (Resume el hardware PCI a través de los sistemas de archivos virtuales / proc y / sys)
 - root@chacka0101:~# lsusb    (Información de Hardware USB sencilla)
 - root@chacka0101:~# sudo apt-get install lshw   (Instalar el lshw)
 
@@ -1222,7 +1226,7 @@ El Kali (y Debian) ISO es un  isohíbrido . Cuando se crea la ISO, una utilidad 
 
 24. What are the minimum required resources to a VM machine? 
   * 2GB RAM, 20 GB disk space!
-
+  
 25. What technologies are used for encryption?
   * LUKS and Logical Volume Management (LVM)
 
@@ -1276,48 +1280,49 @@ El Kali (y Debian) ISO es un  isohíbrido . Cuando se crea la ISO, una utilidad 
   * On the command line with ifupdown
 
 40. Which file contains encrypted user passwords?
-/etc/shadow
+  * /etc/shadow
 
 41. Which command is used to add users to the system?
-adduser
+  * adduser
 
 42. Which command will suspend a user account?
-passwd -l olduser
+  * passwd -l olduser
 
 43. Which is true of the SSH service on a default Kali install? Select all that apply.
   * The SSH service is disabled by default
   * The SSH service is installed by default
   * The default keys from a live image are pre-generated
+  * The default configuration blocks password-based logins
 
 44. Which command is commonly used to start services like ssh and postgresql?
-systemctl
+  * systemctl
 
 45. Which command can used to create a new postgresql database?
-createdb
+  * createdb
 
 46. Which command is not a postgresql command?
-pg_createuser
+  * pg_createuser
 
 47. Which command will create a postgres database name db_new?
-createdb -T template0 -E UTF-8 -O dbuser db_new
+  * createdb -T template0 -E UTF-8 -O dbuser db_new
 
 48. Which of the following are not associated with Apache2? Choose one.
-systemctl start apache
+  * systemctl start apache
 
 49. Which of the following are not associated with Apache2?
-apachectl
+  * apachectl
 
 50. In Kali, what is responsible for the boot sequence, but also permanently acts as a full featured service manager, starting and monitoring services?
-systemd
+  * systemd
 
 51. Which command will inspect the current status of the postgresql service?
-systemctl status postgresql
+  * systemctl status postgresql
 
 52. Which command will determine if nmap has been modified by Kali?
-All of the above
+  * All of the above
 
 53. Which command is used to report a bug to the Debian developers?
-reportbug
+  * reportbug
 
 54. Which of these actions can be used to submit a bug to the Debian developers?
   * Use the official Debian bug tracker at https://bugs.debian.org
