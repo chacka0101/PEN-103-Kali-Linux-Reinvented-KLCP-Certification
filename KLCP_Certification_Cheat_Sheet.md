@@ -1123,6 +1123,7 @@ PASSWORD CRACKING
 INSTALACIÓN DE NESSUS EN KALI LINUX
 ---
 - HackLab para instalación de Nessus en Kali Linux:
+- https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20PARA%20INSTALAR%20NESSUS%20EN%20KALI%20LINUX.pdf
 
 INSTALACIÓN DE WINE EN KALI LINUX
 ---
@@ -1429,5 +1430,69 @@ POSTROUTING
   
 87. Which of the following is not a valid Debian package configuration script?
   * postconf
+  
+88. Which of the following commands will download the source of a Debian package?
+  * apt source
+
+89. Which command will retrieve sources from a GIT repository?
+  * git clone
+
+90. Assuming that you are in a directory containing an unpacked source package, which command will install build dependencies listed in the Build-Depends field of the debian/control file?
+  * apt build-dep ./
+
+91. Which file or command will reveal whether or not your changes to a Debian package “stuck”?
+  * debian/changelog
+
+92. When applying changes, which command will update the prefix used in a Debian package to “kali”?
+  * dch –local kali
+
+93. What is the proper command for copying the config file from a running Kali Linux instance to a downloaded Kali source tree in the current directory?
+  * $ cp /boot/config-4.9.0-kali1-amd64 ~/kernel/linux-source-4.9/.config
+
+94. Which command will execute the graphical kernel configuration tool?
+  * make menuconfig
+
+95. Which command will install the prerequisites for the Kali Linux build environment?
+  * apt install curl git live-build
+
+96. Which metapackage installs all the tools in the default Kali Linux installation?
+  * kali-linux-full
+
+97. Which file contains the data of persisted directories?
+  * persistence.conf
+
+98. Which command will create an EXT3 filesystem with a label of “persistence” on the third partition of the third drive attached to the system?
+  * mkfs.ext3 -L persistence /dev/sdc3
+
+99. Which command could prepare a LUKS container on /dev/sdb3 for user interaction?
+  * # cryptsetup luksOpen /dev/sdb3 kali_persistence
+
+100. Which of the following commands will add a “nuke” password to the LUKS partition on /dev/sdb4?
+  * # cryptsetup luksAddNuke /dev/sdb4
+
+101. Which of the following are required to install Kali over the network on a machine without an operating system?
+  * All of the above
+ 
+102. Which of the following commands will install the dnmap package on salt minions?
+  * salt ’*’ pkg.install dnmap
+
+103. Which of the following commands will generate a binary package from and unsigned source package with unsigned .buildinfo and .changes file?
+  * dpkg-buildpackage -us -uc
+
+104. Which command is used to create and manage Debian repositories?
+  * reprepro
+
+105. Select all of the fields required in a repo configuration file:
+  * Components
+  * Architectures
+  * Codename
+
+106. Select all of the fields required in a repo configuration file:
+  * Architectures
+  * Components
+  * Codename
+  
+107. Which file should be updated on client machines wishing to access a custom repository?
+  * sources.list
 
 ---
