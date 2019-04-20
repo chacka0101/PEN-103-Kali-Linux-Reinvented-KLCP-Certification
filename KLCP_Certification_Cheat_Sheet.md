@@ -102,6 +102,12 @@ GNOME es el entorno de escritorio predeterminado de Kali Linux
 Respositorios o Paquetes
 --
 - Referencia de repositorios Oficiales: https://docs.kali.org/general-use/kali-linux-sources-list-repositories
+- This is Kali Linux's main package repository: http://http.kali.org/
+- root@chacka0101:/# apt source metasploit-framework   (Fuente del paquete)
+- root@chacka0101:/# ls /usr/share/metasploit-framework/   (Directorio de Metasploit Framework)
+- root@chacka0101:/# http://git.kali.org/gitweb/    (Repositorio git de Kali Linux)
+- root@chacka0101:/# git clone git://git.kali.org/packages/metasploit-framework.git   (Descargar el git)
+
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 - root@chacka0101:~# nano /etc/apt/sources.list
 - NOTA: Existen algunos software importantes de DEBIAN que no se encuentran en los repositorios de Kali Linux, para lo cual recomiendo poner en el Source List, debe tener en cuenta la versión de Debian en la cual está ejecutandose Kali, en mi caso es la versión de "Debian Sstretch":
@@ -261,6 +267,13 @@ Actualización de Kali Linux
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales,además repara dependencias rotas)
 - conffiles
   * root@chacka0101:/etc/apt/apt.conf.d# cat local   (Para indicarle a APT que use una distribución específica al buscar paquetes actualizados, puede agregar APT::Default-Release "kali-rolling"; al archivo /etc/apt/apt.conf.d/local.)
+
+Debian Security Tools Packaging Team 
+--
+- https://wiki.debian.org/Teams/pkg-security
+- https://salsa.debian.org/pkg-security-team?page=9
+- https://github.com/JPaulMora/Pyrit
+- https://tracker.debian.org/teams/pkg-security/
 
 
 Gestión de Prioridades en Paquetes
