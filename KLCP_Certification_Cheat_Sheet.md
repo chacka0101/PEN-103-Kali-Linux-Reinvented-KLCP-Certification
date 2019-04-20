@@ -484,6 +484,9 @@ https://wiki.debian.org/ShellCommands#Z
 - root@chacka0101:~# type pwd (Tipo de cada comando)
 - root@chacka0101:~# ls -al (Listar archivos ocultos en la Ubicación actual, Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.)
 - root@chacka0101:~# cat archivo.txt  (Visualiza el contenido del archivo)
+- root@chacka0101:~# ps -A | more (Lista todos los procesos)
+- root@chacka0101:~# ps aux | grep firefox (Lista el PID de Firefox)
+- root@chacka0101:~# kill 0000 (Matar el proceso 0000 donde 0000 es el PID del proceso)
 - root@chacka0101:~# ps axjf | less  (Lista todos los Procesos - PID)
   * A : Select all processes
   * u : Select all processes on a terminal, including those of other users
@@ -669,6 +672,7 @@ Imágen tomada de Kali Training.
 - Turn any computer into a wireless access point with Hostapd: https://seravo.fi/2014/create-wireless-access-point-hostapd
 
 - Comandos de red importantes:
+  * root@chacka0101:/etc/network# ls  (Directorio de Configuración de Network)
   * root@chacka0101:~# ifconfig -a  (Lista todas las interfaces de red)
   * root@chacka0101:~# sudo dhclient eth0 (Activar el DHCP)
   * root@chacka0101:~# sudo service networking restart (Reiniciar el Servicio de red)
@@ -677,7 +681,9 @@ Imágen tomada de Kali Training.
   * root@chacka0101:~# ifconfig eth0 up  (Activar tarjeta de red)
   * root@chacka0101:~# ifconfig eth0 down  (Desactivar tarjeta de red)
   * root@chacka0101:~# sudo ifconfig eth0 192.168.2.5 netmask 255.255.255.0 broadcast 192.168.2.7    (Configurar Manualmente la red)
+  * root@chacka0101:/# sudo ifup -av   (Subir automáticamente las interfaces de red)
 - Más información: https://www.debian.org/doc/manuals/debian-reference/ch05.es.html
+- Más información: https://wiki.debian.org/es/NetworkConfiguration
 
 Gestión de Usuario y Grupos
 --
@@ -1282,7 +1288,8 @@ El Kali (y Debian) ISO es un  isohíbrido . Cuando se crea la ISO, una utilidad 
 37. What is the name of a command-line package typically used in Kali to configure the network from the command line?
   * ifupdown
 
-38. When configuring a network from the command line (say with ifup or ifdown) which line will begin the section for a manual network configuration?
+38. When configuring a 
+from the command line (say with ifup or ifdown) which line will begin the section for a manual network configuration?
   * iface eth0 inet static
 
 39. Which methods can be used to configure network devices in Kali Linux? Choose all that apply:
