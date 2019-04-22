@@ -163,14 +163,14 @@ deb http://www.deb-multimedia.org sid main non-free
 - Repositorio de Kali-Bleeding-Edge: Este repositorio contiene paquetes construidos automáticamente fuera del repositorio Git (o Subversion). La ventaja es que tiene acceso a las últimas funciones y correcciones de errores en menos de 24 horas después que se hayan confirmado. Esta es una forma ideal de verificar si se solucionó un error que reportó. Debido a esto, el repositorio está marcado de tal manera que APT no instala paquetes automáticamente, especialmente durante una actualización.
 
 - MirrorBrain: Es un marco de código abierto para ejecutar una red de entrega de contenido utilizando servidores espejo. Soporta una avalancha de solicitudes de descarga, a menudo magnitudes más de lo que prácticamente cualquier sitio único podría manejar.
-  * root@chacka0101:/# curl -sI http://http.kali.org/README
+  * http://http.kali.org/
   * http://kali.download/
   * http://cdimage.kali.org/
 
-- Mirror original: http.kali.org
-- Otros Mirror: http://http.kali.org/README.mirrorlist  -  http://cdimage.kali.org/README.mirrorlist
-
-- Otras Referencias:
+- Mirror original: http://http.kali.org/
+- Otros Mirror: 
+  *  http://http.kali.org/README.mirrorlist
+  *  http://cdimage.kali.org/README.mirrorlist
   *  Kali Linux Git Repositories: http://git.kali.org/gitweb/
   *  Kali Linux Package Tracker: http://pkg.kali.org/
 
