@@ -36,6 +36,10 @@ El Sistema Operativo de KALI LINUX es DEBIAN
 
 - Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
 - https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
+- Las versiones o Releases de Debian tienen "Code Names": https://wiki.debian.org/es/DebianReleases
+
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/Understanding_Debian.png)
+
 - root@chacka0101:~# lsb_release -a   (Versión del OS)
 - root@chacka0101:~# cat /etc/os-release  (Información del OS)
 - root@chacka0101:~# hostnamectl   (Información del Host)
