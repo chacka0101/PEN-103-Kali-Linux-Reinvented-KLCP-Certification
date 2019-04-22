@@ -65,10 +65,6 @@ Linea de tiempo de las Distros de Hacking:
   * root@chacka0101:~# cat /etc/os-release  (Información del OS)
   * root@chacka0101:~# hostnamectl   (Información del Host)
 
-Sistemas ARM en Kali Linux
---
-- http://docs.kali.org/category/kali-on-arm
-
 Comprimir o descomprimir:
 --
 * Archivos .tar.xz:
@@ -99,6 +95,28 @@ GNOME es el entorno de escritorio predeterminado de Kali Linux
 --
 - root@hacker:~# gnome-shell --version  (Versión del Gnome)
 - root@hacker:~# gnome-shell --replace  (Lanzar una nueva gnome por shell)
+
+Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
+--
+- /bin/:	Programas basicos
+- /boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
+- /dev/:	Archivos de dispositivo
+- /etc/:	Archivos de configuración
+- /home/:	Archivos personales del usuario
+- /lib/:	Bibliotecas básicas
+- /mnt/:	Punto de montaje temporal
+- /opt/:	Aplicaciones adicionales proporcionadas por terceros
+- /root/:	Archivos personales del administrador (raíz)
+- /run/:	Datos de tiempo de ejecución volátiles que no persisten en los reinicios (aún no incluidos en el FHS)
+- /sbin/:	Programas del sistema
+- /srv/:	Datos utilizados por los servidores alojados en este sistema
+- /tmp/:	Archivos temporales (este directorio a menudo se vacía en el arranque)
+- /var/:	Datos variables manejados por demonios. Esto incluye archivos de registro, colas, spools y cachés.
+- /proc/y /sys/: Son específicos para el kernel de Linux (y no son parte del FHS). Son utilizados por el núcleo para exportar
+datos al espacio de usuario.
+- /usr/: Aplicaciones (este directorio es subdividen en bin, sbin, libde acuerdo con la misma lógica que en el directorio raíz)
+  * /usr/share/: Contiene los datos independientes de la arquitectura.
+  * /usr/local/: El administrador debe utilizar el directorio para instalar las aplicaciones manualmente sin sobrescribir los archivos que maneja el sistema de empaque (dpkg).
 
 Respositorios o Paquetes
 --
@@ -335,7 +353,7 @@ HELP - BUGS - ERRORES
   * root@chacka0101:/# reportbug sqlmap  (Reportar un BUG con un paquete en especifico)
   * root@chacka0101:/# dpkg -s metasploit-framework | grep ^Homepage:  (Página web oficial del paquete, ejemplo: metasploit-framework)
   * Homepage: https://www.metasploit.com/
-  * root@chacka0101:~# cat /usr/share/doc/paquete/copyright   (Buscar la página web oficial del paquete)
+  * root@chacka0101:~# cat /usr/share/doc/metasploit-framework/copyright   (Buscar la página web oficial del paquete)
 - Si el software devuelve un mensaje de error muy específico, ingréselo en un motor de búsqueda (entre comillas dobles, para buscar la frase completa, en lugar de las palabras clave individuales). En la mayoría de los casos, los primeros enlaces devueltos contendrán la respuesta que necesita.
   * Documentación específica de KALI LINUX: http://docs.kali.org/
   * kali-linux IRC Channel en Freenode
@@ -343,8 +361,8 @@ HELP - BUGS - ERRORES
   * Página Oficial de Bugs de Kali Linux - Bug Tracker: http://bugs.kali.org 
   * Página Oficial de Bugs de Debian - Debbug: https://debbugs.gnu.org/
   * Los errores asociados a paquetes en Debian se pueden consultar tambien en: https://tracker.debian.org/pkg/sqlmap
-- Un Fe de errata, se conoce como la publicación de errores posteriorES a la publicación final.
-  * Rporte de Bugs en Github: https://help.github.com/en/articles/creating-an-issue
+- Un Fe de errata, se conoce como la publicación de errores posteriores a la publicación final.
+  * Reporte de Bugs en Github: https://help.github.com/en/articles/creating-an-issue
   * Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
   * root@chacka0101:/# apt --reinstall install paquete  (Cuando dañas tu sistema por error al eliminar o modificar ciertos archivos, la forma más fácil de restaurarlos es reinstalar el paquete afectado. Cuando el paquete ya está instalado y se niega instalaro nuevamente se debe re-instalar).
   * root@chacka0101:/# aptitude reinstall paquete  (Otra opción para re-instalar)
@@ -356,13 +374,11 @@ Manejo de Cache
 - root@chacka0101:/var/lib/apt/lists# ls -la (APT almacena una copia de archivos en cache)
 - root@chacka0101:/var/cache/apt/archives# ls -la (Contiene una copia en caché de los paquetes ya descargados para evitar volver a descargarlos si necesita volver a instalarlos)
 - root@chacka0101:/var/cache/apt/archives# apt clean (Vacía completamente el directorio de caché de /var/cache/apt/archives)
-- root@chacka0101:/var/cache/apt/archives# apt autoclean (Colo elimina los paquetes que ya no se pueden descargar porque han desaparecido del espejo y, por lo tanto, son inútiles).
+- root@chacka0101:/var/cache/apt/archives# apt autoclean (Solo elimina los paquetes que ya no se pueden descargar porque han desaparecido del espejo y, por lo tanto, son inútiles).
 - root@chacka0101:/# apt-cache search term | more   (Busqueda de Descripciones de los paquetes)
 - root@chacka0101:/# apt-cache policy (Para obtener una mejor comprensión del mecanismo de prioridad)
 
 
-  
-  
 dpkg - Inspeccionar Paquetes - Base de Datos DPKG
 --
 - root@chacka0101:/var/lib/dpkg# ls -la  (Consultar la base de datos interna de dpkg)
@@ -390,6 +406,9 @@ dpkg - Inspeccionar Paquetes - Base de Datos DPKG
   * 3. dpkg ejecuta postrm remove. Excepto postrm.
   * 4. Para eliminar completamente se ejecuta (dpkg --purge o dpkg -P)
 - root@chacka0101:/# dpkg -P paquete (Elimina el paquete completo)
+- root@chacka0101:/# cat /usr/share/doc/paquete/README.md  (Documentación de un Paquete)
+- root@chacka0101:/# cat /usr/share/doc/paquete/examples/ (Ejemplos de archivos de configuración en el directorio)
+- Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
 
 Integridad
 --
@@ -430,8 +449,9 @@ Integridad
 ```
 
 
-Soporte de ARM
+Soporte de ARM - Sistemas ARM en Kali Linux
 --
+- http://docs.kali.org/category/kali-on-arm
 Debian soporta de manera completa tres adaptaciones a distintos sabores de hardware ARM little-endian:
 La adaptación ARM EABI (armel) está enfocada hacia dispositivos ARM antiguos de 32 bits, en particular, aquellos usados en hardware NAS y una variedad de ordenadores *plug.
 La adaptación más nueva ARM hard-float (armhf) soporta dispositivos más nuevos, y más potentes, de 32 bits, usando la versión 7 de la especificación de la arquitectura ARM.
@@ -441,7 +461,7 @@ COMMANDS
 --
 https://wiki.debian.org/ShellCommands#Z
 
-- root@chacka0101:/proc# cat cpuinfo   (Arquitectura 32 o 64 bits)
+- root@chacka0101:/# cat /proc/cpuinfo   (Arquitectura 32 o 64 bits)
 - root@chacka0101:~# lsb_release -a   (Versión del OS)
 - root@chacka0101:~# cat /etc/os-release  (Información del OS)
 - root@chacka0101:~# hostnamectl   (Información del Host)
@@ -493,6 +513,8 @@ https://wiki.debian.org/ShellCommands#Z
  - root@chacka0101:~# wget -q -O – https://www.kali.org/archive-key.asc | gpg –import    (Descarga e importa la clave pública de Kali a través de https)
  - root@chacka0101:~# adduser (Adicionar un usuario)
  - root@chacka0101:~# passwd -l olduser (suspenderá una cuenta de usuario)
+ - root@chacka0101:~# id   (Información del usuario actual)
+  * uid=0(root) gid=0(root) groups=0(root)
 
 Buscar, Search, Find, Which, Locate
 --
@@ -556,15 +578,11 @@ HARD DISK
 --
 - root@chacka0101:~# free -t -l --human   (Información de Disco Duro)
 - root@chacka0101:~# df --all  (Información de Disco Duro)
-- root@chacka0101:~# id   (Información del usuario actual)
-  * uid=0(root) gid=0(root) groups=0(root)
-- root@chacka0101:~# journalctl --all  (Información de Logs)
-- root@chacka0101:~# journalctl -u ssh.service  (Información de Logs en especifico)
-- root@chacka0101:~# dmesg --human --kernel | more   (Información de los Logs del Kernel)
+- root@chacka0101:~# gnome-system-monitor   (Interfaz gráfica del FILE SYSTEMS)
 
 INFORMACIÓN DE HARDWARE
 --
-- root@hacker:/lib/firmware# ls -la (Drivers o Firmware)
+- root@chacka0101:/# ls -la /lib/firmware (Drivers o Firmware)
 - root@chacka0101:~# lshw -short (Información de Hardware)
 - root@chacka0101:~# lspci -vv | less  (Información de Hardware Detallada)
 - root@chacka0101:~# dmesg | grep CPU0:    (Información de la CPU)
@@ -576,6 +594,7 @@ INFORMACIÓN DE HARDWARE
 - root@chacka0101:~# lspci   (Resume el hardware PCI a través de los sistemas de archivos virtuales / proc y / sys)
 - root@chacka0101:~# lsusb    (Información de Hardware USB sencilla)
 - root@chacka0101:~# sudo apt-get install lshw   (Instalar el lshw)
+- root@chacka0101:~# gnome-system-monitor   (Interfaz gráfica del RESOURCES)
 
 Calcular el tiempo de ejecución de comandos:
 --
@@ -611,34 +630,12 @@ KERNEL
   * (c)character: Puede leer y escribir caracteres, pero no puede buscar una posición determinada y cambiar bytes arbitrarios.
 
 - Ejemplo de Tipo de Archivo en Bloque por que inicia con la letra (b) brw-rw y la comprobación se hace digitando # ls -l:
-- root@chacka0101:~# ls -l /dev/sda
+  * root@chacka0101:~# ls -l /dev/sda
   * brw-rw---- 1 root disk 8, 0 Feb 27 11:00 /dev/sda
 - root@chacka0101:~# sudo file /dev/sda   (Comprobar el tipo de dispositivo)
   * /dev/sda: block special (8/0)
 - root@chacka0101:~# sudo file /dev/ttyS0
   * /dev/ttyS0: character special (4/64)
-
-Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
---
-- /bin/:	Programas basicos
-- /boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
-- /dev/:	Archivos de dispositivo
-- /etc/:	Archivos de configuración
-- /home/:	Archivos personales del usuario
-- /lib/:	Bibliotecas básicas
-- /mnt/:	Punto de montaje temporal
-- /opt/:	Aplicaciones adicionales proporcionadas por terceros
-- /root/:	Archivos personales del administrador (raíz)
-- /run/:	Datos de tiempo de ejecución volátiles que no persisten en los reinicios (aún no incluidos en el FHS)
-- /sbin/:	Programas del sistema
-- /srv/:	Datos utilizados por los servidores alojados en este sistema
-- /tmp/:	Archivos temporales (este directorio a menudo se vacía en el arranque)
-- /var/:	Datos variables manejados por demonios. Esto incluye archivos de registro, colas, spools y cachés.
-- /proc/y /sys/: Son específicos para el kernel de Linux (y no son parte del FHS). Son utilizados por el núcleo para exportar
-datos al espacio de usuario.
-- /usr/: Aplicaciones (este directorio es subdividen en bin, sbin, libde acuerdo con la misma lógica que en el directorio raíz)
-Además, /usr/share/contiene los datos independientes de la arquitectura. El /usr/local/administrador debe utilizar el directorio
-para instalar las aplicaciones manualmente sin sobrescribir los archivos que maneja el sistema de empaque ( dpkg).
 
 NETWORKING
 --
@@ -725,26 +722,17 @@ Gestión de Usuario y Grupos
 - root@chacka0101:/# gpasswd grupo (Cambiar password de un grupo)
 - root@chacka0101:/# gpasswd -r grupo  (Remover la contraseña del grupo)
 
-Configuración de Software o Package
---
-- root@chacka0101:/# dpkg -s paquete (Resumen de información del paquete)
-- root@chacka0101:/# cat /usr/share/doc/paquete/README.md  (Documentación de un Paquete)
-- root@chacka0101:/# dpkg -L paquete (Lista de archivos incluidos en el paquete)
-- root@chacka0101:/# cat /usr/share/doc/paquete/examples/ (Ejemplos de archivos de configuración en el directorio)
-- Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
-
-
-
 SSH
 --
-- root@chacka0101:/# systemctl start ssh (Iniciar el servicio de SSH)
-- root@chacka0101:/# systemctl enable ssh (Iniciar el servicio de SSH desde el arranque del OS)
-   > El servicio de SSH está desactivado por defecto, es importante configurarlo.
 - root@chacka0101:/# ssh -V (Versión del SSH)
 - root@chacka0101:/# cat /etc/ssh/sshd_config | more (Archivo de configuración del SSH)
 - root@chacka0101:/# nano /etc/ssh/sshd_config (Editar el archivo de configuración)
   > Editar la opción de "PermitRootLogin to yes" para que el usuario root pueda utilizar el servicio.
+- root@chacka0101:/# systemctl start ssh (Iniciar el servicio de SSH)
+   > El servicio de SSH está desactivado por defecto, es importante configurarlo.
+- root@chacka0101:/# systemctl enable ssh (Iniciar el servicio de SSH desde el arranque del OS)
 - root@chacka0101:/# systemctl reload ssh (Recargar el servicio de SSH)
+- root@chacka0101:/etc/ssh# service ssh restart   (Reiniciar el servicio de SSH)
 - root@chacka0101:/etc/ssh# service ssh status  (Estado del servicio)
 - Generando nuevas claves de host SSH
   > Cada servidor SSH tiene sus propias claves criptográficas; se denominan "claves de host SSH" y se almacenan en /etc/ssh/ssh_host_*. Deben mantenerse en privado si desea confidencialidad y no deben ser compartidas por varias máquinas.
@@ -757,8 +745,6 @@ Creating SSH2 ECDSA key; this may take some time ...
 Creating SSH2 ED25519 key; this may take some time ...
 256 SHA256:jHzsoF5JaUkK5/7UFZTSzilAgTJKxJvC//fUhNa0Mtw root@chacka0101 (ED25519)
 rescue-ssh.target is a disabled or a static unit, not starting it.
-- root@chacka0101:/etc/ssh# service ssh restart   (Reiniciar el servicio de SSH)
-- root@chacka0101:/etc/ssh# service ssh status  (Estado del servicio)
 
 PostgreSQL
 --
@@ -1026,6 +1012,9 @@ drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.d      (Aquellos que 
 drwxr-s---   2 root logcheck  4096 Mar 10 21:07 violations.ignore.d   (Alertas de seguridad ignoradas)
  ```
   * root@chacka0101:/# tail -f /var/log/auth.log
+  * root@chacka0101:~# journalctl --all  (Información de Logs)
+  * root@chacka0101:~# journalctl -u ssh.service  (Información de Logs en especifico)
+  * root@chacka0101:~# dmesg --human --kernel | more   (Información de los Logs del Kernel)
 
 Navegar en Internet por Terminal
  ---
