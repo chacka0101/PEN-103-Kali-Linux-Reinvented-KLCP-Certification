@@ -174,7 +174,8 @@ deb http://www.deb-multimedia.org sid main non-free
   *  Kali Linux Git Repositories: http://git.kali.org/gitweb/
   *  Kali Linux Package Tracker: http://pkg.kali.org/
 
-- DPKG
+DPKG
+--
   * root@chacka0101:/# dpkg --unpack paquete.deb   (Desempaqueatar el paquete.deb)
   * root@chacka0101:/# dpkg --configure paquete    (Ejecutar scripts del paquete)
   * root@chacka0101:/# dpkg -i paquete.deb  (Instalar dpkg que incluye el desempaquetar y ejecutar scripts)
@@ -227,7 +228,8 @@ i386
 ```
 - Cambios relacionados con la arquitectura: https://wiki.debian.org/Multiarch/HOWTO
   
-- APT - Advanced Packaging Tool
+APT - Advanced Packaging Tool
+--
 * root@chacka0101:/# apt install paquete (Instalar paquete con dpkg)
   * root@chacka0101:/# apt-get install paquete    (Instalar paquete con dpkg)
   * root@chacka0101:/# aptitude install paquete     (Instalar paquete con dpkg)
