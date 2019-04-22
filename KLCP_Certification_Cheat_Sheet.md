@@ -111,28 +111,26 @@ Respositorios o Paquetes
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 - root@chacka0101:~# nano /etc/apt/sources.list
-- NOTA: Existen algunos software importantes de DEBIAN que no se encuentran en los repositorios de Kali Linux, para lo cual recomiendo poner en el Source List, debe tener en cuenta la versión de Debian en la cual está ejecutandose Kali, en mi caso es la versión de "Debian Sstretch":
+- NOTA: Existen algunos software importantes de DEBIAN que no se encuentran en los repositorios de Kali Linux, para lo cual recomiendo poner en el Source List, debe tener en cuenta la versión de Debian en la cual está ejecutandose Kali, en este caso es la versión de "Debian Sid":
 ```
 # KALI REPOSITORIES
-# Regular repositories
+# The kali-rolling repository or Regular repositories
 deb http://http.kali.org/kali kali-rolling main non-free contrib
 # Source repositories
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib
-# The kali-rolling repository
-deb http://http.kali.org/kali kali-rolling main non-free contrib
 
 # DEBIAN REPOSITORIES
-# stretch-oficiales
-deb http://ftp.us.debian.org/debian/ stretch main contrib non-free
-deb-src http://ftp.us.debian.org/debian/ stretch main contrib non-free
-# stretch-actualizaciones-seguridad
-deb http://security.debian.org/debian-security stretch/updates main contrib non-free
-deb-src http://security.debian.org/debian-security stretch/updates main contrib non-free
-# stretch-updates, previously known as 'volatile'
-deb http://ftp.us.debian.org/debian/ stretch-updates main contrib non-free
-deb-src http://ftp.us.debian.org/debian/ stretch-updates main contrib non-free
+# sid-oficiales
+deb http://ftp.us.debian.org/debian/ sid main contrib non-free
+deb-src http://ftp.us.debian.org/debian/ sid main contrib non-free
+# sid-actualizaciones-seguridad
+deb http://security.debian.org/debian-security sid/updates main contrib non-free
+deb-src http://security.debian.org/debian-security sid/updates main contrib non-free
+# sid-updates, previously known as 'volatile'
+deb http://ftp.us.debian.org/debian/ sid-updates main contrib non-free
+deb-src http://ftp.us.debian.org/debian/ sid-updates main contrib non-free
 # debian-multimedia
-deb http://www.deb-multimedia.org stretch main non-free
+deb http://www.deb-multimedia.org sid main non-free
 ```
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/SourceList.png?raw=true)
 
