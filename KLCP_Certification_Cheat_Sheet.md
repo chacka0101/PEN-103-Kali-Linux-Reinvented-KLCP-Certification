@@ -140,7 +140,7 @@ deb http://www.deb-multimedia.org sid main non-free
 - Package Source: Es un repositorio (sitio web, servidor FTP, CD-ROM, directorio local, etc.) que contenga paquetes.
 - Source Package: Es un paquete que contiene el código fuente de un programa.
 
-- root@chacka0101:~# cat /etc/apt/sources.list.d/kali-bleeding-edge.list (Creando un NUEVO archivo (kali-bleeding-edge.list) en el directorio /etc/apt/sources.list.d lo que tiene la ventaja de dejar el sources.list archivo del sistema original sin alterar. En este ejemplo, optamos por crear un /etc/apt/sources.list.d/kali-bleeding-edge.list archivo separado.
+- root@chacka0101:~# cat /etc/apt/sources.list.d/kali-bleeding-edge.list (Creando un NUEVO archivo (kali-bleeding-edge.list) en el directorio /etc/apt/sources.list.d lo que tiene la ventaja de dejar el archivo sources.list del sistema original, sin alterar.
 
 - Archivos deb para paquetes binarios.
 - Archivos deb-src para paquetes fuente.
