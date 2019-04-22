@@ -31,23 +31,6 @@ Recursos
 - Blog de g0tmi1k: https://blog.g0tmi1k.com/
 - Github de Offensive Security: https://github.com/offensive-security
 
-El Sistema Operativo de KALI LINUX es DEBIAN
---
-
-- Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
-- https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
-- Las versiones o Releases de Debian tienen "Code Names": https://wiki.debian.org/es/DebianReleases
-
-![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/Understanding_Debian.png)
-
-- root@chacka0101:~# lsb_release -a   (Versión del OS)
-- root@chacka0101:~# cat /etc/os-release  (Información del OS)
-- root@chacka0101:~# hostnamectl   (Información del Host)
-
-Sistemas ARM en Kali Linux
---
-- http://docs.kali.org/category/kali-on-arm
-
 Hackers Data Base:
 --
 - https://www.securityfocus.com/
@@ -58,7 +41,14 @@ Hackers Data Base:
 - https://tools.kali.org/
 - https://github.com/danielmiessler?tab=repositories
 - https://github.com/rapid7/metasploit-framework
- 
+
+El Sistema Operativo de KALI LINUX es DEBIAN
+--
+- Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
+- https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
+- Las versiones o Releases de Debian tienen "Code Names": https://wiki.debian.org/es/DebianReleases
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/Understanding_Debian.png)
+
 Linea de tiempo de las Distros de Hacking:
 -- 
 - Unix History: https://upload.wikimedia.org/wikipedia/commons/7/77/Unix_history-simple.svg
@@ -71,6 +61,14 @@ Linea de tiempo de las Distros de Hacking:
 - DEBIAN - Kali Linux 1.0 (2013)
 - DEBIAN - Kali Linux 2.0 (2015-2016)
 - DEBIAN - Kali Linux 2019.1 (2019)
+
+- root@chacka0101:~# lsb_release -a   (Versión del OS)
+- root@chacka0101:~# cat /etc/os-release  (Información del OS)
+- root@chacka0101:~# hostnamectl   (Información del Host)
+
+Sistemas ARM en Kali Linux
+--
+- http://docs.kali.org/category/kali-on-arm
 
 Comprimir o descomprimir:
 --
