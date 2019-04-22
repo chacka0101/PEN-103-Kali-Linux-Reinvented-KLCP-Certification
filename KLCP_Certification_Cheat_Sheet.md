@@ -923,11 +923,10 @@ Service Management - Administrador de Servicios
   * root@chacka0101:~# systemctl list-unit-files   (Listar el estado)
 - Más información: https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
 
-  * root@chacka0101:/# netstat -tulpen  (Puertos Abiertos)
-
 SECURITY - MONITORING
 ---
-- fail2ban Bloquea la IP fuente de ataques despues de determinado número de intentos de ataques.
+  * root@chacka0101:/# netstat -tulpen  (Identificar los Puertos Abiertos en Kali Linux)
+- fail2ban Bloquea la IP fuente de ataques de fuerza bruta despues de determinado número de intentos de ataques.
   * root@chacka0101:/# apt install fail2ban
 - lnav Analiza los registros de eventos de Linux.
   * root@chacka0101:/# apt install lnav
@@ -1079,9 +1078,8 @@ FIREWALL NETFILTER
   * DNAT(solo en la tabla de nat): aplica para la traducción de direcciones de red de destino (DNAT). Las opciones adicionales describen los cambios exactos que deben aplicarse, incluida la opción, que define la nueva dirección IP y / o puerto de destino.--to-destination address:port
   * MASQUERADE(solo en la tabla de nat): aplique enmascaramiento (un caso especial de Source NAT).
   * REDIRECT(solo en la tabla de nata): redirige de manera transparente un paquete a un puerto dado del propio firewall; La opción indica el puerto, o rango de puertos, donde los paquetes deben ser redirigidos.--to-ports port(s)
-  
-- Eliminar toldas las reglas del Firewall:
-  * root@chacka0101:~# iptables -F INPUT
+ 
+  * root@chacka0101:~# iptables -F INPUT    (Eliminar toldas las reglas del Firewall)
   * root@chacka0101:~# iptables -P INPUT ACCEPT
   * root@chacka0101:~# iptables -P FORWARD ACCEPT
   * root@chacka0101:~# iptables -P OUTPUT ACCEPT
@@ -1128,12 +1126,14 @@ PASSWORD CRACKING
   * 500-worst-passwords.txt
   * root@chacka0101:~/Downloads# hydra -l root -P 500-worst-passwords.txt 127.0.0.1 ssh
   * [DATA] attacking ssh://127.0.0.1:22/
+- HACKLAB PARA CRACKING HASH CON JOHN THE RIPPER: https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20PARA%20CRACKING%20HASH%20CON%20JOHN%20THE%20RIPPER.pdf
 - Recursos: https://github.com/danielmiessler/SecLists
+
 
 INSTALACIÓN DE NESSUS EN KALI LINUX
 ---
-- HackLab para instalación de Nessus en Kali Linux:
-- https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20PARA%20INSTALAR%20NESSUS%20EN%20KALI%20LINUX.pdf
+- HackLab para instalación de Nessus en Kali Linux: https://github.com/chacka0101/HACKLABS/blob/master/HACKLAB%20PARA%20INSTALAR%20NESSUS%20EN%20KALI%20LINUX.pdf
+
 
 INSTALACIÓN DE WINE EN KALI LINUX
 ---
