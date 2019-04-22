@@ -132,7 +132,7 @@ deb-src http://ftp.us.debian.org/debian/ sid-updates main contrib non-free
 # debian-multimedia
 deb http://www.deb-multimedia.org sid main non-free
 ```
-![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/SourceList.png?raw=true)
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/SourceList.png)
 
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
