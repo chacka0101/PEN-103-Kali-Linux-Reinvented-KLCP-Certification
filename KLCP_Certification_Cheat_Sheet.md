@@ -333,8 +333,8 @@ HELP - BUGS - ERRORES
   * root@chacka0101:~# cat /usr/share/doc/sqlmap/README.pdf  (Manual de paquete sqlmap, puede venir en diferentes formatos)
   * root@chacka0101:/# reportbug (Reportar un BUG)
   * root@chacka0101:/# reportbug sqlmap  (Reportar un BUG con un paquete en especifico)
-  * root@chacka0101:/# dpkg -s sparta | grep ^Homepage:  (Página web oficial del paquete, ejemplo: sparta)
-  * Homepage: https://github.com/SECFORCE/sparta
+  * root@chacka0101:/# dpkg -s metasploit-framework | grep ^Homepage:  (Página web oficial del paquete, ejemplo: metasploit-framework)
+  * Homepage: https://www.metasploit.com/
   * root@chacka0101:~# cat /usr/share/doc/paquete/copyright   (Buscar la página web oficial del paquete)
 - Si el software devuelve un mensaje de error muy específico, ingréselo en un motor de búsqueda (entre comillas dobles, para buscar la frase completa, en lugar de las palabras clave individuales). En la mayoría de los casos, los primeros enlaces devueltos contendrán la respuesta que necesita.
   * Documentación específica de KALI LINUX: http://docs.kali.org/
