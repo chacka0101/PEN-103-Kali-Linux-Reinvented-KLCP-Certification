@@ -160,7 +160,7 @@ deb http://www.deb-multimedia.org sid main non-free
 
 - Repositorio de Kali-Dev: Este repositorio no es para uso público. Es un espacio donde los desarrolladores de Kali resuelven los problemas de dependencia que surgen de la combinación de los paquetes específicos de Kali en Debian Testing. También es el lugar donde los paquetes actualizados se ubican primero.
 
-- Repositorio de Kali-Bleeding-Edge: Este repositorio contiene paquetes construidos automáticamente fuera del repositorio Git (o Subversion) ascendente. La ventaja es que inmediatamente tiene acceso a las últimas funciones y correcciones de errores en menos de 24 horas después de que se hayan confirmado. Esta es una forma ideal de verificar si se solucionó un error que reportó en sentido ascendente. Debido a esto, el repositorio está marcado de tal manera que APT no instala paquetes automáticamente, especialmente durante una actualización.
+- Repositorio de Kali-Bleeding-Edge: Este repositorio contiene paquetes construidos automáticamente fuera del repositorio Git (o Subversion). La ventaja es que tiene acceso a las últimas funciones y correcciones de errores en menos de 24 horas después que se hayan confirmado. Esta es una forma ideal de verificar si se solucionó un error que reportó. Debido a esto, el repositorio está marcado de tal manera que APT no instala paquetes automáticamente, especialmente durante una actualización.
 
 - MirrorBrain: Es un marco de código abierto para ejecutar una red de entrega de contenido utilizando servidores espejo. Soporta una avalancha de solicitudes de descarga, a menudo magnitudes más de lo que prácticamente cualquier sitio único podría manejar.
   * root@chacka0101:/# curl -sI http://http.kali.org/README
