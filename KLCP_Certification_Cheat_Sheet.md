@@ -229,7 +229,7 @@ i386
   
 APT - Advanced Packaging Tool
 --
-* root@chacka0101:/# apt install paquete (Instalar paquete con dpkg)
+  * root@chacka0101:/# apt install paquete (Instalar paquete con dpkg)
   * root@chacka0101:/# apt-get install paquete    (Instalar paquete con dpkg)
   * root@chacka0101:/# aptitude install paquete     (Instalar paquete con dpkg)
   * root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
