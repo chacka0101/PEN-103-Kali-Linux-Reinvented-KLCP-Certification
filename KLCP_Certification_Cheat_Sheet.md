@@ -191,7 +191,6 @@ DPKG
   * root@chacka0101:/# dpkg --remove paquete   (Desinstalar el paquete)
   * root@chacka0101:/# dpkg -P paquete   (Eliminar o Purgar todos los datos asociados al paquete)
 
-
 - Habilitando Multi-Arch
   * El soporte para múltiples arquitecturas dpkg permite a los usuarios definir arquitecturas que pueden instalarse en el sistema actual.
 ```
