@@ -47,6 +47,7 @@ El Sistema Operativo de KALI LINUX es DEBIAN
 - Debian Handbook: https://debian-handbook.info/browse/es-ES/stable/
 - https://www.debian.org/doc/manuals/debian-reference/debian-reference.es.pdf
 - Las versiones o Releases de Debian tienen "Code Names": https://wiki.debian.org/es/DebianReleases
+
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/Understanding_Debian.png)
 
 Linea de tiempo de las Distros de Hacking:
