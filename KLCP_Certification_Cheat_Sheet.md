@@ -350,8 +350,6 @@ HELP - BUGS - ERRORES
   * root@chacka0101:/# aptitude reinstall paquete  (Otra opción para re-instalar)
   * NOTA: No utilizar (# apt --reinstall) para recuperarse de un ataque.
   * root@chacka0101:/# apt install w3af/kali-rolling  (Re-instalar una versión anterior)
-
-
   
 Manejo de Cache
 --
