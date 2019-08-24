@@ -69,8 +69,7 @@ Linea de tiempo de las Distros de Hacking:
 - DEBIAN - Kali Linux 1.0 (2013)
 - DEBIAN - Kali Linux 2.0 (2015-2016)
 - DEBIAN - Kali Linux 2019.1 (2019)
-- Información de Kali:
-* root@chacka0101:~# id; uname -a; lsb_release -a; hostnamectl; cat /etc/os-release
+- Información de Kali: root@chacka0101:~# id; uname -a; lsb_release -a; hostnamectl; cat /etc/os-release
 
 Comprimir o descomprimir:
 --
