@@ -35,6 +35,7 @@ Hackers Data Base:
 --
 - https://tools.ietf.org/html/rfc1392
 - http://catb.org/jargon/html/
+- http://bugtraq-team.com/
 - https://www.securityfocus.com/
 - https://packetstormsecurity.com/
 - https://www.exploit-db.com/
