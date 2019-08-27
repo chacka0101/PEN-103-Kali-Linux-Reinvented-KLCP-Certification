@@ -1177,8 +1177,7 @@ SIGUIENTES PASOS
 Questions and Answers
 --
 1. What versions of Debian is Kali 1.0 ,2.0 and Rolling based on?
-  * Kali 1.0 was based on Debian Wheezy. 
-  * Kali 2.0 is based on Jessie.
+  * Kali 1.0 was based on Debian Wheezy. Kali 2.0 is based on Jessie.
 
 2. What are the main differences between a Live boot instance of Kali, and an Installed instance?
   * Live mode boots to RAM, and an installed instance of Kali boots to a storage device.
