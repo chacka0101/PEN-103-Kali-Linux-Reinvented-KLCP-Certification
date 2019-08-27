@@ -1545,5 +1545,11 @@ from the command line (say with ifup or ifdown) which line will begin the sectio
 
 113. Which of the following best describes a technique that is used to target the various applications installed on the workstation of an employee within a target organization?
   * Client-Side Attack
+  
+114. What good examples can you think of for booting Kali live? What about bad examples?
+  * Kali Live is great when you want to: keep a portable copy of Kali in your pocket; test out Kali Linux without making any changes on your computer; need to engage forensics mode. It’s a bad idea to use Kali live as any kind of permanent installation, especially if you’re hoping to save changes (no persistence!) or if you  have limited memory on the boot machine.
+
+115. Does it strike you weird that you can simply dd an ISO to a USB key, and have it boot?
+  * The Kali (and Debian) ISO is an isohybrid. When the ISO is built, a syslinux utility runs the isohybrid command on the ISO, which adds a partition table to the ISO, while still keeping it a valid ISO file.
 
 ---
