@@ -71,6 +71,19 @@ Linea de tiempo de las Distros de Hacking:
 - DEBIAN - Kali Linux 2019.1 (2019)
 - Información de Kali: root@chacka0101:~# id; uname -a; lsb_release -a; hostnamectl; cat /etc/os-release
 
+Opciones de Instalación de Kali Linux:
+--
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/boot_screen_options-1.png)
+  * Live : Arranque en vivo, como siempre.
+  * Live (failsafe) : Arranque con un conjunto mínimo de controladores y comprobaciones de hardware.
+  * Live (forensics) : Arranque sin montar nada, adecuado para trabajos forenses.
+  * Live USB Persistence (and encrypted) : Solo agrega las particiones necesarias y el menú de inicio está listo para la persistencia.
+  * Install: Instalación normal en modo texto.
+  * Install Graphical : Modo de instalación de GUI
+  * Install with speech synthesis: Instalación de Kali para usuarios con discapacidad visual.
+  * Hardware Detection Tool: Diseñada para mostrar información de hardware de bajo nivel.
+  * Memory Diagnostic: erm, diagnostica la memoria.
+
 Comprimir o descomprimir:
 --
 * Archivos .tar.xz:
