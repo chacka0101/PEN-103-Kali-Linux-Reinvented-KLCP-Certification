@@ -86,6 +86,11 @@ Opciones de Instalación de Kali Linux:
 
 Comprimir o descomprimir:
 --
+Comando para cambiar el teclado en ingles: root@chacka0101:~# setxkbmap -layout us
+Comando para cambiar el teclado en español: root@chacka0101:~# setxkbmap -layout es
+
+Comprimir o descomprimir:
+--
 * Archivos .tar.xz:
   * Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
   * Descomprimir: tar -Jxvf paquete.tar.xz
