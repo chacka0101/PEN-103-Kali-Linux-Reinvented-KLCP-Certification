@@ -156,26 +156,18 @@ Respositorios o Paquetes
 - NOTA: Existen algunos software importantes de DEBIAN que no se encuentran en los repositorios de Kali Linux, para lo cual recomiendo poner en el Source List, debe tener en cuenta la versión de Debian en la cual está ejecutandose Kali, en este caso es la versión de "Debian Sid":
 ```
 # KALI REPOSITORIES
-# The kali-rolling repository or Regular repositories
-deb http://http.kali.org/kali kali-rolling main non-free contrib
-# Source repositories
-deb-src http://http.kali.org/kali kali-rolling main non-free contrib
-
-# DEBIAN REPOSITORIES
-# sid-oficiales
-deb http://ftp.us.debian.org/debian/ sid main contrib non-free
-deb-src http://ftp.us.debian.org/debian/ sid main contrib non-free
-# sid-actualizaciones-seguridad
-deb http://security.debian.org/debian-security sid/updates main contrib non-free
-deb-src http://security.debian.org/debian-security sid/updates main contrib non-free
-# sid-updates, previously known as 'volatile'
-deb http://ftp.us.debian.org/debian/ sid-updates main contrib non-free
-deb-src http://ftp.us.debian.org/debian/ sid-updates main contrib non-free
-# debian-multimedia
-deb http://www.deb-multimedia.org sid main non-free
+deb http://http.kali.org/kali kali-rolling main contrib non-free
+# For source package access, uncomment the following line
+# deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+deb http://http.kali.org/kali sana main non-free contrib
+deb http://security.kali.org/kali-security sana/updates main contrib non-free
+# For source package access, uncomment the following line
+# deb-src http://http.kali.org/kali sana main non-free contrib
+# deb-src http://security.kali.org/kali-security sana/updates main contrib non-free
+deb http://old.kali.org/kali moto main non-free contrib
+# For source package access, uncomment the following line
+# deb-src http://old.kali.org/kali moto main non-free contrib
 ```
-![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/SourceList2.png)
-
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
 
