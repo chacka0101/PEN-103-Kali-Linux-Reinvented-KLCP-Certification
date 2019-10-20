@@ -540,7 +540,7 @@ Buscar, Search, Find, Which, Locate
 - root@chacka0101:~# find / -name "nombredeloquebusco*"  (Buscando archivos y dentro de archivos)
 - root@chacka0101:~# find / -iname nombreexactodeloquebusco.txt  (Buscando archivos ignorando mayusculas o minusculas)
 - Buscar archivos de extensión .php
-- root@chacka0101:~# find . -type f -name "*.php"
+- root@chacka0101:~# find -type f -name "*.php"
 - Lista los archivos que contiene el paquete nmap:
 - root@chacka0101:/# ls /var/lib/dpkg/info/*nmap*.*
 - root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
