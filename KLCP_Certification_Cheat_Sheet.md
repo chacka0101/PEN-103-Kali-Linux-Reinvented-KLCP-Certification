@@ -84,7 +84,7 @@ Opciones de Instalación de Kali Linux:
   * Hardware Detection Tool: Diseñada para mostrar información de hardware de bajo nivel.
   * Memory Diagnostic: erm, diagnostica la memoria.
 
-Comprimir o descomprimir:
+Idioma y Teclado:
 --
   * Comando para cambiar el teclado en ingles: root@chacka0101:~# setxkbmap -layout us
   * Comando para cambiar el teclado en español: root@chacka0101:~# setxkbmap -layout es
