@@ -267,8 +267,9 @@ APT - Advanced Packaging Tool
   * root@chacka0101:/# apt-get install paquete    (Instalar paquete con dpkg)
   * root@chacka0101:/# aptitude install paquete     (Instalar paquete con dpkg)
   * root@chacka0101:/# apt -o Dpkg::Options::="--force-overwrite" install paquete  (En caso que aparezcan errores o sobre escribir, instala el paquete de forma forzada)
-  * root@chacka0101:/# apt remove paquete   (Desinstalar el paquete)
+  * root@chacka0101:/# apt remove paquete (Desinstalar el paquete)
   * root@chacka0101:/# apt purge paquete   (Eliminar o Purgar todos los datos asociados al paquete)
+  * root@chacka0101:/# apt remove --purge paquete (Desinstalar el paquete y eliminar o Purgar todos los datos asociados al paquete)
   * root@chacka0101:/# apt autoremove    (Elimina paquetes paquetes automáticos que ya no son necesarios)
   * root@chacka0101:/# apt-key fingerprint    (Integridad de los paquetes)
 
