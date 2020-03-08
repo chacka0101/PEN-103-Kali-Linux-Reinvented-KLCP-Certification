@@ -390,9 +390,10 @@ Manejo de Cache
 --
 - root@chacka0101:/var/lib/apt/lists# ls -la (APT almacena una copia de archivos en cache)
 - root@chacka0101:/var/cache/apt/archives# ls -la (Contiene una copia en caché de los paquetes ya descargados para evitar volver a descargarlos si necesita volver a instalarlos)
+- root@chacka0101:/# apt show sbd | more   (Uso de apt show para examinar información relacionada con el paquete)
 - root@chacka0101:/var/cache/apt/archives# apt clean (Vacía completamente el directorio de caché de /var/cache/apt/archives)
 - root@chacka0101:/var/cache/apt/archives# apt autoclean (Solo elimina los paquetes que ya no se pueden descargar porque han desaparecido del espejo y, por lo tanto, son inútiles).
-- root@chacka0101:/# apt-cache search term | more   (Busqueda de Descripciones de los paquetes)
+- root@chacka0101:/# apt-cache search sbd | more   (Busqueda de Descripciones de los paquetes)
 - root@chacka0101:/# apt-cache policy (Para obtener una mejor comprensión del mecanismo de prioridad)
 
 
