@@ -476,6 +476,7 @@ La adaptación ARM de 64 bits (arm64) soporta los últimos dispositivos ARM de 6
 COMMANDS
 --
 https://wiki.debian.org/ShellCommands#Z
+https://linux.die.net/
 
 - root@chacka0101:/# cat /proc/cpuinfo   (Arquitectura 32 o 64 bits)
 - root@chacka0101:~# lsb_release -a   (Versión del OS)
