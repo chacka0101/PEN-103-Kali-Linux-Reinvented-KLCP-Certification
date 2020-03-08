@@ -295,9 +295,10 @@ Gestión de Paquetes con Interfaz Gráfica
 
 Actualización de Kali Linux
 --
-- Recomendamos que actualice Kali al menos una vez por semana:
+- Recomendamos que actualice Kali al menos una vez por semana, es una buena idea tomar una screenshot de la máquina virtual en un estado limpio antes de actualizar.
   * root@chacka0101:/# apt update   (Descargar la lista de paquetes actualmente disponibles)
   * root@chacka0101:/# apt upgrade  (apt-get upgrade, aptitude safe-upgrade. Buscan paquetes instalados que se pueden actualizar sin eliminar ningún paquete)
+  * root@chacka0101:/# apt upgrade metasploit-framework (actualiza el paquete puntualmente)
   * root@chacka0101:/# apt full-upgrade  (Para actualizaciones más importantes, como las actualizaciones de versiones principales,además repara dependencias rotas)
 - conffiles
   * root@chacka0101:/etc/apt/apt.conf.d# cat local   (Para indicarle a APT que use una distribución específica al buscar paquetes actualizados, puede agregar APT::Default-Release "kali-rolling"; al archivo /etc/apt/apt.conf.d/local.)
