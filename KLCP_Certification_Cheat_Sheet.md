@@ -14,9 +14,10 @@ https://www.edx.org/course/introduction-to-linux
 * Consideraciones de BIOS
   * Las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debe deshabilitar esa característica en la configuración de BIOS.
 
-* Software de Captura de Pantalla
+* Software de Captura de Pantalla y otros importantes
   * Instalar software gnome-screenshot: root@chacka0101:~# apt-get install gnome-screenshot
   * Recortar un área especifica: root@chacka0101:~# gnome-screenshot -a
+  * Compresor de archivos: root@chacka0101:~# sudo apt-get install p7zip-full 
 
 Recursos
 --
