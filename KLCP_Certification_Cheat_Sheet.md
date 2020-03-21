@@ -123,7 +123,7 @@ GNOME es el entorno de escritorio predeterminado de Kali Linux
 
 Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
 --
-- /bin/:	Programas basicos
+- /bin/:	Programas basicos como ls, cd, cat.
 - /boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
 - /dev/:	Archivos de dispositivo
 - /etc/:	Archivos de configuración
@@ -133,14 +133,15 @@ Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
 - /opt/:	Aplicaciones adicionales proporcionadas por terceros
 - /root/:	Archivos personales del administrador (raíz)
 - /run/:	Datos de tiempo de ejecución volátiles que no persisten en los reinicios (aún no incluidos en el FHS)
-- /sbin/:	Programas del sistema
+- /sbin/:	Programas del sistema como fdisk, apache2, samba.
 - /srv/:	Datos utilizados por los servidores alojados en este sistema
 - /tmp/:	Archivos temporales (este directorio a menudo se vacía en el arranque)
 - /var/:	Datos variables manejados por demonios. Esto incluye archivos de registro, colas, spools y cachés.
 - /proc/y /sys/: Son específicos para el kernel de Linux (y no son parte del FHS). Son utilizados por el núcleo para exportar
 datos al espacio de usuario.
 - /usr/: Aplicaciones (este directorio es subdividen en bin, sbin, libde acuerdo con la misma lógica que en el directorio raíz)
-  * /usr/share/: Contiene los datos independientes de la arquitectura.
+  * /usr/bin/: Contiene aplicaciones como nmap, ncap.. 
+  * /usr/share/: Contiene los datos de las aplicaciones y soporte.
   * /usr/local/: El administrador debe utilizar el directorio para instalar las aplicaciones manualmente sin sobrescribir los archivos que maneja el sistema de empaque (dpkg).
 
 Respositorios o Paquetes
@@ -363,7 +364,8 @@ Manejo de problemas o errores después de una actualización
 HELP - BUGS - ERRORES
 --
   * root@chacka0101:~# man ls  (Manual para el comando ls)
-  * root@chacka0101:~# apropos "copy file"  (Busca la palabra copy file dentro de Manuales y lista donde están contenidos)
+  * root@chacka0101:~# man -k '^ls$' (Manual para el comando ls)
+  * root@chacka0101:~# apropos keyword  (Busca la palabra clave dentro de Manuales y lista donde están contenidos)
   * root@chacka0101:~# yelp (Gnome Help)
   * root@chacka0101:~# apt install pinfo (Instalar pinfo)
   * root@chacka0101:~# pinfo (Interfaz gráfica de información de comandos)
@@ -486,10 +488,11 @@ https://linux.die.net/
 - root@chacka0101:~# lsb_release -a   (Versión del OS)
 - root@chacka0101:~# cat /etc/os-release  (Información del OS)
 - root@chacka0101:~# hostnamectl   (Información del Host)
-- root@chacka0101:~# pwd (Directorio actual)
+- root@chacka0101:~# pwd (Visualiza el Directorio actual)
 - root@hchacka0101:~# d (change directory)
 - root@chacka0101:~# ls (list file or directory contents)
-- root@chacka0101:~# mkdir (make directory)
+- root@chacka0101:~# mkdir chacka (Crear un directorio)
+- root@chacka0101:~# mkdir chacka chacka0101 (Crear el directio chacak y el directorio chacka0101, los dos al mismo tiempo)
 - root@chacka0101:~# rmdir (remove directory)
 - root@chacka0101:~# mv, rm, and cp (move, remove or copy file or directory respectively)
 - root@chacka0101:~# cat (concatenate or show file)
@@ -536,6 +539,8 @@ https://linux.die.net/
  - root@chacka0101:~# passwd -l olduser (suspenderá una cuenta de usuario)
  - root@chacka0101:~# id   (Información del usuario actual)
   * uid=0(root) gid=0(root) groups=0(root)
+ - root@chacka0101:~# cd ~ (Viaja al directorio de home)
+ - root@chacka0101:~# cd / (Viaja al directorio raiz)
 
 Buscar, Search, Find, Which, Locate
 --
