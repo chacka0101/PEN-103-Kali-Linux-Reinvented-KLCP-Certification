@@ -545,23 +545,16 @@ https://linux.die.net/
 
 Buscar, Search, Find, Which, Locate
 --
+- El comando find busca todos los archivos y carpetas hasta la última profundidad. Esto puede llevar mucho tiempo y tener muchos recursos cuando busca en un directorio grande o si tiene demasiados archivos pequeños divididos en varios directorios. Es posible limitar el comando de búsqueda para buscar solo hasta 1 niveles hacia abajo (o 2 o 3 o cualquier cosa que desee) de los subdirectorios. Esto se puede hacer usando la opción maxdepth)
 - root@chacka0101:~# find | head  (Busqueda y lista todos los archivos en el directorio actual)
 - root@chacka0101:~# find /root | head  (Busqueda y lista todos los archivos en el directorio específico, en este caso /root)
 - root@chacka0101:~# find / -name nombreexactodeloquebusco (Buscando archivos y dentro de archivos)
 - root@chacka0101:~# find / -name "nombredeloquebusco*"  (Buscando archivos y dentro de archivos)
 - root@chacka0101:~# find / -iname nombreexactodeloquebusco.txt  (Buscando archivos ignorando mayusculas o minusculas)
+- root@chacka0101:~# find / -type d -name root   (Buscar el directorio con la palabra root)
 - Buscar archivos de extensión .php
 - root@chacka0101:~# find -type f -name "*.php"
-- Lista los archivos que contiene el paquete nmap:
-- root@chacka0101:/# ls /var/lib/dpkg/info/*nmap*.*
-- root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
-- root@chacka0101:~# locate "*rockyou.txt.gz*"   (Busqueda de Archivos)
-- root@chacka0101:~# find / -type d -name root   (Buscar el directorio con la palabra root)
-- root@chacka0101:~# which ls (Buscar la ubicación o directorio)
-- root@chacka0101:/# whereis wireshark  (Directorios de la palabra Wireshark)
-- El comando find busca todos los archivos y carpetas hasta la última profundidad. Esto puede llevar mucho tiempo y tener muchos recursos cuando busca en un directorio grande o si tiene demasiados archivos pequeños divididos en varios directorios. Es posible limitar el comando de búsqueda para buscar solo hasta 1 niveles hacia abajo (o 2 o 3 o cualquier cosa que desee) de los subdirectorios. Esto se puede hacer usando la opción maxdepth)
 - root@chacka0101:~# find /etc -maxdepth 1 -name "*.conf" | tail
-![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/find.png?raw=true)
 - Buscar archivos Ejecutables:
 - root@chacka0101:~# find . -perm /a=x | head
 - Buscar archivos Ocultos:
@@ -573,6 +566,14 @@ Buscar, Search, Find, Which, Locate
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +4000 -ls  (Buscar todos los ficheros con permisos solo SUID)
 - root@chacka0101:~# find / -path /proc -prune -o -type f -perm +2000 -ls  (Buscar todos los ficheros con permisos solo SGID)
 - Más información: https://www.blackmoreops.com/2014/08/18/practical-examples-linux-find-command/
+
+- Lista los archivos que contiene el paquete nmap:
+- root@chacka0101:/# ls /var/lib/dpkg/info/*nmap*.*
+- root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
+- root@chacka0101:~# locate "*rockyou.txt.gz*"   (Busqueda de Archivos)
+- root@chacka0101:~# which ls (Buscar la ubicación o directorio)
+- root@chacka0101:/# whereis wireshark  (Directorios de la palabra Wireshark)
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/find.png?raw=true)
 
 Permisos de los archivos y directorios - CHMOD
 --
