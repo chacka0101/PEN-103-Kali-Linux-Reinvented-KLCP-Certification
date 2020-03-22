@@ -404,6 +404,8 @@ Manejo de Cache
 
 dpkg - Inspeccionar Paquetes - Base de Datos DPKG
 --
+- root@chacka0101:/# sudo dpkg -i ./nano_3_2-2_amd64.deb  (Instalar un paguete offline)
+- root@chacka0101:/# sudo dpkg -P paquete (Elimina el paquete completo)
 - root@chacka0101:/var/lib/dpkg# ls -la  (Consultar la base de datos interna de dpkg)
 - root@chacka0101:/# dpkg -L metasploit-framework (Lista todos los archivos instalados de metasploit-framework)
 - root@chacka0101:/# dpkg -S /bin/date (Busca cualquier paquete que esté en la ruta)
@@ -428,7 +430,6 @@ dpkg - Inspeccionar Paquetes - Base de Datos DPKG
   * 2. dpkg elimina los archivos del paquete, sin los archivos de configruación y los scripts de configuración.
   * 3. dpkg ejecuta postrm remove. Excepto postrm.
   * 4. Para eliminar completamente se ejecuta (dpkg --purge o dpkg -P)
-- root@chacka0101:/# dpkg -P paquete (Elimina el paquete completo)
 - root@chacka0101:/# cat /usr/share/doc/paquete/README.md  (Documentación de un Paquete)
 - root@chacka0101:/# cat /usr/share/doc/paquete/examples/ (Ejemplos de archivos de configuración en el directorio)
 - Averiguar la última versión de un paquete: http://pkg.kali.org/pkg/nmap
