@@ -93,29 +93,33 @@ Idioma y Teclado:
 Comprimir o descomprimir:
 --
 * Archivos .tar.xz:
-  * Comprimir: tar -Jcvf paquete.tar.xz /carpeta/a/empaquetar/
+  * Comprimir: tar -Jcvf paquete.tar.xz /dir/a/empaquetar/
   * Descomprimir: tar -Jxvf paquete.tar.xz
 
 * Archivos .tar.gz:
-  * Comprimir: tar -czvf paquete.tar.gz /carpeta/a/empaquetar/
+  * Comprimir: tar -czvf paquete.tar.gz /dir/a/empaquetar/
   * Descomprimir: tar -xzvf paquete.tar.gz
 
 * Archivos .tar:
   * Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
   * Desempaquetar: tar -xvf paquete.tar
+  
+* Archivos .bz2:
+  * Comprimir: tar -cvf paquete.bz2
+  * Descomprimir: tar -xvjf paquete.bz2
 
 * Archivos .gz:
-  * Comprimir: gzip -9 index.php
-  * Descomprimir: gzip -d index.php.gz
+  * Comprimir: gzip -9 paquete.php
+  * Descomprimir: gzip -d paquete.gz
 
 * Archivos .zip:
-  * Comprimir: zip archivo.zip carpeta
-  * Descomprimir: unzip archivo.zip
+  * Comprimir: zip paquete.zip /dir/
+  * Descomprimir: unzip paquete.zip
 
 * Archivos .xz:
-  * Comprimir: xz archivo.xz
-  * Descomprimir: unxz archivo.xz
-
+  * Comprimir: xz paquete.xz
+  * Descomprimir: unxz paquete.xz
+   
 GNOME es el entorno de escritorio predeterminado de Kali Linux
 --
 - root@hacker:~# gnome-shell --version  (Versión del Gnome)
