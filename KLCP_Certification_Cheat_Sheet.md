@@ -90,6 +90,11 @@ Idioma y Teclado:
   * Comando para cambiar el teclado en ingles: root@chacka0101:~# setxkbmap -layout us
   * Comando para cambiar el teclado en español: root@chacka0101:~# setxkbmap -layout es
 
+Archivos Bloqueados en Kali:
+--
+  * 1.       Aparece el error “E: No se pudo abrir el fichero de bloqueo «/var/lib/dpkg/lock» - open (13: Permiso denegado)” el cual no permite instalar ni actualizar el sistema.
+  * 2.       La solución Ejecutar (rm -rf var/lib/dpkg/lock), reiniciar y todo arreglado.
+
 Comprimir o descomprimir:
 --
 * Archivos .tar.xz:
