@@ -505,7 +505,8 @@ https://linux.die.net/
 - root@chacka0101:~# mkdir chacka (Crear un directorio)
 - root@chacka0101:~# mkdir chacka chacka0101 (Crear el directio chacka y el directorio chacka0101, los dos al mismo tiempo)
 - root@chacka0101:~# mkdir -p /home/kali/Desktop/chacka0101/{nmap,github,exploits,report}
-- root@chacka0101:~# rmdir (remove directory)
+- root@chacka0101:~# rmdir (Remove directory)
+- root@chacka0101:~# rm -r (Remove directory not empty)
 - root@chacka0101:~# mv, rm, and cp (move, remove or copy file or directory respectively)
 - root@chacka0101:~# cat (concatenate or show file)
 - root@chacka0101:~# less/more (show files a page at a time)
