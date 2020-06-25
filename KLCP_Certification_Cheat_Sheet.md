@@ -157,27 +157,28 @@ Respositorios o Paquetes
 --
 - Referencia de repositorios Oficiales: https://docs.kali.org/general-use/kali-linux-sources-list-repositories
 - This is Kali Linux's main package repository: http://http.kali.org/
-- root@chacka0101:/# apt source metasploit-framework   (Fuente del paquete)
+- root@chacka0101:/# apt metasploit-framework   (Fuente del paquete)
 - root@chacka0101:/# ls /usr/share/metasploit-framework/   (Directorio de Metasploit Framework)
 - root@chacka0101:/# http://git.kali.org/gitweb/    (Repositorio git de Kali Linux)
 - root@chacka0101:/# git clone git://git.kali.org/packages/metasploit-framework.git   (Descargar el git)
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 - root@chacka0101:~# nano /etc/apt/sources.list
-- NOTA: Existen algunos software importantes de DEBIAN que no se encuentran en los repositorios de Kali Linux, para lo cual recomiendo poner en el Source List, debe tener en cuenta la versión de Debian en la cual está ejecutandose Kali, en este caso es la versión de "Debian Sid":
+- NOTA: Personalmente recomiendo: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
 ```
 # KALI REPOSITORIES
-deb http://http.kali.org/kali kali-rolling main contrib non-free
-# For source package access, uncomment the following line
-# deb-src http://http.kali.org/kali kali-rolling main contrib non-free
-deb http://http.kali.org/kali sana main non-free contrib
-deb http://security.kali.org/kali-security sana/updates main contrib non-free
-# For source package access, uncomment the following line
-# deb-src http://http.kali.org/kali sana main non-free contrib
-# deb-src http://security.kali.org/kali-security sana/updates main contrib non-free
-deb http://old.kali.org/kali moto main non-free contrib
-# For source package access, uncomment the following line
-# deb-src http://old.kali.org/kali moto main non-free contrib
+
+# KALI REPOSITORY
+# deb http://http.kali.org/kali kali-rolling main non-free contrib
+# deb http://http.kali.org/kali kali-last-snapshot main non-free contrib
+# deb http://http.kali.org/kali kali-experimental main non-free contrib
+
+# DEBIAN REPOSITORY
+# https://wiki.debian.org/DebianRepository
+# deb http://ftp.debian.org/debian stable main contrib non-free
+
+# UBUNTU REPOSITORY
+# deb http://archive.ubuntu.com/ubuntu/ artful-updates main universe restricted
 ```
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
