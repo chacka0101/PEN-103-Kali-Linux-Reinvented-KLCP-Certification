@@ -164,21 +164,21 @@ Respositorios o Paquetes
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 - root@chacka0101:~# nano /etc/apt/sources.list
-- NOTA: Personalmente recomiendo: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
 ```
-# KALI REPOSITORIES
+# 
 
-# KALI REPOSITORY
-# deb http://http.kali.org/kali kali-rolling main non-free contrib
-# deb http://http.kali.org/kali kali-last-snapshot main non-free contrib
-# deb http://http.kali.org/kali kali-experimental main non-free contrib
+# deb cdrom:[Kali GNU/Linux 2020.1rc4 _Kali-last-snapshot_ - Official amd64 DVD Binary-1 with firmware 20200124-09:35]/ kali-rolling main non-free
 
-# DEBIAN REPOSITORY
-# https://wiki.debian.org/DebianRepository
-# deb http://ftp.debian.org/debian stable main contrib non-free
+#deb cdrom:[Kali GNU/Linux 2020.1rc4 _Kali-last-snapshot_ - Official amd64 DVD Binary-1 with firmware 20200124-09:35]/ kali-rolling main non-free
 
-# UBUNTU REPOSITORY
-# deb http://archive.ubuntu.com/ubuntu/ artful-updates main universe restricted
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+deb-src http://http.kali.org/kali kali-rolling main non-free contrib
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manua
 ```
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
