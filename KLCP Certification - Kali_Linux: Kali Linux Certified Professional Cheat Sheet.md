@@ -6,9 +6,13 @@ Kali está dirigido a profesionales de la seguridad, PenTesters, Hackers y admin
 
 Prerrequisitos
 --
-https://www.edx.org/course/introduction-to-linux
+De forma opcional puede tomar alguna de estas certifcaciones, o estudiar por tu cuenta:
+- CompTIA Linux + (Powered by LPI)
+- GCUX: Administrador de seguridad UNIX certificado por GIAC
+- Red Hat Certified System Administrator (RHCSA)
+- Certificaciones LPI (Linux Professional Institute)
 
-* Arquitecturas Diponibles para Kali:
+* Aprender sobre arquitecturas Diponibles para Kali:
   * amd64, i386, armel, armhf, arm64
 
 * Consideraciones de BIOS
