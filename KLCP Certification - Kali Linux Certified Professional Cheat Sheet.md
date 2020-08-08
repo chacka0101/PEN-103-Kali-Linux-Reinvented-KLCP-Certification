@@ -1,4 +1,4 @@
-KLCP Certification - Kali_Linux: Kali Linux Certified Professional Cheat Sheet
+KLCP Certification - Kali Linux Certified Professional Cheat Sheet
 ==
 
 Kali Linux es una distribución para pruebas de "Penetration Test" basada en Debian GNU / Linux. 
