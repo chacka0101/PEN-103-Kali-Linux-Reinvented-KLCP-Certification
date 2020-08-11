@@ -176,7 +176,12 @@ Respositorios o Paquetes
 #deb cdrom:[Kali GNU/Linux 2020.1rc4 _Kali-last-snapshot_ - Official amd64 DVD Binary-1 with firmware 20200124-09:35]/ kali-rolling main non-free
 
 deb http://http.kali.org/kali kali-rolling main non-free contrib
-deb-src http://http.kali.org/kali kali-rolling main non-free contrib
+deb-src http://http.kali.org/kali kali-rolling main contrib non-free
+deb http://ftp.de.debian.org/debian stretch main
+deb http://old.kali.org/kali sana main non-free contrib
+deb-src http://old.kali.org/kali sana main non-free contrib
+deb http://old.kali.org/kali moto main non-free contrib
+deb-src http://old.kali.org/kali moto main non-free contrib
 
 # This system was installed using small removable media
 # (e.g. netinst, live or single CD). The matching "deb cdrom"
