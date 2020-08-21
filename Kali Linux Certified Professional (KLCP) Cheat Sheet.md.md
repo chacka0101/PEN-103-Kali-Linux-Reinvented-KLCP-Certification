@@ -511,7 +511,7 @@ https://linux.die.net/
 - root@chacka0101:~# hostnamectl   (Información del Host)
 - root@chacka0101:~# pwd (Visualiza el Directorio actual)
 - root@hchacka0101:~# d (change directory)
-- root@chacka0101:~# ls (list file or directory contents)
+- root@chacka0101:~# ls -lah (list file or directory contents, hidden files, size file on KB)
 - root@chacka0101:~# mkdir chacka (Crear un directorio)
 - root@chacka0101:~# mkdir chacka chacka0101 (Crear el directio chacka y el directorio chacka0101, los dos al mismo tiempo)
 - root@chacka0101:~# mkdir -p /home/kali/Desktop/chacka0101/{nmap,github,exploits,report}
