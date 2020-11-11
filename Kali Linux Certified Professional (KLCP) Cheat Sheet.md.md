@@ -122,7 +122,8 @@ Comprimir o descomprimir:
   * Descomprimir: gzip -d paquete.gz
 
 * Archivos .zip:
-  * Comprimir: zip paquete.zip /dir/
+  * # sudo apt-get install zip gzip tar
+  * Comprimir: kali@kali:~/chacka0101/bitlab$ sudo zip -r RemoteConnection.zip RemoteConnection.exe
   * Descomprimir: unzip paquete.zip
 
 * Archivos .xz:
