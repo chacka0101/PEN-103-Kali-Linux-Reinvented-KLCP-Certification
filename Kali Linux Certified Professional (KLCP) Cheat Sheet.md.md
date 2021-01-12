@@ -538,6 +538,7 @@ https://linux.die.net/
 - root@chacka0101:~# sudo systemctl restart nombredelproceso (Reiniciar proceso)
 - root@chacka0101:~# sudo killall nombredelproceso  (Matar proceso)
 - root@chacka0101:~# kill %1  (Matar proceso segundo plano)
+- root@chacka0101:~# ps -faux  (Lista los procesos en tiempo real)
 - root@chacka0101:~# top (Lista los procesos en tiempo real)
 - root@chacka0101:~# top -b -n1 > /root/Desktop/process.log (Guardar procesos en un log)
 - root@chacka0101:~# jobs -l  (Lista los procesos en segundo plano)
