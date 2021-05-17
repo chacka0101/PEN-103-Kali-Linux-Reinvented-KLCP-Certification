@@ -534,14 +534,6 @@ https://linux.die.net/
 - root@chacka0101:~# sudo fdisk -l (Visualizar Disco Duro y Particiones)
 - root@chacka0101:~# cat /proc/filesystems  (Tipos de sistemas de Archivos soportados por Kali)
   * Mas info: https://wiki.debian.org/FileSystem
-- root@chacka0101:~# ls /etc/init.d  (Procesos Abiertos)
-- root@chacka0101:~# sudo systemctl restart nombredelproceso (Reiniciar proceso)
-- root@chacka0101:~# sudo killall nombredelproceso  (Matar proceso)
-- root@chacka0101:~# kill %1  (Matar proceso segundo plano)
-- root@chacka0101:~# ps -faux  (Lista los procesos en tiempo real)
-- root@chacka0101:~# top (Lista los procesos en tiempo real)
-- root@chacka0101:~# top -b -n1 > /root/Desktop/process.log (Guardar procesos en un log)
-- root@chacka0101:~# jobs -l  (Lista los procesos en segundo plano)
 - root@chacka0101:~# echo $PATH  (Variable de entorno)
   * /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 - root@chacka0101:/etc # cat profile (Editar la Variable de Entorno)
@@ -566,6 +558,22 @@ https://linux.die.net/
   * uid=0(root) gid=0(root) groups=0(root)
  - root@chacka0101:~# cd ~ (Viaja al directorio de home)
  - root@chacka0101:~# cd / (Viaja al directorio raiz)
+
+Process Status examples:
+--
+- root@chacka0101:~# ls /etc/init.d  (Procesos Abiertos)
+- root@chacka0101:~# sudo systemctl restart nombredelproceso (Reiniciar proceso)
+- root@chacka0101:~# sudo killall nombredelproceso  (Matar proceso)
+- root@chacka0101:~# kill %1  (Matar proceso segundo plano)
+- root@chacka0101:~# ps -faux  (Lista los procesos en tiempo real)
+- root@chacka0101:~# ps -ef
+- root@chacka0101:~# sudo ps aux | grep "xvnc"
+- root@chacka0101:~# sudo ps aux | grep "vnc"
+- root@chacka0101:~# sudo ps aux | grep "tmux"
+- root@chacka0101:~# sudo ps aux | grep "procmon"
+- root@chacka0101:~# top (Lista los procesos en tiempo real)
+- root@chacka0101:~# top -b -n1 > /root/Desktop/process.log (Guardar procesos en un log)
+- root@chacka0101:~# jobs -l  (Lista los procesos en segundo plano)
 
 Buscar, Search, Find, Which, Locate
 --
