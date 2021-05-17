@@ -543,13 +543,7 @@ https://linux.die.net/
 - root@chacka0101:~# type pwd (Tipo de cada comando)
 - root@chacka0101:~# ls -al (Listar archivos ocultos en la Ubicación actual, Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.)
 - root@chacka0101:~# cat archivo.txt  (Visualiza el contenido del archivo)
-- root@chacka0101:~# ps -A | more (Lista todos los procesos)
-- root@chacka0101:~# ps aux | grep firefox (Lista el PID de Firefox)
-- root@chacka0101:~# kill 0000 (Matar el proceso 0000 donde 0000 es el PID del proceso)
-- root@chacka0101:~# ps axjf | less  (Lista todos los Procesos - PID)
-  * A : Select all processes
-  * u : Select all processes on a terminal, including those of other users
-  * x : Select processes without controlling ttys
+
  - root@chacka0101:~# passwd root  (Cambiar password de Usuario root)
  - root@chacka0101:~# wget -q -O – https://www.kali.org/archive-key.asc | gpg –import    (Descarga e importa la clave pública de Kali a través de https)
  - root@chacka0101:~# adduser (Adicionar un usuario)
@@ -561,6 +555,13 @@ https://linux.die.net/
 
 Process Status examples:
 --
+- root@chacka0101:~# ps -A | more (Lista todos los procesos)
+- root@chacka0101:~# ps aux | grep firefox (Lista el PID de Firefox)
+- root@chacka0101:~# kill 0000 (Matar el proceso 0000 donde 0000 es el PID del proceso)
+- root@chacka0101:~# ps axjf | less  (Lista todos los Procesos - PID)
+  * A : Select all processes
+  * u : Select all processes on a terminal, including those of other users
+  * x : Select processes without controlling ttys
 - root@chacka0101:~# ls /etc/init.d  (Procesos Abiertos)
 - root@chacka0101:~# sudo systemctl restart nombredelproceso (Reiniciar proceso)
 - root@chacka0101:~# sudo killall nombredelproceso  (Matar proceso)
