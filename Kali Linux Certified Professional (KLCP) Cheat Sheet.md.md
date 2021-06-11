@@ -4,7 +4,7 @@ Kali Linux Certified Professional (KLCP) Cheat Sheet
 Kali Linux es una distribución para pruebas de "Penetration Test" basada en Debian GNU / Linux. 
 Kali está dirigido a profesionales de la seguridad, PenTesters, Hackers y administradores de TI, lo que les permite realizar pruebas avanzadas de hacking, pentest, análisis forense y auditorías de seguridad.
 
-Prerrequisitos
+Pre-requisitos
 --
 De forma opcional puede tomar alguna de estas certifcaciones, o estudiar por tu cuenta:
 - CompTIA Linux + (Powered by LPI)
@@ -1213,6 +1213,13 @@ INSTALACIÓN DE WINE EN KALI LINUX
 - root@chacka0101:~# wine uninstaller
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/wine.png?raw=true)
 - Seguir los pasos de la instalación.
+
+
+MAC SPOOFING
+---
+root@hacker:~# ifconfig eth0 down
+root@hacker:~# ifconfig eth0 hw ether MAC
+root@hacker:~# ifconfig eth0 up
 
 
 SIGUIENTES PASOS
