@@ -169,17 +169,7 @@ Respositorios o Paquetes
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 - root@chacka0101:~# nano /etc/apt/sources.list
-
-- Search packages:
-
--└─$ apt-cache search peda
-
--gdb-peda - Python Exploit Development Assistance for GDB
-
--└─$ sudo apt-get install gdb-peda
 ```
-# 
-
 # deb cdrom:[Kali GNU/Linux 2020.1rc4 _Kali-last-snapshot_ - Official amd64 DVD Binary-1 with firmware 20200124-09:35]/ kali-rolling main non-free
 
 #deb cdrom:[Kali GNU/Linux 2020.1rc4 _Kali-last-snapshot_ - Official amd64 DVD Binary-1 with firmware 20200124-09:35]/ kali-rolling main non-free
@@ -198,6 +188,15 @@ deb-src http://old.kali.org/kali moto main non-free contrib
 # For information about how to configure apt package sources,
 # see the sources.list(5) manua
 ```
+
+- Search packages:
+
+-└─$ apt-cache search peda
+
+-gdb-peda - Python Exploit Development Assistance for GDB
+
+-└─$ sudo apt-get install gdb-peda
+
 - root@chacka0101:/var/lib/dpkg/info# apt install dpkg
 - Manipulación de paquetes con dpkg: https://debian-handbook.info/browse/es-ES/stable/sect.manipulating-packages-with-dpkg.html
 
