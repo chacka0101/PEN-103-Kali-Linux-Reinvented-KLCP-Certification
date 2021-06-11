@@ -169,6 +169,16 @@ Respositorios o Paquetes
 
 - root@chacka0101:~# cat /etc/apt/sources.list  (Archivo que enumera los diferentes repositorios (o fuentes) que publican los paquetes de Debian.)
 - root@chacka0101:~# nano /etc/apt/sources.list
+
+- Search packages:
+
+-┌──(chacka0101㉿kali)-[~/htb/october/peda]
+-└─$ apt-cache search peda
+
+-gdb-peda - Python Exploit Development Assistance for GDB
+
+-┌──(chacka0101㉿kali)-[~/htb/october/peda]
+-└─$ sudo apt-get install gdb-peda
 ```
 # 
 
