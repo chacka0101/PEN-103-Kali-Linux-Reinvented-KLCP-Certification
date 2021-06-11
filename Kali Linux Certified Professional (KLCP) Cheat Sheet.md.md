@@ -172,12 +172,10 @@ Respositorios o Paquetes
 
 - Search packages:
 
--┌──(chacka0101㉿kali)-[~/htb/october/peda]
 -└─$ apt-cache search peda
 
 -gdb-peda - Python Exploit Development Assistance for GDB
 
--┌──(chacka0101㉿kali)-[~/htb/october/peda]
 -└─$ sudo apt-get install gdb-peda
 ```
 # 
