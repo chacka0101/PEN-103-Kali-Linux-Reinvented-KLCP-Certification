@@ -109,6 +109,10 @@ Comprimir o descomprimir:
   * Comprimir: tar -czvf paquete.tar.gz /dir/a/empaquetar/
   * Descomprimir: tar -xzvf paquete.tar.gz
 
+* Archivos .tgz:
+  * Comprimir: gunzip -c paquete.tgz | tar xvf -
+  * Descomprimir: tar zxvf paquete.tgz
+
 * Archivos .tar:
   * Empaquetar: tar -cvf paquete.tar /dir/a/comprimir/
   * Desempaquetar: tar -xvf paquete.tar
@@ -129,6 +133,7 @@ Comprimir o descomprimir:
 * Archivos .xz:
   * Comprimir: xz paquete.xz
   * Descomprimir: unxz paquete.xz
+
    
 GNOME es el entorno de escritorio predeterminado de Kali Linux
 --
