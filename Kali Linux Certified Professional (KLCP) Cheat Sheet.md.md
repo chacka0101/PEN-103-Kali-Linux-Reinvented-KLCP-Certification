@@ -39,6 +39,7 @@ Recursos
 - GitHub de Unix Ninja: https://github.com/unix-ninja
 - Blog de g0tmi1k: https://blog.g0tmi1k.com/
 - Github de Offensive Security: https://github.com/offensive-security
+- Ethical Hacking Toolkit: https://0xcybery.github.io/ehtk/
 
 Hackers Data Base:
 --
