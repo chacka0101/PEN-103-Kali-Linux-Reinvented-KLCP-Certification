@@ -35,6 +35,7 @@ Recursos
 - Blog de g0tmi1k: https://blog.g0tmi1k.com/
 - Github de Offensive Security: https://github.com/offensive-security
 - Ethical Hacking Toolkit: https://0xcybery.github.io/ehtk/
+- Download distros: https://distrowatch.com/
 
 Hackers Data Base:
 --
@@ -72,6 +73,7 @@ Linea de tiempo de las Distros de Hacking:
 - DEBIAN - Kali Linux 2.0 (2015-2016)
 - DEBIAN - Kali Linux 2019.1 (2019)
 - Información de Kali: root@chacka0101:~# id; uname -a; lsb_release -a; hostnamectl; cat /etc/os-release
+- Download distros: https://distrowatch.com/
 
 Opciones de Instalación de Kali Linux:
 --
