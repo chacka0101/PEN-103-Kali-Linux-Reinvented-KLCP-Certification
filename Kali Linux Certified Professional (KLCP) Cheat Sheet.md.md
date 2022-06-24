@@ -18,11 +18,6 @@ De forma opcional puede tomar alguna de estas certifcaciones, o estudiar por tu 
 * Consideraciones de BIOS
   * Las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debe deshabilitar esa característica en la configuración de BIOS.
 
-* Software de Captura de Pantalla y otros importantes
-  * Instalar software gnome-screenshot: root@chacka0101:~# apt-get install gnome-screenshot
-  * Recortar un área especifica: root@chacka0101:~# gnome-screenshot -a
-  * Compresor de archivos: root@chacka0101:~# sudo apt-get install p7zip-full 
-
 Recursos
 --
 - WEB: https://kali.training
@@ -48,12 +43,13 @@ Hackers Data Base:
 - http://bugtraq-team.com/
 - https://www.securityfocus.com/
 - https://packetstormsecurity.com/
-- https://www.exploit-db.com/
 - https://github.com/rapid7/metasploit-framework/tree/master/modules
 - https://wpvulndb.com/wordpresses
 - https://tools.kali.org/
 - https://github.com/danielmiessler?tab=repositories
 - https://github.com/rapid7/metasploit-framework
+- https://github.com/offensive-security/exploitdb
+- https://www.exploit-db.com/
 
 El Sistema Operativo de KALI LINUX es DEBIAN
 --
