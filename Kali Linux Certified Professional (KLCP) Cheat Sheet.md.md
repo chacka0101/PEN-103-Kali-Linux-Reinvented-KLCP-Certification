@@ -970,13 +970,13 @@ AuthUserFile /etc/apache2/authfile/htpasswd-private
  
 Service Management - Administrador de Servicios
 ---
-* Para ver una lista de todas las unidades activas que systemd conoce, podemos usar el comando list-units:
-  * root@chacka0101:~# systemctl list-units
+* Para ver una lista de todos los servicios que systemd conoce, podemos usar el comando list-units:
+  * root@chacka0101:~# sudo systemctl list-units --type service
   * UNIT: El nombre de la unidad systemd.
   * LOAD: Si systemd ha analizado la configuración de la unidad. La configuración de las unidades cargadas se mantiene en la memoria.
   * ACTIVE: Un estado de resumen sobre si la unidad está activa. Esta suele ser una forma bastante básica de saber si la unidad se ha iniciado con éxito o no.
   * SUB: Este es un estado de nivel inferior que indica información más detallada sobre la unidad. Esto a menudo varía según el tipo de unidad, el estado y el método real en el que se ejecuta la unidad.
-  * DESCRIPTION: Una breve descripción textual de lo que es / hace la unidad.
+  * DESCRIPTION: Una breve descripción textual de lo que es / hace la el servicio.
   * root@chacka0101:~# sudo systemctl start application.service
   * root@chacka0101:~# sudo systemctl stop application.service
   * root@chacka0101:~# sudo systemctl restart application.service
@@ -989,7 +989,7 @@ Service Management - Administrador de Servicios
   * root@chacka0101:~# systemctl is-failed application.service
   * root@chacka0101:~# systemctl list-dependencies sshd.service   (Listar todas las depedependencias de un servicio)
   * root@chacka0101:~# systemctl show sshd.service (Listar todas las propiedades de un servicio)
-- Systemd también tiene la capacidad de marcar una unidad como completamente inestable, automática o manualmente, al vincularla a /dev/null. Esto se denomina enmascarar la unidad, y es posible con el comando de máscara:
+- Systemd también tiene la capacidad de marcar el servicio como completamente inestable, automática o manualmente, al vincularla a /dev/null. Esto se denomina enmascarar la unidad, y es posible con el comando de máscara:
   * root@chacka0101:~# sudo systemctl mask sshd.service
   * root@chacka0101:~# sudo systemctl unmask sshd.service
   * root@chacka0101:~# systemctl list-unit-files   (Listar el estado)
