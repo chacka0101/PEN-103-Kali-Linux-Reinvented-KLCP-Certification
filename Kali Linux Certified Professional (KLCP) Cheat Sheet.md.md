@@ -77,7 +77,12 @@ Linea de tiempo de las Distros de Hacking:
 
 Opciones de Instalación de Kali Linux:
 --
+
+- Kali Mirror: http://cdimage.kali.org/README.mirrorlist
+- Download Kali Linux: https://www.kali.org/get-kali/
+
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/boot_screen_options-1.png)
+
   * Live : Arranque en vivo, como siempre.
   * Live (failsafe) : Arranque con un conjunto mínimo de controladores y comprobaciones de hardware.
   * Live (forensics) : Arranque sin montar nada, adecuado para trabajos forenses.
