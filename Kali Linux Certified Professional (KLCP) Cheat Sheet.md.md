@@ -79,6 +79,7 @@ Crear una USB Booteable de Kali Linux:
 --
  * Creating a Bootable Kali USB Drive on Windows (Rufus)
  - https://www.kali.org/docs/usb/live-usb-install-with-windows/#creating-a-bootable-kali-usb-drive-on-windows-rufus
+ - Download Kali Linux: https://www.kali.org/get-kali/
 
 Opciones de Instalación de Kali Linux:
 --
