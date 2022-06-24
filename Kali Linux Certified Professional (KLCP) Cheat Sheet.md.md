@@ -542,7 +542,7 @@ https://linux.die.net/
 - root@chacka0101:~# uname -r (Versión del Kernel)
 - root@chacka0101:~# apt update (Actualizar)
 - root@chacka0101:~# apt list --upgradable (Actualizar)
-- root@chacka0101~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la 
+- root@chacka0101~# sha256sum kali-linux-2016.2-amd64.iso (Comando para verificar la integridad del archivo)
   * 1d90432e6d5c6f40dfe9589d9d0450a53b0add9a55f71371d601a5d454fa0431  kali-linux-2016.2-amd64.iso
 - root@chacka0101:~# ls -l /dev/sd* (Identificar la USB)
 - root@chacka0101:~# sudo rm archivo.xxx (Borrar archivo)
