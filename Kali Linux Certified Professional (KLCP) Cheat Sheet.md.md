@@ -75,12 +75,13 @@ Linea de tiempo de las Distros de Hacking:
 - Información de Kali: root@chacka0101:~# id; uname -a; lsb_release -a; hostnamectl; cat /etc/os-release
 - Download distros: https://distrowatch.com/
 
+Crear una USB Booteable de Kali Linux:
+--
+ * Creating a Bootable Kali USB Drive on Windows (Rufus)
+ - https://www.kali.org/docs/usb/live-usb-install-with-windows/#creating-a-bootable-kali-usb-drive-on-windows-rufus
+--
 Opciones de Instalación de Kali Linux:
 --
-
-- Kali Mirror: http://cdimage.kali.org/README.mirrorlist
-- Download Kali Linux: https://www.kali.org/get-kali/
-
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/boot_screen_options-1.png)
 
   * Live : Arranque en vivo, como siempre.
