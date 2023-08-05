@@ -1,4 +1,4 @@
-Kali Linux Certified Professional (KLCP) Cheat Sheet
+PEN-103 Kali Linux Revealed (KLR) Cheat Sheet
 ==
 
 Kali Linux es una distribución para pruebas de "Penetration Test" basada en Debian GNU / Linux. 
