@@ -18,7 +18,7 @@ De forma opcional puede tomar alguna de estas certifcaciones, o estudiar por tu 
 * Consideraciones de BIOS
   * Las imágenes de Kali Linux se pueden iniciar en modo UEFI en el BIOS, no admiten el INICIO SEGURO. Debe deshabilitar esa característica en la configuración de BIOS.
 
-Recursos
+Resources:
 --
 - WEB: https://kali.training
 - Book: https://kali.training/downloads/Kali-Linux-Revealed-1st-edition.pdf
@@ -36,21 +36,16 @@ Recursos
 - Github de Offensive Security: https://github.com/offensive-security
 - Ethical Hacking Toolkit: https://0xcybery.github.io/ehtk/
 - Download distros: https://distrowatch.com/
-
-Hackers Data Base:
---
-- https://tools.ietf.org/html/rfc1392
-- http://catb.org/jargon/html/
-- http://bugtraq-team.com/
-- https://www.securityfocus.com/
+- Cybersecurity Tools: https://sectools.org/
+- Internet Users' Glossary: https://tools.ietf.org/html/rfc1392
+- The Jargon File: http://catb.org/jargon/html/
 - https://packetstormsecurity.com/
 - https://github.com/rapid7/metasploit-framework/tree/master/modules
-- https://wpvulndb.com/wordpresses
-- https://tools.kali.org/
-- https://github.com/danielmiessler?tab=repositories
+- https://github.com/danielmiessler/SecLists
 - https://github.com/rapid7/metasploit-framework
 - https://github.com/offensive-security/exploitdb
-- https://www.exploit-db.com/
+- https://www.exploit-db.com
+- https://0day.today/exploit/36472
 
 El Sistema Operativo de KALI LINUX es DEBIAN
 --
