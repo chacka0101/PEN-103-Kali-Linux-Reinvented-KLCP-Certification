@@ -514,6 +514,15 @@ La adaptación ARM EABI (armel) está enfocada hacia dispositivos ARM antiguos d
 La adaptación más nueva ARM hard-float (armhf) soporta dispositivos más nuevos, y más potentes, de 32 bits, usando la versión 7 de la especificación de la arquitectura ARM.
 La adaptación ARM de 64 bits (arm64) soporta los últimos dispositivos ARM de 64 bits.
 
+Kali Important Directories
+--
+- Modules Metasploit Framework:	/usr/share/metasploit-framework/modules/
+- Impacket: 								python3 /usr/share/doc/python3-impacket/examples/smbserver.py
+- Exploits in Exploit Database:		/usr/share/exploitdb/
+- Wordlist:									/usr/share/wordlists/
+- Scripts nmap:							/usr/share/nmap/scripts
+- Python directory:						/usr/local/lib
+
 COMMANDS
 --
 https://wiki.debian.org/ShellCommands#Z
