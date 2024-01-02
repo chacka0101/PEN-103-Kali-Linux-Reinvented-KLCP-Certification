@@ -646,6 +646,9 @@ el bit "Setuid" se identifica con una “s” en un listado de la siguiente form
 
 - root@chacka0101:~# ls -al /bin/ping (Visualizar Permisos)
 -rwxr-xr-x 1 root root 65272 Aug  3  2018 /bin/ping
+
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/Linux_Permissions.png?raw=true)
+
 * Algunos Recursos:
   * https://es.wikipedia.org/wiki/Chmod
   * https://chmod-calculator.com
