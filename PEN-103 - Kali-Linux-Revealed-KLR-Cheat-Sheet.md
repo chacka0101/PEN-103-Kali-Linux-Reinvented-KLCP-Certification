@@ -1,4 +1,5 @@
-PEN-103 Kali Linux Revealed (KLR) Cheat Sheet
+PEN-103 - Kali Linux Reinvented - KLCP Certification
+![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/pen-103.png)
 ==
 - Última actualización: 15 de Abril de 2024.
 --
