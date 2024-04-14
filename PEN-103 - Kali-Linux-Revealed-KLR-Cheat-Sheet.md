@@ -526,7 +526,7 @@ Kali Important Directories
 - Scripts nmap:							/usr/share/nmap/scripts
 - Python directory:						/usr/local/lib
 
-COMMANDS
+COMMANDS - COMANDOS
 --
 https://wiki.debian.org/ShellCommands#Z
 https://linux.die.net/
@@ -536,7 +536,7 @@ https://linux.die.net/
 - root@chacka0101:~# cat /etc/os-release  (Información del OS)
 - root@chacka0101:~# hostnamectl   (Información del Host)
 - root@chacka0101:~# pwd (Visualiza el Directorio actual)
-- root@hchacka0101:~# d (change directory)
+- root@chacka0101:~# d (change directory)
 - root@chacka0101:~# ls -lah (list file or directory contents, hidden files, size file on KB)
 - root@chacka0101:~# mkdir chacka (Crear un directorio)
 - root@chacka0101:~# mkdir chacka chacka0101 (Crear el directorio chacka y el directorio chacka0101, los dos al mismo tiempo)
@@ -568,15 +568,17 @@ https://linux.die.net/
 - root@chacka0101:~# type pwd (Tipo de cada comando)
 - root@chacka0101:~# ls -al (Listar archivos ocultos en la Ubicación actual, Tenga en cuenta que los nombres de archivo que comienzan con un punto están ocultos por defecto.)
 - root@chacka0101:~# cat archivo.txt  (Visualiza el contenido del archivo)
-
- - root@chacka0101:~# passwd root  (Cambiar password de Usuario root)
- - root@chacka0101:~# wget -q -O – https://www.kali.org/archive-key.asc | gpg –import    (Descarga e importa la clave pública de Kali a través de https)
- - root@chacka0101:~# adduser (Adicionar un usuario)
- - root@chacka0101:~# passwd -l olduser (suspenderá una cuenta de usuario)
- - root@chacka0101:~# id   (Información del usuario actual)
+- root@chacka0101:~# passwd root  (Cambiar password de Usuario root)
+- root@chacka0101:~# wget -q -O – https://www.kali.org/archive-key.asc | gpg –import    (Descarga e importa la clave pública de Kali a través de https)
+- root@chacka0101:~# adduser (Adicionar un usuario)
+- root@chacka0101:~# passwd -l olduser (suspenderá una cuenta de usuario)
+- root@chacka0101:~# id   (Información del usuario actual)
   * uid=0(root) gid=0(root) groups=0(root)
- - root@chacka0101:~# cd ~ (Viaja al directorio de home)
- - root@chacka0101:~# cd / (Viaja al directorio raiz)
+- root@chacka0101:~# cd ~ (Viaja al directorio de home)
+- root@chacka0101:~# cd / (Viaja al directorio raiz)
+- root@chacka0101:~# free (Mostrar información de memoria)
+- root@chacka0101:~# df (Mostrar espacio libre en disco)
+- root@chacka0101:~# dmesg (Revisar los registros del Kernel)
 
 Process Status examples:
 --
