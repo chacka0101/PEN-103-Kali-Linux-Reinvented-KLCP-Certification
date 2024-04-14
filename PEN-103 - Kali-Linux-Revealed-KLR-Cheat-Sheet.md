@@ -1,4 +1,5 @@
 PEN-103 Kali Linux Revealed (KLR) Cheat Sheet
+Última actualización: 15 de Abril de 2024.
 ==
 
 Kali Linux es una distribución para pruebas de "Penetration Test" basada en Debian GNU / Linux. 
