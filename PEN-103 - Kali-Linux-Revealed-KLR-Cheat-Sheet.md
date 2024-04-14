@@ -579,6 +579,7 @@ https://linux.die.net/
 - root@chacka0101:~# free (Mostrar información de memoria)
 - root@chacka0101:~# df (Mostrar espacio libre en disco)
 - root@chacka0101:~# dmesg (Revisar los registros del Kernel)
+- root@chacka0101:~# journalctl(Mostrar todos los registros disponibles).
 
 Process Status examples:
 --
