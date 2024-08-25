@@ -144,6 +144,7 @@ Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
 - /bin/:	Programas basicos como ls, cd, cat.
 - /boot/:	El kernel Kali Linux y otros archivos necesarios para su proceso de arranque temprano
 - /dev/:	Archivos de dispositivo
+  * Specific files represent disk drives (for instance, /dev/sda), partitions (/dev/sda1), mice (/dev/input/mouse0), keyboards (/dev/input/event0), sound cards (/dev/snd/*), serial ports (/dev/ttyS*), and other components.
 - /etc/:	Archivos de configuración
 - /home/:	Archivos personales del usuario
 - /lib/:	Bibliotecas básicas
@@ -155,12 +156,13 @@ Gerarquia del Sistema de Archivos Filesystem Hierarchy Standard (FHS)
 - /srv/:	Datos utilizados por los servidores alojados en este sistema
 - /tmp/:	Archivos temporales (este directorio a menudo se vacía en el arranque)
 - /var/:	Datos variables manejados por demonios. Esto incluye archivos de registro, colas, spools y cachés.
-- /proc/y /sys/: Son específicos para el kernel de Linux (y no son parte del FHS). Son utilizados por el núcleo para exportar
+- /proc/ y /sys/: Son específicos para el kernel de Linux (y no son parte del FHS). Son utilizados por el núcleo para exportar
 datos al espacio de usuario.
 - /usr/: Aplicaciones (este directorio es subdividen en bin, sbin, libde acuerdo con la misma lógica que en el directorio raíz)
   * /usr/bin/: Contiene aplicaciones como nmap, ncap.. 
   * /usr/share/: Contiene los datos de las aplicaciones y soporte.
   * /usr/local/: El administrador debe utilizar el directorio para instalar las aplicaciones manualmente sin sobrescribir los archivos que maneja el sistema de empaque (dpkg).
+
 
 Respositorios o Paquetes
 --
