@@ -846,7 +846,7 @@ PostgreSQL
 - root@chacka0101:/# systemctl enable postgresql (Iniciar el servicio de SSH desde el arranque del OS)
 - root@chacka0101:/etc/postgresql# psql --version  (Versión del postgresql, en este caso es la 11 y el directorio es 11)
   * psql (PostgreSQL) 11.1 (Debian 11.1-2)
-- root@chacka0101:/# cat /etc/postgresql/11/main/postgresql.conf | more (Archivo de configuración del SSH)  
+- root@chacka0101:/# cat /etc/postgresql/11/main/postgresql.conf | more (Archivo de configuración del PostgreSQL) thx @DarkSkull91.
 - root@chacka0101:/etc/postgresql/11/main# service postgresql status  (Estado del servicio)
 - root@chacka0101:/# systemctl reload postgresql (Recargar el servicio de postgresql)
 - root@chacka0101:/# service postgresql status  (Estado del servicio)
