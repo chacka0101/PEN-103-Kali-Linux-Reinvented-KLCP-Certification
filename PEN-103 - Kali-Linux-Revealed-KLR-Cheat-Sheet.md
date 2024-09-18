@@ -1,4 +1,4 @@
-PEN-103 - Kali Linux Reinvented - KLCP Certification
+PEN-103 Kali Linux Reinvented - KLCP Certification
 ==
 
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/pen-103.png)
