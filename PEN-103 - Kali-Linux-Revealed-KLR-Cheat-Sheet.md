@@ -3,7 +3,7 @@ PEN-103 Kali Linux Reinvented - KLCP Certification
 
 ![Alt Text](https://github.com/chacka0101/Kali_Linux_Certified_Professional/blob/master/pen-103.png)
 
-- Última actualización: 15 de Abril de 2024.
+- Última actualización de este Material de estudio: 20 de septiembre de 2024.
 - Kali Linux es una distribución para pruebas de "Penetration Test" basada en Debian GNU / Linux. 
 Kali está dirigido a profesionales de la seguridad, PenTesters, Hackers y administradores de TI, lo que les permite realizar pruebas avanzadas de hacking, pentest, análisis forense y auditorías de seguridad.
 
