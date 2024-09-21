@@ -1590,7 +1590,7 @@ from the command line (say with ifup or ifdown) which line will begin the sectio
   * salt ’*’ pkg.install dnmap
 
 103. Which of the following commands will generate a binary package from and unsigned source package with unsigned .buildinfo and .changes file?
-  * dpkg-buildpackage -us -uc
+  * dpkg-buildpackage -us -uc -b
 
 104. Which command is used to create and manage Debian repositories?
   * reprepro
