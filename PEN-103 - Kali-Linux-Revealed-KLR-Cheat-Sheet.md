@@ -606,7 +606,7 @@ Process Status examples:
 - root@chacka0101:~# top -b -n1 > /root/Desktop/process.log (Guardar procesos en un log)
 - root@chacka0101:~# jobs -l  (Lista los procesos en segundo plano)
 
-Buscar, Search, Find, Which, Locate
+Buscar, Grep, Search, Find, Which, Locate
 --
 - El comando find busca todos los archivos y carpetas hasta la última profundidad. Esto puede llevar mucho tiempo y tener muchos recursos cuando busca en un directorio grande o si tiene demasiados archivos pequeños divididos en varios directorios. Es posible limitar el comando de búsqueda para buscar solo hasta 1 niveles hacia abajo (o 2 o 3 o cualquier cosa que desee) de los subdirectorios. Esto se puede hacer usando la opción maxdepth)
 - root@chacka0101:~# find | head  (Busqueda y lista todos los archivos en el directorio actual)
@@ -632,7 +632,8 @@ Buscar, Search, Find, Which, Locate
 
 - Lista los archivos que contiene el paquete nmap:
 - root@chacka0101:/# ls /var/lib/dpkg/info/*nmap*.*
-- root@chacka0101:~# grep -r "nombredeloquebusco" /    (Busqueda recursiva con Grep)
+- root@chacka0101:~# grep "loquebusco" "arhivo.txt o ruta" (Busqueda con Grep)
+- root@chacka0101:~# grep -r "loquebusco" "/"  (Busqueda recursiva con Grep)
 - root@chacka0101:~# locate "*rockyou.txt.gz*"   (Busqueda de Archivos)
 - root@chacka0101:~# which ls (Buscar la ubicación o directorio)
 - root@chacka0101:/# whereis wireshark  (Directorios de la palabra Wireshark)
