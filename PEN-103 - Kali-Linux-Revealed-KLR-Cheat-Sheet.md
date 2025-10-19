@@ -400,7 +400,8 @@ HELP - BUGS - ERRORES
   * root@chacka0101:~# man ls  (Manual para el comando ls)
   * root@chacka0101:~# man -k '^ls$' (Manual para el comando ls)
   * root@chacka0101:~# whatis ls  (Qué es el comando ls?)
-  * root@chacka0101:~# apropos ls (Comandos con esa palabra asociada)
+  * root@chacka0101:~# apropos ls (Buscará los comandos con esa palabra asociada)
+  * root@chacka0101:~# apropos -a change password (Buscará los comandos con esas dos palabras asociada)s
   * root@chacka0101:~# yelp (Gnome Help)
   * root@chacka0101:~# apt install pinfo (Instalar pinfo)
   * root@chacka0101:~# pinfo (Interfaz gráfica de información de comandos)
